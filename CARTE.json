@@ -1,0 +1,114 @@
+{
+ "format": "carte-projet 1",
+ "titre": "Nom du projet : le parcours de l'utilisateur",
+ "sous_titre": [
+  "Version 0, brouillon du AAAA-MM-JJ : à valider",
+  "À dessiner par Claude Code à partir des notes, avant la première ligne de code."
+ ],
+ "legende": {
+  "x": 1080.0,
+  "y": 20.0,
+  "l": 700.0,
+  "h": 100.0
+ },
+ "zones": [
+  {
+   "id": "z1",
+   "titre": "Première étape du parcours",
+   "x": 40.0,
+   "y": 140.0,
+   "l": 1740.0,
+   "h": 260.0
+  },
+  {
+   "id": "zp",
+   "titre": "Mis de côté pour l'instant",
+   "x": 40.0,
+   "y": 440.0,
+   "l": 850.0,
+   "h": 180.0
+  },
+  {
+   "id": "zq",
+   "titre": "Questions ouvertes",
+   "x": 930.0,
+   "y": 440.0,
+   "l": 850.0,
+   "h": 180.0
+  }
+ ],
+ "tuiles": [
+  {
+   "id": "e1",
+   "x": 80.0,
+   "y": 200.0,
+   "l": 240.0,
+   "h": 80.0,
+   "etat": "hors_app",
+   "titre": "Ce qui vient de l'extérieur",
+   "texte": [
+    "fichier, personne, autre logiciel"
+   ],
+   "note": ""
+  },
+  {
+   "id": "e2",
+   "x": 380.0,
+   "y": 200.0,
+   "l": 240.0,
+   "h": 80.0,
+   "etat": "a_faire",
+   "titre": "Ce que l'utilisateur fait",
+   "texte": [
+    "dans l'application"
+   ],
+   "note": ""
+  },
+  {
+   "id": "e3",
+   "x": 680.0,
+   "y": 200.0,
+   "l": 240.0,
+   "h": 80.0,
+   "etat": "a_faire",
+   "titre": "Ce que l'application produit",
+   "texte": [
+    "écran, calcul, alerte, export"
+   ],
+   "note": ""
+  }
+ ],
+ "textes": [
+  {
+   "id": "q1",
+   "x": 955.0,
+   "y": 485.0,
+   "l": 800.0,
+   "h": 120.0,
+   "lignes": [
+    "1. Première question à trancher avant de valider la carte ?"
+   ],
+   "italique": false
+  }
+ ],
+ "liens": [
+  {
+   "de": "e1",
+   "vers": "e2",
+   "libelle": "",
+   "pointille": false,
+   "points": []
+  },
+  {
+   "de": "e2",
+   "vers": "e3",
+   "libelle": "",
+   "pointille": false,
+   "points": []
+  }
+ ],
+ "titre_pos": [
+  40.0,
+  25.0
+ ]
+}
