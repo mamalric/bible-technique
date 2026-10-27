@@ -22,9 +22,10 @@
   - thème clair et largeur mobile, sans défilement horizontal ;
   - aucune erreur en console.
 - Git : `main` contient le squelette du projet ; `dev` contient en plus le prototype. Rien n'est poussé, aucun dépôt distant.
+- Format validé par l'utilisateur le 27/10 : "c'est exactement ça que je veux". Des retouches de forme de détail viendront plus tard. Le moule de la fiche fait donc référence pour les suivantes : schéma interactif, en 30 secondes, chiffres, arbre de décision, vérifications, pièges, à ne pas confondre, vu sur les affaires, pour aller plus loin.
 - À faire :
   - remplir `CARTE.json`, resté au modèle vierge ;
-  - faire valider le rendu ;
+  - recueillir les retouches de forme ;
   - valider l'`id` ;
   - créer la skill d'enrichissement ;
   - créer le dépôt distant (sur accord) ;
