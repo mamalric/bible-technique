@@ -2,6 +2,27 @@
 
 <!-- Dernière entrée en haut. Une entrée par session de travail ou par décision. Date au format AAAA-MM-JJ. -->
 
+## 2026-10-27 (suite) : id, skill et vérificateur
+
+- `id` validé par l'utilisateur : `2026-10-27-bible-technique`.
+- Skill `bible-technique` créée dans `C:\Users\mamalric\.claude\skills\bible-technique\SKILL.md`. Elle couvre :
+  - quand l'utiliser ou la proposer ;
+  - le moule de fiche (`clapet-coupe-feu.js`) ;
+  - les badges de source ;
+  - le schéma interactif ;
+  - l'anonymisation ;
+  - le contrôle ;
+  - les commits sur `dev`, sans mise en ligne sans accord.
+- `tests/verifier_bible.js` (node) vérifie :
+  - le registre et les fichiers de fiche ;
+  - les rubriques obligatoires ;
+  - les sources de chaque affirmation et l'arbre de décision ;
+  - les caractères bannis ;
+  - les noms interdits listés dans `prive/noms-interdits.txt`.
+
+  Essayé sur un fichier piégé, il a relevé le tiret cadratin, le tilde et le nom d'affaire, sans faux positif sur "accès". La fiche clapet passe : 37 affirmations, dont 14 à vérifier.
+- `prive/` amorcé, non suivi par git : la liste des noms de l'affaire d'origine, et `traces.md` avec le cas des clapets en clair.
+
 ## 2026-10-27 : création et prototype
 
 - Idée née sur une affaire (clapets coupe-feu passés à fusible sur avis du coordinateur SSI) : garder une trace visuelle et réutilisable de chaque notion technique tranchée sur une affaire.
