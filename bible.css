@@ -1,0 +1,240 @@
+/* Bible technique : feuille commune à l'accueil et aux fiches.
+   Palette reprise du portail b27-hub : sombre par défaut, vert #95C03D du logo,
+   couleurs de domaine = couleurs de lot B27 du catalogue du hub. */
+
+:root{
+  --fond:#0a0d08;
+  --fond-2:#10150b;
+  --carte:#141a0e;
+  --carte-2:#1a2212;
+  --ligne:rgba(149,192,61,.15);
+  --ligne-forte:rgba(149,192,61,.34);
+  --encre:#e9ede2;
+  --encre-2:#c4cbb8;
+  --discret:#8d9880;
+  --accent:#95c03d;
+  --accent-encre:#0a0d08;
+  --lien:#b7dc78;
+  --danger:#ef6b5b;
+  --danger-fond:rgba(239,107,91,.10);
+  --ok:#7cc46a;
+  --ombre:0 10px 34px rgba(0,0,0,.42);
+  --rayon-g:20px; --rayon-m:14px; --rayon-s:9px;
+  --courbe:cubic-bezier(.2,.7,.2,1);
+
+  /* badges de fiabilité */
+  --b-texte:#4fb36a;     /* texte réglementaire */
+  --b-norme:#3e8fb8;     /* norme, citée par son numéro */
+  --b-fab:#7d8fd6;       /* fabricant, DoP, PV */
+  --b-expert:#e0a03a;    /* dire d'expert */
+  --b-cas:#b07ad0;       /* vu sur une affaire */
+  --b-verif:#8d9880;     /* à vérifier */
+
+  /* schémas */
+  --s-paroi:#3a4231;
+  --s-hachure:#59644c;
+  --s-gaine:#2a3320;
+  --s-gaine-bord:#7f8b70;
+  --s-air:#9fd0e8;
+  --s-chaud:#ff7a3d;
+}
+:root[data-theme="clair"]{
+  --fond:#f3f5f0;
+  --fond-2:#e9eee2;
+  --carte:#ffffff;
+  --carte-2:#f6f8f2;
+  --ligne:#dde3d2;
+  --ligne-forte:#b9c79c;
+  --encre:#171b10;
+  --encre-2:#3a4230;
+  --discret:#5f6a52;
+  --accent:#95c03d;
+  --accent-encre:#131709;
+  --lien:#4e6b1c;
+  --danger:#b3261e;
+  --danger-fond:rgba(179,38,30,.07);
+  --ok:#2e7d32;
+  --ombre:0 10px 30px rgba(30,40,15,.12);
+  --b-texte:#2e7d4a; --b-norme:#1f6b94; --b-fab:#4655a8; --b-expert:#9a6200; --b-cas:#7b3fa0; --b-verif:#68725a;
+  --s-paroi:#d9ddd2; --s-hachure:#a7b097; --s-gaine:#eef1e9; --s-gaine-bord:#5f6a52; --s-air:#2f7f92; --s-chaud:#d9480f;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; background:var(--fond); color:var(--encre);
+  font-family:Inter,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  font-size:16px; line-height:1.55; -webkit-font-smoothing:antialiased;
+}
+a{color:var(--lien); text-decoration:none}
+a:hover{text-decoration:underline}
+.page{max-width:1120px; margin:0 auto; padding:0 20px 80px}
+
+/* ---------- barre du haut ---------- */
+.barre{
+  position:sticky; top:0; z-index:20; backdrop-filter:blur(10px);
+  background:color-mix(in srgb, var(--fond) 82%, transparent);
+  border-bottom:1px solid var(--ligne);
+}
+.barre .dedans{max-width:1120px; margin:0 auto; padding:10px 20px; display:flex; align-items:center; gap:14px}
+.marque{display:flex; align-items:center; gap:10px; color:var(--encre); font-weight:700; letter-spacing:.2px}
+.marque:hover{text-decoration:none}
+.marque .pastille{width:30px; height:30px; border-radius:9px; background:var(--accent); display:grid; place-items:center; color:var(--accent-encre); font-weight:800; font-size:15px}
+.barre .vide{flex:1}
+.bouton{
+  border:1px solid var(--ligne-forte); background:var(--carte); color:var(--encre);
+  border-radius:999px; padding:7px 14px; font:inherit; font-size:14px; cursor:pointer;
+  transition:border-color .2s, transform .2s var(--courbe);
+}
+.bouton:hover{border-color:var(--accent)}
+.bouton:active{transform:scale(.97)}
+.bouton.actif{background:var(--accent); color:var(--accent-encre); border-color:var(--accent); font-weight:600}
+
+/* ---------- accueil ---------- */
+.entree{text-align:center; padding:72px 0 36px}
+.entree h1{font-size:clamp(34px,6vw,58px); line-height:1.05; margin:0 0 14px; letter-spacing:-1px}
+.entree h1 span{color:var(--accent)}
+.entree p{color:var(--encre-2); font-size:18px; max-width:640px; margin:0 auto 28px}
+.recherche{position:relative; max-width:560px; margin:0 auto}
+.recherche input{
+  width:100%; padding:15px 20px 15px 48px; border-radius:999px; font:inherit; font-size:17px;
+  border:1px solid var(--ligne-forte); background:var(--carte); color:var(--encre); outline:none;
+}
+.recherche input:focus{border-color:var(--accent); box-shadow:0 0 0 4px rgba(149,192,61,.15)}
+.recherche svg{position:absolute; left:18px; top:50%; transform:translateY(-50%); color:var(--discret)}
+
+.section-titre{display:flex; align-items:baseline; gap:12px; margin:44px 0 16px}
+.section-titre h2{margin:0; font-size:22px}
+.section-titre small{color:var(--discret)}
+
+.domaines{display:grid; grid-template-columns:repeat(auto-fill,minmax(160px,1fr)); gap:14px}
+.domaine{
+  position:relative; border-radius:var(--rayon-m); padding:18px 16px 16px; background:var(--carte);
+  border:1px solid var(--ligne); cursor:pointer; text-align:left; color:var(--encre); font:inherit;
+  transition:transform .25s var(--courbe), border-color .2s, box-shadow .25s;
+  overflow:hidden;
+}
+.domaine::before{content:""; position:absolute; inset:0 0 auto 0; height:4px; background:var(--c)}
+.domaine:hover{transform:translateY(-3px); border-color:var(--c); box-shadow:var(--ombre)}
+.domaine.choisi{border-color:var(--c); box-shadow:0 0 0 2px var(--c) inset}
+.domaine .ico{width:42px; height:42px; border-radius:12px; display:grid; place-items:center; background:color-mix(in srgb, var(--c) 22%, transparent); color:var(--c); margin-bottom:12px}
+.domaine b{display:block; font-size:16px}
+.domaine small{color:var(--discret)}
+
+.fiches{display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:16px}
+.carte-fiche{
+  display:flex; gap:16px; padding:18px; border-radius:var(--rayon-m); background:var(--carte);
+  border:1px solid var(--ligne); color:var(--encre); transition:transform .25s var(--courbe), border-color .2s, box-shadow .25s;
+}
+.carte-fiche:hover{text-decoration:none; transform:translateY(-3px); border-color:var(--ligne-forte); box-shadow:var(--ombre)}
+.carte-fiche .vignette{flex:0 0 86px; height:86px; border-radius:12px; background:var(--fond-2); display:grid; place-items:center; overflow:hidden}
+.carte-fiche h3{margin:2px 0 6px; font-size:18px}
+.carte-fiche p{margin:0 0 10px; color:var(--encre-2); font-size:14.5px}
+.puces-domaines{display:flex; gap:6px; flex-wrap:wrap}
+.puce{font-size:12px; padding:2px 9px; border-radius:999px; border:1px solid color-mix(in srgb, var(--c) 55%, transparent); color:var(--c); background:color-mix(in srgb, var(--c) 10%, transparent)}
+.carte-vide{padding:26px; border:1px dashed var(--ligne-forte); border-radius:var(--rayon-m); color:var(--discret); text-align:center}
+
+.legende{display:flex; flex-wrap:wrap; gap:10px}
+.legende .item{display:flex; align-items:center; gap:8px; padding:8px 12px; border-radius:var(--rayon-s); background:var(--carte); border:1px solid var(--ligne); font-size:14px}
+
+/* ---------- badges de source ---------- */
+.badge{
+  display:inline-flex; align-items:center; gap:5px; font-size:11.5px; font-weight:600; letter-spacing:.2px;
+  padding:1px 8px; border-radius:999px; vertical-align:2px; white-space:nowrap; cursor:help;
+  color:var(--bc); background:color-mix(in srgb, var(--bc) 13%, transparent); border:1px solid color-mix(in srgb, var(--bc) 45%, transparent);
+}
+.badge::before{content:""; width:7px; height:7px; border-radius:50%; background:var(--bc)}
+.badge.texte{--bc:var(--b-texte)} .badge.norme{--bc:var(--b-norme)} .badge.fabricant{--bc:var(--b-fab)}
+.badge.expert{--bc:var(--b-expert)} .badge.cas{--bc:var(--b-cas)} .badge.verifier{--bc:var(--b-verif)}
+
+/* ---------- fiche ---------- */
+.fil{margin:22px 0 0; font-size:14px; color:var(--discret)}
+.tete-fiche{display:grid; grid-template-columns:1fr; gap:10px; margin:14px 0 26px}
+.tete-fiche h1{font-size:clamp(30px,5vw,46px); line-height:1.08; margin:0; letter-spacing:-.6px}
+.tete-fiche .soustitre{color:var(--encre-2); font-size:18px; margin:0}
+
+.bloc{background:var(--carte); border:1px solid var(--ligne); border-radius:var(--rayon-g); padding:22px; margin:18px 0}
+.bloc > h2{margin:0 0 14px; font-size:19px; display:flex; align-items:center; gap:10px}
+.bloc > h2 .num{width:28px; height:28px; border-radius:8px; display:grid; place-items:center; background:var(--accent); color:var(--accent-encre); font-size:14px; font-weight:800}
+
+/* schéma */
+.schema-onglets{display:flex; gap:8px; flex-wrap:wrap; margin-bottom:14px}
+.schema-cadre{background:var(--fond-2); border-radius:var(--rayon-m); border:1px solid var(--ligne); overflow:hidden}
+.schema-cadre svg{display:block; width:100%; height:auto}
+.schema-commandes{display:flex; gap:10px; flex-wrap:wrap; align-items:center; margin-top:14px}
+.schema-etat{margin-left:auto; font-weight:600; font-size:15px}
+.schema-etat.ferme{color:var(--danger)} .schema-etat.ouvert{color:var(--ok)}
+.schema-note{margin:12px 0 0; color:var(--encre-2); font-size:15px}
+
+/* l'essentiel */
+.essentiel{font-size:19px; line-height:1.5; margin:0; padding-left:0; list-style:none; display:grid; gap:10px}
+.essentiel li{padding-left:30px; position:relative}
+.essentiel li::before{content:""; position:absolute; left:4px; top:11px; width:12px; height:12px; border-radius:4px; background:var(--accent)}
+
+/* chiffres clés */
+.tuiles{display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:14px}
+.tuile{background:var(--fond-2); border:1px solid var(--ligne); border-radius:var(--rayon-m); padding:18px}
+.tuile .valeur{font-size:38px; font-weight:800; line-height:1; color:var(--accent); letter-spacing:-1px}
+/* en clair, le vert du logo ne tient pas face au texte : vert d'encre, comme le hub */
+:root[data-theme="clair"] .tuile .valeur, :root[data-theme="clair"] .entree h1 span{color:var(--lien)}
+.tuile .libelle{margin:8px 0 10px; color:var(--encre-2); font-size:14.5px}
+
+/* arbre de décision */
+.arbre{display:grid; gap:12px}
+.etape{border-left:3px solid var(--ligne-forte); padding:4px 0 4px 16px; animation:apparait .35s var(--courbe)}
+.etape .question{font-weight:650; font-size:17px; margin-bottom:10px}
+.etape .choix{display:flex; gap:8px; flex-wrap:wrap}
+.etape.repondue .choix .bouton:not(.actif){opacity:.35}
+.verdict{border-radius:var(--rayon-m); padding:16px 18px; background:color-mix(in srgb, var(--accent) 14%, transparent); border:1px solid var(--accent); animation:apparait .35s var(--courbe)}
+.verdict b{font-size:18px; display:block; margin-bottom:4px}
+.verdict p{margin:0; color:var(--encre-2)}
+@keyframes apparait{from{opacity:0; transform:translateY(6px)} to{opacity:1; transform:none}}
+
+/* à vérifier */
+.colonnes{display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:14px}
+.colonne{background:var(--fond-2); border:1px solid var(--ligne); border-radius:var(--rayon-m); padding:16px}
+.colonne h3{margin:0 0 12px; font-size:16px; display:flex; align-items:center; gap:8px}
+.colonne h3 .ico{width:30px; height:30px; border-radius:9px; display:grid; place-items:center; background:color-mix(in srgb, var(--accent) 18%, transparent); color:var(--accent)}
+.coche{display:flex; gap:10px; align-items:flex-start; padding:7px 0; border-top:1px solid var(--ligne); cursor:pointer; font-size:15px}
+.coche:first-of-type{border-top:0}
+.coche input{appearance:none; flex:0 0 20px; height:20px; margin-top:2px; border-radius:6px; border:2px solid var(--ligne-forte); display:grid; place-items:center; cursor:pointer}
+.coche input:checked{background:var(--accent); border-color:var(--accent)}
+.coche input:checked::after{content:""; width:6px; height:11px; border:solid var(--accent-encre); border-width:0 2.5px 2.5px 0; transform:rotate(45deg) translate(-1px,-1px)}
+.coche input:checked + span{color:var(--discret); text-decoration:line-through}
+
+/* pièges */
+.pieges{display:grid; gap:12px}
+.piege{display:flex; gap:14px; padding:14px 16px; border-radius:var(--rayon-m); background:var(--danger-fond); border:1px solid color-mix(in srgb, var(--danger) 45%, transparent)}
+.piege .ico{flex:0 0 34px; height:34px; border-radius:10px; display:grid; place-items:center; background:var(--danger); color:#fff}
+.piege p{margin:0}
+
+/* ne pas confondre */
+.confondre{display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:14px}
+.confondre > div{padding:16px; border-radius:var(--rayon-m); background:var(--fond-2); border:1px solid var(--ligne)}
+.confondre b{display:block; margin-bottom:6px}
+
+/* vu sur */
+.frise{position:relative; padding-left:26px; display:grid; gap:16px}
+.frise::before{content:""; position:absolute; left:8px; top:6px; bottom:6px; width:2px; background:var(--ligne-forte)}
+.evenement{position:relative}
+.evenement::before{content:""; position:absolute; left:-23px; top:6px; width:12px; height:12px; border-radius:50%; background:var(--b-cas); box-shadow:0 0 0 4px color-mix(in srgb, var(--b-cas) 22%, transparent)}
+.evenement .date{font-size:13px; color:var(--discret); font-weight:600}
+.evenement p{margin:2px 0 0}
+
+/* sources */
+.sources{margin:0; padding:0; list-style:none; display:grid; gap:8px; font-size:14.5px}
+.sources li{display:flex; gap:10px; align-items:baseline}
+
+.pied{margin-top:50px; padding-top:20px; border-top:1px solid var(--ligne); color:var(--discret); font-size:13.5px; text-align:center}
+
+@media (max-width:640px){
+  .page{padding:0 16px 60px}
+  .entree{padding:46px 0 26px}
+  .bloc{padding:16px}
+  .tuile .valeur{font-size:32px}
+  .carte-fiche{flex-direction:column}
+  .carte-fiche .vignette{width:100%; flex-basis:auto}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important; transition:none!important}
+}
