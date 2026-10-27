@@ -15,7 +15,15 @@
   - les normes NF et DTU sont citées par leur numéro, jamais recopiées ;
   - les schémas sont dessinés par nous.
 - Prototype : accueil et fiche "Clapet coupe-feu" (schéma animé autocommandé, émission, rupture ; arbre de décision ; listes à cocher ; pièges ; cas anonymisé).
+- Vérifié dans le navigateur, servi en local par `python -m http.server` (configuration "bible-technique" ajoutée au `.claude/launch.json` du dossier de l'affaire, d'où la session a été lancée) :
+  - accueil et fiche ;
+  - schéma dans les trois modes (incendie, coupure de câble en rupture) ;
+  - arbre de décision ;
+  - thème clair et largeur mobile, sans défilement horizontal ;
+  - aucune erreur en console.
+- Git : `main` contient le squelette du projet ; `dev` contient en plus le prototype. Rien n'est poussé, aucun dépôt distant.
 - À faire :
+  - remplir `CARTE.json`, resté au modèle vierge ;
   - faire valider le rendu ;
   - valider l'`id` ;
   - créer la skill d'enrichissement ;
