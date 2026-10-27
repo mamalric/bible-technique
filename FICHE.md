@@ -9,8 +9,8 @@ maj: 2026-10-27
 tags: [cvc, plomberie, ssi, thermique, reglementation, web]
 stack: HTML + CSS + JS vanilla, sans framework ni build, destiné à GitHub Pages (publié depuis main)
 lancer: ouvrir index.html
-site:
-depot:
+site: https://mamalric.github.io/bible-technique/
+depot: https://github.com/mamalric/bible-technique
 ---
 
 # Bible technique
@@ -19,10 +19,10 @@ depot:
 Construire, au fil des affaires, une base de connaissance technique très visuelle (CVC, plomberie, SSI, thermique, réglementation) : une fiche par notion avec un schéma de principe interactif, les chiffres clés, un arbre de décision, ce qu'on vérifie en VISA, sur chantier et à la réception, les pièges, et la trace anonymisée des cas rencontrés. Destinée à être publique et accessible depuis le portail B27 (b27-hub) par une carte qui pointe vers son site.
 
 ## État actuel
-Prototype du 27/10/2026 : accueil (tuiles par domaine, recherche, légende des badges de fiabilité, thème sombre par défaut et clair à un clic) et première fiche, "Clapet coupe-feu", avec un schéma animé (autocommandé à fusible, télécommandé à émission ou à rupture), un arbre de décision cliquable et des listes à cocher. Chaque affirmation porte un badge de source : texte réglementaire, norme, fabricant, dire d'expert, cas d'affaire ou à vérifier. Dépôt git local avec les branches `main` et `dev`, aucun dépôt distant créé.
+En ligne depuis le 27/10/2026 sur https://mamalric.github.io/bible-technique/ (dépôt public `mamalric/bible-technique`, GitHub Pages publié depuis `main`) et accessible depuis le portail b27-hub par une carte bêta, rangée dans Ressources et référentiels. Contenu : accueil (tuiles par domaine, recherche, légende des badges de fiabilité, thème sombre par défaut et clair à un clic) et une fiche, "Clapet coupe-feu", avec un schéma animé (autocommandé à fusible, télécommandé à émission ou à rupture), un arbre de décision cliquable et des listes à cocher. Chaque affirmation porte un badge de source ; la fiche clapet en compte 37, dont 14 à vérifier. Skill `bible-technique` et vérificateur `tests/verifier_bible.js` en place.
 
 ## Prochaine étape
-Format validé le 27/10/2026, `id` validé, skill `bible-technique` en place. Suivant : recueillir les retouches de forme, ajouter les fiches au fil des affaires, puis créer le dépôt GitHub public et la carte dans le hub (accord explicite requis avant tout envoi en ligne).
+Remplir `CARTE.json`, restée au modèle vierge, et la faire valider. Ajouter les fiches au fil des affaires et lever les badges "à vérifier" de la fiche clapet. Chaque ajout se commite sur `dev` ; la publication, sur accord de l'utilisateur, consiste à avancer `main` sur `dev` et à pousser avec le compte GitHub `mamalric`.
 
 ## Utilisation
 Ouvrir `index.html` dans un navigateur (fonctionne hors ligne). Une fiche = un fichier `donnees/fiches/<id>.js` plus une ligne dans `donnees/registre.js` ; un schéma interactif = un fichier `schemas/<nom>.js`. Le dossier `prive/` (ignoré par git) recevra la trace détaillée des affaires, qui ne doit jamais être publiée.

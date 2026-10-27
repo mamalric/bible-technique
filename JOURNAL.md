@@ -2,6 +2,24 @@
 
 <!-- Dernière entrée en haut. Une entrée par session de travail ou par décision. Date au format AAAA-MM-JJ. -->
 
+## 2026-10-27 (mise en ligne) : dépôt public, GitHub Pages et carte du hub
+
+- Constat en début de session : le site n'était pas en ligne (404), aucun dépôt distant n'existait et le catalogue du hub n'avait pas de carte Bible. La mise en ligne attendait l'accord de l'utilisateur, qui l'a donné : la direction est d'accord.
+- Avant de pousser, l'historique local a été nettoyé, car il n'avait jamais été publié :
+  - `JOURNAL.md` citait en clair le nom de l'affaire d'origine et celui du directeur, dans tous les commits depuis la création ; ces mentions sont anonymisées dans tout l'historique (`git filter-branch`) ;
+  - l'adresse des commits devient l'adresse noreply de GitHub, comme pour le hub ;
+  - l'ancien historique reste sur la branche locale `backup/avant-anonymisation`, qui ne doit jamais être poussée ; elle peut être supprimée une fois la publication jugée satisfaisante ;
+  - un scan de `main` et `dev` avec la liste `prive/noms-interdits.txt` ne relève plus que le prénom de l'utilisateur, dans les chemins de `CLAUDE.md`, que publient aussi les autres dépôts.
+- Dépôt public `mamalric/bible-technique` créé, `main` avancé sur `dev`, les deux branches poussées. GitHub Pages activé depuis `main` (racine).
+- Le compte GitHub actif de la machine n'a pas le droit d'écrire dans les dépôts `mamalric` : les envois passent par le jeton du compte `mamalric`, connu de `gh`, sans changer le compte actif.
+- Vérifié en ligne : accueil et fiche clapet (schéma, arbre de décision), aucune erreur en console.
+- Hub : carte `bible-technique` ajoutée à `catalogue.js` (type outil, catégorie ressources, statut bêta, icône livre), contrôlée par `tests/verifier_catalogue.py`, vue en local, puis publiée sur `dev` et `main` du hub. Vérifiée en ligne sur https://mamalric.github.io/b27-hub/.
+- Reste à faire :
+  - remplir `CARTE.json`, toujours au modèle vierge, et la faire valider ;
+  - lever les 14 badges "à vérifier" de la fiche clapet ;
+  - passer la carte du hub de bêta à en ligne quand le contenu sera jugé mûr ;
+  - supprimer `backup/avant-anonymisation` avec l'accord de l'utilisateur.
+
 ## 2026-10-27 (suite) : id, skill et vérificateur
 
 - `id` validé par l'utilisateur : `2026-10-27-bible-technique`.
