@@ -2,6 +2,32 @@
 
 <!-- Dernière entrée en haut. Une entrée par session de travail ou par décision. Date au format AAAA-MM-JJ. -->
 
+## 2026-10-27 (fiche ERP) : type et catégorie
+
+- Demande de l'utilisateur : une fiche sur les ERP, en priorité. Elle ne vient pas d'une affaire : pas de rubrique "vu sur les affaires", rien à ajouter dans `prive/`.
+- Fiche `erp` (domaines sécurité incendie et missions et méthode) :
+  - définition, type et catégorie ;
+  - seuils de 300, 700 et 1 500 personnes, et seuil de 5e catégorie propre à chaque type ;
+  - 1er et 2e groupes ;
+  - arbre de décision qui mène à la catégorie ;
+  - vérifications en conception, sur le chantier et à l'ouverture ;
+  - pièges et notions à ne pas confondre (IGH, famille d'habitation, lieu de travail).
+- Schéma `schemas/erp.js` :
+  - six types au choix (W, M, N, R, O, U) et deux curseurs, public et personnel ;
+  - le bâtiment se remplit (1 point pour 25 personnes) et un curseur se place sur l'échelle des cinq catégories ;
+  - la règle appliquée : le public seul sous le seuil du type donne la 5e, sinon public et personnel s'additionnent.
+- Vignette `erp` ajoutée dans `bible.js`.
+- Badges : 35 affirmations, dont 19 à vérifier. Restent notamment à vérifier :
+  - les seuils de 5e catégorie de chaque type et leurs seuils par niveau ;
+  - la règle de comptage du personnel ;
+  - les conditions de la visite de la commission de sécurité.
+
+  Les articles du CCH sont cités par leur plage (R143-1 et suivants, ex-R123) plutôt que par un numéro dont on n'est pas sûr.
+- Contrôles :
+  - `node tests/verifier_bible.js` : 2 fiches, 0 erreur ;
+  - dans le navigateur : le schéma sur huit cas (5e à 1re, seuils à 100 et 200), les trois branches de l'arbre, le thème clair, 375 px sans défilement horizontal, console vide.
+- Commité sur `dev`, non publié : la mise en ligne attend l'accord de l'utilisateur.
+
 ## 2026-10-27 (mise en ligne) : dépôt public, GitHub Pages et carte du hub
 
 - Constat en début de session : le site n'était pas en ligne (404), aucun dépôt distant n'existait et le catalogue du hub n'avait pas de carte Bible. La mise en ligne attendait l'accord de l'utilisateur, qui l'a donné : la direction est d'accord.
