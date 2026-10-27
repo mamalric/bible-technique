@@ -15,8 +15,8 @@ Modèle : application. Ce projet suit la convention commune de `_modele/` : une 
 
 ## La carte du parcours
 La carte dessine le chemin de l'utilisateur dans l'application : une tuile par étape, des flèches entre les étapes, une couleur par état. L'utilisateur la lit d'un coup d'œil dans `CARTE.pdf` pour savoir où en est le projet, plutôt que de longs fichiers Markdown.
-- Trois fichiers : `CARTE.json` contient tout le contenu (titre, zones, tuiles, états, liens, textes) et c'est le seul qu'on modifie ; `CARTE.pdf` (A3, à lire) et `CARTE.dxf` (dessin CADCraft) en sont tirés par `python "C:\Users\Marius\OneDrive\_code\_modele\_outils\carte\generer_carte.py" CARTE.json`. Ne jamais retoucher le PDF ou le DXF à la main : ils seraient écrasés à la génération suivante.
-- Si le rendu d'une carte paraît différent de d'habitude (police, couleurs, traits), lancer d'abord `python "C:\Users\Marius\OneDrive\_code\_modele\_outils\carte\verifier_temoin.py"` : il dit si le générateur ou un logiciel a changé de comportement.
+- Trois fichiers : `CARTE.json` contient tout le contenu (titre, zones, tuiles, états, liens, textes) et c'est le seul qu'on modifie ; `CARTE.pdf` (A3, à lire) et `CARTE.dxf` (dessin CADCraft) en sont tirés par `python "C:\Users\mamalric\OneDrive\_code\_modele\_outils\carte\generer_carte.py" CARTE.json`. Ne jamais retoucher le PDF ou le DXF à la main : ils seraient écrasés à la génération suivante.
+- Si le rendu d'une carte paraît différent de d'habitude (police, couleurs, traits), lancer d'abord `python "C:\Users\mamalric\OneDrive\_code\_modele\_outils\carte\verifier_temoin.py"` : il dit si le générateur ou un logiciel a changé de comportement.
 - Le dessin suit la charte commune `_modele/_outils/carte/charte.json`, identique pour tous les projets. Ne pas la modifier pour un projet particulier : la changer, c'est changer toutes les cartes, et seulement à la demande de l'utilisateur. Le format de `CARTE.json` est décrit dans `_modele/_outils/carte/LISEZMOI.md`.
 - Après chaque modification, régénérer : le générateur contrôle lui-même la mise en page (chevauchements, texte qui déborde, flèche qui traverse une tuile, bout de flèche trop court) et entoure chaque défaut dans `CARTE-alertes.png`. Ne jamais livrer une carte avec des alertes : corriger dans `CARTE.json` (taille ou position d'une tuile, points de passage d'un lien) et régénérer jusqu'à "CONTRÔLES : aucune alerte", puis regarder `CARTE.png` avant de répondre.
 - Garder les tuiles existantes à leur place d'une version à l'autre, pour que l'utilisateur s'y retrouve ; placer une nouvelle tuile dans sa zone, sur la grille de 10 px, sans chevauchement.
@@ -28,7 +28,7 @@ La carte dessine le chemin de l'utilisateur dans l'application : une tuile par �
 - Le sous-titre porte la version et sa date : "Version 2, validée le AAAA-MM-JJ". Une version reste un brouillon tant que l'utilisateur ne l'a pas validée.
 
 ## Ancienne carte draw.io
-Si le projet a encore une `CARTE.drawio` (projets créés avant le 2026-10-18), la convertir avec `python "C:\Users\Marius\OneDrive\_code\_modele\_outils\carte\drawio_vers_carte.py" CARTE.drawio CARTE.json`, générer la carte, la comparer avec l'ancien aperçu (PNG ou PDF de la carte, s'il existe ; draw.io n'est plus installé) et corriger `CARTE.json` si besoin. Garder `CARTE.drawio` jusqu'à ce que l'utilisateur valide la nouvelle carte, puis la supprimer avec son accord.
+Si le projet a encore une `CARTE.drawio` (projets créés avant le 2026-10-18), la convertir avec `python "C:\Users\mamalric\OneDrive\_code\_modele\_outils\carte\drawio_vers_carte.py" CARTE.drawio CARTE.json`, générer la carte, la comparer avec l'ancien aperçu (PNG ou PDF de la carte, s'il existe ; draw.io n'est plus installé) et corriger `CARTE.json` si besoin. Garder `CARTE.drawio` jusqu'à ce que l'utilisateur valide la nouvelle carte, puis la supprimer avec son accord.
 
 ## Règles
 - `id` ne se modifie jamais, même si le dossier est renommé, déplacé ou archivé.
@@ -36,3 +36,10 @@ Si le projet a encore une `CARTE.drawio` (projets créés avant le 2026-10-18), 
 - Pas d'autre fichier de métadonnées (pas de NOTES.md, pas de README parallèle) : tout passe par `FICHE.md`, `JOURNAL.md` et `CARTE.json` (avec `CARTE.pdf`, `CARTE.dxf` et `CARTE.png` générés). Si un `README.md` est nécessaire (dépôt publié), il reste court et ne remplace pas `FICHE.md`.
 - Dans les fichiers Markdown, écrire en français accentué. Une phrase ou un paragraphe tient sur une seule ligne, sans retour à la ligne intermédiaire.
 - Dossiers : `src/` pour le code, `tests/` pour les tests, `docs/` pour la documentation. Aucun dossier protégé.
+
+## Spécifique à la Bible technique
+- Pour toute fiche, retouche de forme ou levée de badge, suivre la skill `bible-technique`. Le moule de fiche validé est `donnees/fiches/clapet-coupe-feu.js`.
+- Avant chaque commit : `node tests/verifier_bible.js` doit finir sur 0 erreur.
+- Travailler sur la branche `dev`. Fusionner dans `main` et pousser seulement sur l'accord explicite de l'utilisateur, à chaque fois. Créer le dépôt GitHub public demande aussi son accord.
+- Le site est public : aucun nom d'affaire, de client, d'entreprise ni de personne. Le cas en clair va dans `prive/` (ignoré par git), les noms à proscrire dans `prive/noms-interdits.txt`.
+- Aperçu : configuration `bible-technique` de `.claude/launch.json` (serveur Python sur le port 8765), à ouvrir dans le panneau navigateur.
