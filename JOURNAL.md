@@ -26,7 +26,7 @@
 - Contrôles :
   - `node tests/verifier_bible.js` : 2 fiches, 0 erreur ;
   - dans le navigateur : le schéma sur huit cas (5e à 1re, seuils à 100 et 200), les trois branches de l'arbre, le thème clair, 375 px sans défilement horizontal, console vide.
-- Commité sur `dev`, non publié : la mise en ligne attend l'accord de l'utilisateur.
+- Commité sur `dev`, puis publié le jour même avec l'accord de l'utilisateur (`main` avancé sur `dev`, les deux branches poussées). Vérifié en ligne : la fiche charge, le schéma répond, la console est vide.
 
 ## 2026-10-27 (mise en ligne) : dépôt public, GitHub Pages et carte du hub
 
