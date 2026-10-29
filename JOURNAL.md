@@ -28,7 +28,7 @@
 - Contrôles :
   - `node tests/verifier_bible.js` : 3 fiches, 0 erreur ;
   - dans le navigateur : les quatre cas et leurs pastilles, les essais feu et fuite, l'arbre, la recherche "sous-station" à l'accueil, le thème clair et 375 px sans défilement horizontal, console vide.
-- Commité sur `dev`, non publié : la mise en ligne attend l'accord de l'utilisateur.
+- Commité sur `dev`, puis publié le jour même avec l'accord de l'utilisateur (`main` avancé sur `dev`, les deux branches poussées). Vérifié en ligne : la fiche charge, les quatre cas et leurs pastilles répondent, console vide.
 - Reste à faire : `CARTE.json` est toujours au modèle vierge.
 
 ## 2026-10-27 (fiche ERP) : type et catégorie
