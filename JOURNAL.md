@@ -2,6 +2,35 @@
 
 <!-- Dernière entrée en haut. Une entrée par session de travail ou par décision. Date au format AAAA-MM-JJ. -->
 
+## 2026-10-29 : fiche locaux techniques et sous-station
+
+- Demande de l'utilisateur : une fiche très complète sur les locaux techniques et la sous-station, en sous-sol notamment, avec les définitions, les obligations et la sécurité incendie. Elle ne vient pas d'une affaire : pas de rubrique "vu sur les affaires".
+- Vérification documentaire faite par un agent, surtout sur Légifrance, puis CH 5 et CH 11 relus directement. Ce qu'elle a changé dans la fiche :
+  - l'arrêté du 23 juin 1978 couvre les chaufferies (titre I) et aussi les sous-stations (titre II), au-delà de 70 kW ;
+  - en ERP, une chaufferie de plus de 70 kW est un local à risques importants (CH 5 §1, version du 1er janvier 2026, renvoi à CO 28 §1) ;
+  - aucun texte ne fixe de degré coupe-feu à une sous-station ; au-delà de 110 °C, il faut un accès direct par l'extérieur, des coupures depuis l'extérieur et un sas ventilé vers le public (art. 22 et 29 de 1978, CH 11) ;
+  - la salle des machines frigorifiques et le local de CTA sont des locaux à risques courants (CH 35, CH 36) ;
+  - le local électrique suit les trois cas a, b et c de EL 5 ; les postes HT et les groupes électrogènes relèvent du cas a) (EL 6, EL 7) ;
+  - le seuil ICPE 2910-A est de 1 MW (déclaration avec contrôle) ;
+  - en habitation, les emplacements de production d'énergie au gaz sont interdits en sous-sol (arrêté du 23 février 2018) ;
+  - l'interdiction du GPL en sous-sol en ERP n'a pas été retrouvée dans la version actuelle de GZ : elle n'est pas dans la fiche.
+- Textes récents à garder en tête :
+  - chapitres CH et GZ réécrits au 1er janvier 2026 ;
+  - arrêté du 22 mars 2026 sur la résistance au feu, qui remplace celui de 2004 ;
+  - rubrique 2910 remaniée en juin 2026.
+- Deux cahiers de prescriptions de réseaux de chaleur publiés ont servi pour les points récurrents d'une sous-station (accès de l'exploitant, limite de prestation, ventilation, puisard). Ils restent anonymes dans le site ; leurs liens sont dans `prive/traces.md`.
+- Fiche `locaux-techniques` (domaines chauffage et sécurité incendie) :
+  - schéma `schemas/local-technique.js` : coupe d'un local en sous-sol, quatre cas, dix pastilles par cas qui disent chacune une obligation avec son badge, essais "feu dans le local" et "fuite" (eau, ou fluide pour le froid) ;
+  - pastilles agrandies sous 600 px de large pour le doigt ;
+  - arbre "Quel local, quelles règles ?" à treize verdicts, de la petite chaudière au poste HT ;
+  - vignette `local` dans `bible.js`.
+- Badges : 52 affirmations dans la fiche, dont 22 à vérifier ; le schéma porte ses propres badges, la plupart sur un texte. Restent à vérifier notamment les exigences de la NF EN 378, lue seulement par des sources secondaires, et les pratiques de chantier (puisard, trémie, stockage).
+- Contrôles :
+  - `node tests/verifier_bible.js` : 3 fiches, 0 erreur ;
+  - dans le navigateur : les quatre cas et leurs pastilles, les essais feu et fuite, l'arbre, la recherche "sous-station" à l'accueil, le thème clair et 375 px sans défilement horizontal, console vide.
+- Commité sur `dev`, non publié : la mise en ligne attend l'accord de l'utilisateur.
+- Reste à faire : `CARTE.json` est toujours au modèle vierge.
+
 ## 2026-10-27 (fiche ERP) : type et catégorie
 
 - Demande de l'utilisateur : une fiche sur les ERP, en priorité. Elle ne vient pas d'une affaire : pas de rubrique "vu sur les affaires", rien à ajouter dans `prive/`.

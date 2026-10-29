@@ -54,7 +54,15 @@
       '<circle cx="62" cy="44" r="4" fill="var(--discret)"/><circle cx="26" cy="57" r="4" fill="var(--s-air)"/><circle cx="38" cy="57" r="4" fill="var(--s-air)"/>' +
       '<rect x="8" y="74" width="14" height="6" rx="2" fill="var(--ok)"/><rect x="24" y="74" width="14" height="6" rx="2" fill="var(--accent)"/>' +
       '<rect x="40" y="74" width="14" height="6" rx="2" fill="var(--b-expert)"/><rect x="56" y="74" width="10" height="6" rx="2" fill="var(--s-chaud)"/>' +
-      '<rect x="68" y="74" width="10" height="6" rx="2" fill="var(--danger)"/></svg>'
+      '<rect x="68" y="74" width="10" height="6" rx="2" fill="var(--danger)"/></svg>',
+    local:
+      '<svg viewBox="0 0 86 86" width="86" height="86" aria-hidden="true">' +
+      '<rect x="4" y="20" width="78" height="6" fill="var(--s-paroi)"/><rect x="4" y="74" width="78" height="6" fill="var(--s-paroi)"/>' +
+      '<rect x="14" y="26" width="6" height="30" fill="var(--s-paroi)"/><rect x="15" y="57" width="4" height="17" fill="var(--encre-2)"/>' +
+      '<rect x="40" y="38" width="16" height="36" rx="2" fill="var(--s-gaine)" stroke="var(--s-gaine-bord)" stroke-width="1.5"/>' +
+      '<path d="M82 34H64v12h-8M56 66h12V40h14" fill="none" stroke="var(--danger)" stroke-width="2.5"/>' +
+      '<path d="M40 46H30V6M40 66H26V6" fill="none" stroke="var(--s-chaud)" stroke-width="2.5"/>' +
+      '<rect x="4" y="50" width="8" height="8" rx="2" fill="var(--danger)"/></svg>'
   };
 
   function echapper(s) {
