@@ -166,6 +166,45 @@ a:hover{text-decoration:underline}
 .schema-etat.ferme{color:var(--danger)} .schema-etat.ouvert{color:var(--ok)}
 .schema-note{margin:12px 0 0; color:var(--encre-2); font-size:15px}
 
+/* cours pas à pas */
+#cours{scroll-margin-top:72px}
+.cours-intro{margin:0 0 14px; color:var(--encre-2); font-size:17px}
+.cours-points{display:flex; flex-wrap:wrap; gap:6px; margin-bottom:10px}
+.cours-point{width:36px; height:36px; border-radius:10px; border:1px solid var(--ligne-forte); background:var(--fond-2); color:var(--encre-2); font:inherit; font-size:14px; font-weight:700; cursor:pointer}
+.cours-point:hover{border-color:var(--accent)}
+.cours-point.vu{background:color-mix(in srgb, var(--accent) 22%, transparent); color:var(--encre)}
+.cours-point.actif{background:var(--accent); border-color:var(--accent); color:var(--accent-encre)}
+.cours-sommaire{margin-bottom:18px; font-size:15px}
+.cours-sommaire summary{cursor:pointer; color:var(--lien); font-weight:600}
+.cours-sommaire-grille{display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:16px; margin-top:12px}
+.cours-sommaire h4{margin:0 0 6px; font-size:13px; letter-spacing:.3px; color:var(--discret); text-transform:uppercase}
+.cours-sommaire button{display:block; width:100%; padding:4px 0; border:0; background:none; color:var(--encre); font:inherit; text-align:left; cursor:pointer}
+.cours-sommaire button:hover{color:var(--lien)}
+.chapitre-partie{margin:0; color:var(--discret); font-size:14px; font-weight:600}
+.chapitre h3{margin:2px 0 12px; font-size:clamp(22px,3.4vw,28px); line-height:1.2; letter-spacing:-.3px}
+.chapitre-intro{margin:0 0 14px; font-size:17px}
+.chapitre-dessin{margin-bottom:18px}
+.chapitre-dessin .schema-cadre svg{max-width:720px; margin:0 auto}
+.chapitre-lignes{margin:0 0 16px; padding:0; list-style:none; display:grid; gap:10px; font-size:17px; line-height:1.5}
+.chapitre-lignes li{padding-left:24px; position:relative}
+.chapitre-lignes li::before{content:""; position:absolute; left:2px; top:10px; width:10px; height:10px; border-radius:3px; background:var(--accent)}
+.chapitre-tuiles{display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:12px; margin-bottom:16px}
+.chapitre-tuile{display:flex; gap:12px; align-items:flex-start; padding:12px; border-radius:var(--rayon-m); background:var(--fond-2); border:1px solid var(--ligne); font-size:15px}
+.chapitre-tuile .ico{flex:0 0 56px; height:56px; display:block}
+.chapitre-tuile .ico:empty{display:none}
+.chapitre-tuile b{display:block; margin-bottom:2px; font-size:16px}
+.chapitre-calcul{margin:0 0 16px; padding:0; list-style:none; display:grid; gap:10px; counter-reset:calcul}
+.chapitre-calcul li{position:relative; padding:12px 14px 12px 50px; border-radius:var(--rayon-m); background:var(--fond-2); border:1px solid var(--ligne); counter-increment:calcul}
+.chapitre-calcul li::before{content:counter(calcul); position:absolute; left:12px; top:12px; width:26px; height:26px; border-radius:8px; display:grid; place-items:center; background:var(--accent); color:var(--accent-encre); font-size:14px; font-weight:800}
+.chapitre-calcul .question{font-weight:650}
+.chapitre-calcul .operation{font-size:17px; font-variant-numeric:tabular-nums}
+.chapitre-calcul .operation b{color:var(--lien); white-space:nowrap}
+.chapitre-calcul p{margin:4px 0 0; color:var(--encre-2); font-size:15px}
+.chapitre-comme{margin:0 0 12px; padding:12px 14px; border-left:4px solid var(--b-norme); border-radius:0 var(--rayon-s) var(--rayon-s) 0; background:color-mix(in srgb, var(--b-norme) 10%, transparent)}
+.chapitre-retenir{margin:0; padding:12px 14px; border-radius:var(--rayon-m); background:color-mix(in srgb, var(--accent) 14%, transparent); border:1px solid var(--accent); font-size:17px; font-weight:600}
+.chapitre-nav{display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap; margin-top:18px}
+.chapitre-nav .bouton{text-align:left}
+
 /* l'essentiel */
 .essentiel{font-size:19px; line-height:1.5; margin:0; padding-left:0; list-style:none; display:grid; gap:10px}
 .essentiel li{padding-left:30px; position:relative}

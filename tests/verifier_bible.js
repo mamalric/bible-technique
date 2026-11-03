@@ -2,6 +2,7 @@
    - chaque fiche du registre a son fichier, ses rubriques et un id cohérent ;
    - chaque affirmation porte un type de source connu ;
    - aucun caractère banni (tirets cadratin et demi-cadratin, guillemets en chevrons, tilde pour "environ") ;
+   - chaque étape du cours, s'il y en a un, a son id, son dessin et une source par affirmation ;
    - aucun nom de la liste privée prive/noms-interdits.txt (affaires, clients, entreprises, personnes) :
      le site est public. Sort en erreur (code 1) au premier défaut trouvé dans chaque fichier. */
 
@@ -86,6 +87,23 @@ B.fiches.forEach(e => {
   (F.pieges || []).forEach((a, i) => source(a, "piège " + (i + 1)));
   (F.confondre || []).forEach((a, i) => source(a, "confondre " + (i + 1)));
   (F.references || []).forEach((a, i) => source(a, "référence " + (i + 1)));
+  if (F.cours) {
+    const ids = new Set();
+    const schemaTexte = F.schema ? fs.readFileSync(path.join(RACINE, "schemas", F.schema + ".js"), "utf8") : "";
+    (F.cours.parties || []).forEach(p => (p.chapitres || []).forEach(c => {
+      if (!c.id || ids.has(c.id)) erreur(`fiche ${e.id} : étape du cours sans id, ou id en double (${c.id})`);
+      ids.add(c.id);
+      if (!c.titre || !c.retenir) erreur(`fiche ${e.id} : étape ${c.id} sans titre ou sans "à retenir"`);
+      if (!c.lignes && !c.tuiles && !c.calcul) erreur(`fiche ${e.id} : étape ${c.id} vide`);
+      if (c.dessin && !schemaTexte.includes("BIBLE_DESSINS." + c.dessin + " ")) erreur(`fiche ${e.id} : dessin ${c.dessin} absent de schemas/${F.schema}.js`);
+      (c.lignes || []).forEach((a, i) => source(a, `étape ${c.id}, ligne ${i + 1}`));
+      (c.tuiles || []).forEach((a, i) => {
+        source(a, `étape ${c.id}, tuile ${i + 1}`);
+        if (a.ico && !schemaTexte.includes("BIBLE_ICONES." + a.ico + " ")) erreur(`fiche ${e.id} : icône ${a.ico} absente de schemas/${F.schema}.js`);
+      });
+      (c.calcul || []).forEach((a, i) => source(a, `étape ${c.id}, calcul ${i + 1}`));
+    }));
+  }
   if (F.decision) {
     const nd = F.decision.noeuds || {};
     if (!nd[F.decision.depart]) erreur(`fiche ${e.id} : départ de l'arbre introuvable`);

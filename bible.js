@@ -210,6 +210,7 @@
       html += '<div class="tete-fiche"><h1>' + echapper(F.titre) + '</h1><p class="soustitre">' + F.soustitre + "</p>" + puces(entree.domaines) + "</div>";
 
       if (F.schema) html += bloc("Le principe en image", '<div id="schema"></div>');
+      if (F.cours) html += bloc("Le cours, pas à pas", '<div id="cours"></div>');
       html += bloc("En 30 secondes", '<ul class="essentiel">' + F.essentiel.map(function (a) { return "<li>" + affirmation(a) + "</li>"; }).join("") + "</ul>");
       html += bloc("Les chiffres à retenir", '<div class="tuiles">' + F.chiffres.map(function (c) {
         return '<div class="tuile"><div class="valeur">' + c.valeur + '</div><div class="libelle">' + c.libelle + "</div>" + badge(c.s, c.ref) + "</div>";
@@ -236,11 +237,87 @@
       if (F.decision) arbre(document.getElementById("arbre"), F.decision);
       if (F.schema) charger("schemas/" + F.schema + ".js").then(function () {
         window.BIBLE_SCHEMAS[F.schema](document.getElementById("schema"), { badge: badge });
+        if (F.cours) cours(document.getElementById("cours"), F.cours, id);
       });
       pied();
     }, function () {
       page.innerHTML = '<p class="fil">Impossible de charger la fiche. <a href="index.html">Retour à l\'accueil</a></p>';
     });
+  }
+
+  /* cours pas à pas, facultatif : { intro, parties: [{ titre, chapitres: [{ id, titre, intro, dessin, lignes, tuiles, calcul, comme, retenir }] }] }.
+     Une étape à la fois. fiche.html?f=<fiche>#<id d'étape> ouvre directement une étape. */
+  function cours(cadre, def, ficheId) {
+    var liste = [], cle = "bible-cours-" + ficheId;
+    def.parties.forEach(function (p) { p.chapitres.forEach(function (c) { liste.push({ c: c, partie: p.titre }); }); });
+    function chapitre(e, i) {
+      var c = e.c, suivant = liste[i + 1];
+      return '<article class="chapitre" data-c="' + c.id + '" hidden>' +
+        '<p class="chapitre-partie">' + echapper(e.partie) + " · étape " + (i + 1) + " sur " + liste.length + "</p>" +
+        "<h3>" + c.titre + "</h3>" +
+        (c.intro ? '<p class="chapitre-intro">' + c.intro + "</p>" : "") +
+        (c.dessin ? '<div class="chapitre-dessin" data-dessin="' + c.dessin + '"></div>' : "") +
+        (c.lignes ? '<ul class="chapitre-lignes">' + c.lignes.map(function (a) { return "<li>" + affirmation(a) + "</li>"; }).join("") + "</ul>" : "") +
+        (c.tuiles ? '<div class="chapitre-tuiles">' + c.tuiles.map(function (a) {
+          return '<div class="chapitre-tuile"><span class="ico" data-ico="' + (a.ico || "") + '"></span><div><b>' + a.titre + "</b><span>" + affirmation(a) + "</span></div></div>";
+        }).join("") + "</div>" : "") +
+        (c.calcul ? '<ol class="chapitre-calcul">' + c.calcul.map(function (a) {
+          return '<li><div class="question">' + a.q + '</div><div class="operation">' + a.op + ' <b>' + a.res + "</b></div>" + (a.t ? "<p>" + a.t + " " + badge(a.s, a.ref) + "</p>" : "<p>" + badge(a.s, a.ref) + "</p>") + "</li>";
+        }).join("") + "</ol>" : "") +
+        (c.comme ? '<p class="chapitre-comme"><b>Pour se le représenter.</b> ' + c.comme + "</p>" : "") +
+        '<p class="chapitre-retenir"><b>À retenir.</b> ' + c.retenir + "</p>" +
+        '<div class="chapitre-nav">' +
+        (i > 0 ? '<button class="bouton" type="button" data-aller="' + (i - 1) + '">Étape précédente</button>' : "<span></span>") +
+        (suivant ? '<button class="bouton actif" type="button" data-aller="' + (i + 1) + '">Suivant : ' + suivant.c.titre + "</button>" : "") +
+        "</div></article>";
+    }
+    var n = 0;
+    cadre.innerHTML =
+      (def.intro ? '<p class="cours-intro">' + def.intro + "</p>" : "") +
+      '<div class="cours-points">' + liste.map(function (e, i) {
+        return '<button class="cours-point" type="button" data-aller="' + i + '" title="' + echapper(e.c.titre.replace(/<[^>]+>/g, "")) + '">' + (i + 1) + "</button>";
+      }).join("") + "</div>" +
+      '<details class="cours-sommaire"><summary>Voir le sommaire</summary><div class="cours-sommaire-grille">' + def.parties.map(function (p) {
+        return "<div><h4>" + echapper(p.titre) + "</h4>" + p.chapitres.map(function (c) {
+          n++;
+          return '<button type="button" data-aller="' + (n - 1) + '">' + n + ". " + c.titre + "</button>";
+        }).join("") + "</div>";
+      }).join("") + "</div></details>" +
+      '<div class="cours-etapes">' + liste.map(chapitre).join("") + "</div>";
+    Array.prototype.forEach.call(cadre.querySelectorAll(".chapitre-tuile .ico"), function (el) {
+      el.innerHTML = window.BIBLE_ICONES[el.getAttribute("data-ico")] || "";
+    });
+    var articles = cadre.querySelectorAll(".chapitre"), points = cadre.querySelectorAll(".cours-point");
+    function montrer(i, defiler) {
+      Array.prototype.forEach.call(articles, function (a, k) { a.hidden = k !== i; });
+      Array.prototype.forEach.call(points, function (p, k) { p.classList.toggle("actif", k === i); p.classList.toggle("vu", k < i); });
+      var d = articles[i].querySelector(".chapitre-dessin");
+      if (d && !d.firstChild && window.BIBLE_DESSINS[d.getAttribute("data-dessin")]) {
+        window.BIBLE_DESSINS[d.getAttribute("data-dessin")](d, { badge: badge });
+      }
+      try { history.replaceState(null, "", "#" + liste[i].c.id); localStorage.setItem(cle, liste[i].c.id); } catch (e) { /* facultatif */ }
+      if (defiler) cadre.scrollIntoView({ block: "start" });
+    }
+    function indice(id) {
+      for (var i = 0; i < liste.length; i++) if (liste[i].c.id === id) return i;
+      return -1;
+    }
+    cadre.addEventListener("click", function (e) {
+      var b = e.target.closest("[data-aller]"); if (!b) return;
+      var s = cadre.querySelector(".cours-sommaire");
+      if (s.contains(b)) s.open = false;
+      montrer(+b.getAttribute("data-aller"), true);
+    });
+    window.addEventListener("hashchange", function () {
+      var i = indice(location.hash.slice(1));
+      if (i >= 0) montrer(i, true);
+    });
+    var depart = indice(location.hash.slice(1));
+    if (depart >= 0) { montrer(depart, false); cadre.scrollIntoView({ block: "start" }); return; }
+    var memoire = -1;
+    try { memoire = indice(localStorage.getItem(cle)); } catch (e) { /* facultatif */ }
+    montrer(memoire >= 0 ? memoire : 0, false);
+    try { if (memoire < 0) history.replaceState(null, "", location.pathname + location.search); } catch (e) { /* facultatif */ }
   }
 
   /* arbre de décision : { depart, noeuds: { id: { q, choix: [{ r, vers }] } | { verdict, texte, s, ref } } } */
@@ -270,5 +347,7 @@
   }
 
   window.BIBLE_SCHEMAS = window.BIBLE_SCHEMAS || {};
+  window.BIBLE_DESSINS = window.BIBLE_DESSINS || {};
+  window.BIBLE_ICONES = window.BIBLE_ICONES || {};
   window.Bible = { accueil: accueil, fiche: fiche, icone: icone };
 })();
