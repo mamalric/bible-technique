@@ -4,7 +4,7 @@
 
 ## 2026-11-03 : carte du parcours
 
-- Demande de l'utilisateur : remplir la carte, restée au modèle vierge depuis la création du projet. `CARTE.json` passe en version 1, encore en brouillon tant que l'utilisateur ne l'a pas validée. `CARTE.pdf`, `CARTE.dxf` et `CARTE.png` sont générés : "CONTRÔLES : aucune alerte", rendu regardé.
+- Demande de l'utilisateur : remplir la carte, restée au modèle vierge depuis la création du projet. `CARTE.json` passe en version 1. `CARTE.pdf`, `CARTE.dxf` et `CARTE.png` sont générés : "CONTRÔLES : aucune alerte", rendu regardé.
 - Quatre étapes : une notion entre dans la bible ; le lecteur arrive ; lire une fiche ; les fiches disponibles. Plus les zones "mis de côté" et "questions ouvertes".
 - États :
   - en vert, ce qui a été vu dans le site qui tourne, y compris les cases à cocher, la bascule de thème et la rubrique "vu sur les affaires", revues sur le site public avant de les marquer ;
@@ -13,6 +13,7 @@
   - en bordeaux, les fiches à venir ;
   - en gris, la carte du hub à passer de bêta à en ligne, et les retouches de forme annoncées à la création.
 - Questions ouvertes portées sur la carte : un cours pour les trois autres fiches ; l'alignement du texte qui cite encore les métiers ; la suppression de `backup/avant-anonymisation` ; l'accès aux normes non lues.
+- Validée par l'utilisateur le 2026-11-03 : la carte fait foi désormais, et ses questions ouvertes restent à trancher.
 - Commité sur `dev` seulement, pas poussé : le site en ligne ne change pas.
 
 ## 2026-11-03 : cours pour débutant dans les fiches bases de la ventilation et sorbonne
