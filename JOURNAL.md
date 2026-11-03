@@ -2,6 +2,34 @@
 
 <!-- Dernière entrée en haut. Une entrée par session de travail ou par décision. Date au format AAAA-MM-JJ. -->
 
+## 2026-11-03 : cours pour débutant dans les fiches clapet, ERP et locaux techniques
+
+- À la demande de l'utilisateur, les trois fiches qui n'en avaient pas reçoivent la rubrique `cours`, au même format que les bases et la sorbonne : une étape par écran, un dessin, des phrases courtes, chaque mot défini à son arrivée, une image de la vie courante, une phrase à retenir, un exemple chiffré à la fin. Le moule ne change pas.
+- Fiche `clapet-coupe-feu` : cours de 10 étapes en trois parties (le problème, lire et choisir, sur le chantier). Dessins à manipuler : la gaine avec et sans clapet, le fusible au curseur, l'émission et la rupture avec le câble à couper.
+- Fiche `erp` : cours de 9 étapes en deux parties (comprendre, compter et classer). Dessins à manipuler : les quatorze lettres, les seuils de la 5e catégorie par type. Exemple complet d'un restaurant, N 4 ou N 5 selon la surface.
+- Fiche `locaux-techniques` : cours de 11 étapes en deux parties (les locaux, les règles). Dessins à manipuler : l'air et l'eau selon le local, l'accès au sous-sol selon la température du primaire. Exemple complet d'une sous-station de 400 kW.
+- Textes lus sur Légifrance dans leur version en vigueur :
+  - règlement ERP, arrêté du 25 juin 1980 : CH 32 et CH 33 (version du 1er août 2025), GN 1, GN 2, PE 1 à PE 4 (PE 2 en version du 1er janvier 2026), N 2 (version de février 2022), W 2, GE 4 ;
+  - code de la construction et de l'habitation : R143-19, R143-34 à R143-44 ;
+  - MS 53, CO 24 et CO 25 sont cités d'après des extraits de Légifrance, dans des versions dont la date n'a pas été confirmée.
+- Autres sources ajoutées : deux supports de formation de la DREAL Normandie (classement et contrôle des ERP), un document de la préfecture de la Vienne, un guide de la préfecture de l'Aude (2016), une fiche de la préfecture de Tarn-et-Garonne, deux guides du Cerema sur les réseaux de chaleur (2014 et 2019), une fiche technique de fabricant de clapets.
+- Ce que ces textes ont corrigé dans les fiches existantes :
+  - clapet : quand les dispositions du type exigent un SSI de catégorie A ou B, seuls les télécommandés sont admis au droit des parois de compartimentage (CH 32 § 6). La fiche disait seulement que le coordinateur SSI choisit. Son avis d'octobre 2026 reste cité, pour les autres cas ;
+  - clapet : le type H de l'arbre de décision n'existe pas dans GN 1, il est retiré ;
+  - clapet : une fiche de fabricant lue annonce un fusible de 72 °C alors que CH 32 dit 70 °C. La fiche le signale, à regarder au VISA ;
+  - ERP : seul s'ajoute au public le personnel qui n'a pas de dégagements indépendants (GN 1), et non tout le personnel. La fiche, son arbre et le schéma de tête sont corrigés ;
+  - ERP : pour un restaurant assis, le principe est la déclaration contrôlée des places, limitée à une personne pour 2 m² ; une personne par m² ne vaut qu'à défaut (N 2) ;
+  - ERP : la densité des magasins lue dans un document de préfecture est ancienne. M 2 a été réécrit en 2017 : le repère cité reste à vérifier, faute d'avoir lu l'article en vigueur.
+- Badges, cours compris : 97 affirmations dont 13 à vérifier pour le clapet (14 sur 37 avant), 89 dont 5 pour les ERP (19 sur 35 avant), 118 dont 31 pour les locaux techniques (22 sur 52 avant).
+  - Clapet : 5 anciens "à vérifier" levés. NF EN 13501-3 et NF S 61-937 ne sont pas lues directement : ce qui en est dit vient de documents de fabricants.
+  - ERP : 15 anciens "à vérifier" levés.
+  - Locaux techniques : 1 ancien "à vérifier" levé, 10 ajoutés par le cours. Ce sont surtout des explications générales et des prescriptions de réseaux. Aucun texte lu ne définit le local technique en général ni le degré coupe-feu d'une sous-station.
+- Contrôles :
+  - `node tests/verifier_bible.js` : 5 fiches, 0 erreur, 0 alerte ;
+  - dans le navigateur : toutes les étapes des trois cours, leurs dessins et commandes, thèmes clair et sombre, 375 px sans défilement horizontal sur chaque étape, recherche à l'accueil ("calfeutrement", "dégagement", "échangeur", "sous-station", "clapet"), console vide.
+- Carte : tuiles d1, d2 et d3 mises à jour, tuile c2 "dans les 5 fiches", question sur les cours retirée et questions renumérotées. La version validée reste la version 1.
+- Reste à faire : publier sur accord de l'utilisateur ; lire M 2 en vigueur, NF EN 13501-3 et NF S 61-937 ; trancher les trois questions ouvertes de la carte.
+
 ## 2026-11-03 : carte du parcours
 
 - Demande de l'utilisateur : remplir la carte, restée au modèle vierge depuis la création du projet. `CARTE.json` passe en version 1. `CARTE.pdf`, `CARTE.dxf` et `CARTE.png` sont générés : "CONTRÔLES : aucune alerte", rendu regardé.

@@ -259,7 +259,7 @@
    "texte": [
     "une étape par écran, pour un débutant"
    ],
-   "note": "facultatif : bases et sorbonne"
+   "note": "facultatif : dans les 5 fiches"
   },
   {
    "id": "c3",
@@ -361,9 +361,9 @@
    "etat": "en_cours",
    "titre": "Clapet coupe-feu",
    "texte": [
-    "en ligne, 37 affirmations"
+    "en ligne ; cours de 10 étapes sur dev, 97 affirmations"
    ],
-   "note": "14 à vérifier"
+   "note": "13 à vérifier"
   },
   {
    "id": "d2",
@@ -374,9 +374,9 @@
    "etat": "en_cours",
    "titre": "ERP : type et catégorie",
    "texte": [
-    "en ligne, 35 affirmations"
+    "en ligne ; cours de 9 étapes sur dev, 89 affirmations"
    ],
-   "note": "19 à vérifier"
+   "note": "5 à vérifier"
   },
   {
    "id": "d3",
@@ -387,9 +387,9 @@
    "etat": "en_cours",
    "titre": "Locaux techniques",
    "texte": [
-    "en ligne, 52 affirmations"
+    "en ligne ; cours de 11 étapes sur dev, 118 affirmations"
    ],
-   "note": "22 à vérifier"
+   "note": "31 à vérifier"
   },
   {
    "id": "d4",
@@ -466,10 +466,9 @@
    "h": 160,
    "italique": false,
    "lignes": [
-    "1. Un cours pour débutant dans les fiches clapet, ERP et locaux techniques ?",
-    "2. L'accueil, la description du dépôt et FICHE.md citent encore CVC, plomberie, SSI et thermique, retirés de la carte du hub : on les aligne ?",
-    "3. Peut-on supprimer la branche locale backup/avant-anonymisation ?",
-    "4. Y a-t-il un accès pour lire NF X 15-206, NF X 15-211 et NF EN 14175 ?"
+    "1. L'accueil, la description du dépôt et FICHE.md citent encore CVC, plomberie, SSI et thermique, retirés de la carte du hub : on les aligne ?",
+    "2. Peut-on supprimer la branche locale backup/avant-anonymisation ?",
+    "3. Y a-t-il un accès pour lire NF X 15-206, NF X 15-211 et NF EN 14175 ?"
    ]
   }
  ],
