@@ -62,7 +62,15 @@
       '<rect x="40" y="38" width="16" height="36" rx="2" fill="var(--s-gaine)" stroke="var(--s-gaine-bord)" stroke-width="1.5"/>' +
       '<path d="M82 34H64v12h-8M56 66h12V40h14" fill="none" stroke="var(--danger)" stroke-width="2.5"/>' +
       '<path d="M40 46H30V6M40 66H26V6" fill="none" stroke="var(--s-chaud)" stroke-width="2.5"/>' +
-      '<rect x="4" y="50" width="8" height="8" rx="2" fill="var(--danger)"/></svg>'
+      '<rect x="4" y="50" width="8" height="8" rx="2" fill="var(--danger)"/></svg>',
+    ventilation:
+      '<svg viewBox="0 0 86 86" width="86" height="86" aria-hidden="true">' +
+      '<rect x="14" y="24" width="58" height="48" rx="2" fill="var(--s-gaine)" stroke="var(--s-gaine-bord)" stroke-width="1.5"/>' +
+      '<path d="M2 36h24" stroke="var(--s-air)" stroke-width="4" stroke-linecap="round" stroke-dasharray="6 5"/>' +
+      '<path d="M60 36h24" stroke="var(--s-chaud)" stroke-width="4" stroke-linecap="round" stroke-dasharray="6 5"/>' +
+      '<circle cx="34" cy="50" r="4" fill="var(--encre-2)"/><path d="M28 66v-4a6 6 0 0 1 12 0v4z" fill="var(--encre-2)"/>' +
+      '<circle cx="52" cy="50" r="4" fill="var(--encre-2)"/><path d="M46 66v-4a6 6 0 0 1 12 0v4z" fill="var(--encre-2)"/>' +
+      '<circle cx="43" cy="11" r="9" fill="none" stroke="var(--encre-2)" stroke-width="2"/><path d="M43 5v12M37 11h12" stroke="var(--encre-2)" stroke-width="2.5" stroke-linecap="round"/></svg>'
   };
 
   function echapper(s) {

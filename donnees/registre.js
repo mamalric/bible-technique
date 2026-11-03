@@ -19,7 +19,7 @@ window.BIBLE = {
     texte:     { nom: "Texte",       aide: "Texte réglementaire (code, arrêté, règlement) : la référence est citée." },
     norme:     { nom: "Norme",       aide: "Norme NF, EN ou DTU, citée par son numéro et reformulée, jamais recopiée." },
     fabricant: { nom: "Fabricant",   aide: "Documentation de fabricant, déclaration des performances ou procès-verbal d'essai." },
-    expert:    { nom: "Expert",      aide: "Avis d'un spécialiste (coordinateur SSI, contrôleur technique...) recueilli sur une affaire." },
+    expert:    { nom: "Expert",      aide: "Avis d'un spécialiste (coordinateur SSI, contrôleur technique...) recueilli sur une affaire, ou guide d'un organisme de référence comme l'INRS." },
     cas:       { nom: "Vu sur affaire", aide: "Constaté sur une affaire réelle, présentée de façon anonyme." },
     verifier:  { nom: "À vérifier",  aide: "Explication de principe, pas encore rattachée à un texte : à confirmer avant de s'en servir." }
   },
@@ -51,6 +51,15 @@ window.BIBLE = {
       motscles: ["local technique", "sous-station", "chaufferie", "réseau de chaleur", "échangeur", "primaire", "secondaire", "eau surchauffée", "sous-sol", "local à risques importants", "local à risques moyens", "CO 28", "arrêt d'urgence", "ventilation haute et basse", "puisard", "TGBT", "salle des machines", "NF EN 378", "70 kW", "ICPE 2910"],
       vignette: "local",
       maj: "2026-10-29"
+    },
+    {
+      id: "bases-ventilation",
+      titre: "Les bases de la ventilation",
+      resume: "Pourquoi on renouvelle l'air, comment il se déplace, et ce que veulent dire débit, dépression et perte de charge. Quatre leçons à manipuler, sans prérequis.",
+      domaines: ["ventilation", "methode"],
+      motscles: ["ventilation", "VMC", "air neuf", "air vicié", "air recyclé", "débit", "vitesse", "section", "pression", "dépression", "surpression", "perte de charge", "simple flux", "double flux", "ventilateur", "point de fonctionnement", "compensation", "CO2", "R4222-6", "RSD", "article 64", "pollution spécifique", "bases", "débutant", "arrêté de 1982"],
+      vignette: "ventilation",
+      maj: "2026-11-03"
     }
   ]
 };
