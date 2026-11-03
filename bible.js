@@ -70,7 +70,15 @@
       '<path d="M60 36h24" stroke="var(--s-chaud)" stroke-width="4" stroke-linecap="round" stroke-dasharray="6 5"/>' +
       '<circle cx="34" cy="50" r="4" fill="var(--encre-2)"/><path d="M28 66v-4a6 6 0 0 1 12 0v4z" fill="var(--encre-2)"/>' +
       '<circle cx="52" cy="50" r="4" fill="var(--encre-2)"/><path d="M46 66v-4a6 6 0 0 1 12 0v4z" fill="var(--encre-2)"/>' +
-      '<circle cx="43" cy="11" r="9" fill="none" stroke="var(--encre-2)" stroke-width="2"/><path d="M43 5v12M37 11h12" stroke="var(--encre-2)" stroke-width="2.5" stroke-linecap="round"/></svg>'
+      '<circle cx="43" cy="11" r="9" fill="none" stroke="var(--encre-2)" stroke-width="2"/><path d="M43 5v12M37 11h12" stroke="var(--encre-2)" stroke-width="2.5" stroke-linecap="round"/></svg>',
+    sorbonne:
+      '<svg viewBox="0 0 86 86" width="86" height="86" aria-hidden="true">' +
+      '<path d="M18 22H70V72H18V60" fill="var(--s-gaine)" stroke="var(--encre-2)" stroke-width="2.5"/>' +
+      '<rect x="60" y="22" width="10" height="38" fill="var(--s-paroi)"/><rect x="14" y="58" width="60" height="4" fill="var(--s-gaine-bord)"/>' +
+      '<rect x="16" y="8" width="4" height="38" fill="var(--s-air)" stroke="var(--encre)" stroke-width="1"/>' +
+      '<path d="M2 54H14Q36 50 58 54" fill="none" stroke="var(--s-air)" stroke-width="3" stroke-linecap="round" stroke-dasharray="5 5"/>' +
+      '<path d="M38 56C40 42 50 40 58 42" fill="none" stroke="var(--s-chaud)" stroke-width="3" stroke-linecap="round"/>' +
+      '<rect x="62" y="4" width="6" height="18" fill="var(--s-gaine)" stroke="var(--s-gaine-bord)"/></svg>'
   };
 
   function echapper(s) {

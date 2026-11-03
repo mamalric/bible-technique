@@ -60,6 +60,15 @@ window.BIBLE = {
       motscles: ["ventilation", "VMC", "air neuf", "air vicié", "air recyclé", "débit", "vitesse", "section", "pression", "dépression", "surpression", "perte de charge", "simple flux", "double flux", "ventilateur", "point de fonctionnement", "compensation", "CO2", "R4222-6", "RSD", "article 64", "pollution spécifique", "bases", "débutant", "arrêté de 1982"],
       vignette: "ventilation",
       maj: "2026-11-03"
+    },
+    {
+      id: "sorbonne",
+      titre: "Sorbonne de laboratoire",
+      resume: "Comment une sorbonne retient les vapeurs par l'air qui entre, ce qui la perturbe, comment la choisir, l'implanter et la contrôler.",
+      domaines: ["ventilation", "securite"],
+      motscles: ["sorbonne", "hotte", "laboratoire", "guillotine", "vitesse frontale", "confinement", "SF6", "plenum", "débit variable", "recirculation", "air de compensation", "NF EN 14175", "NF X 15-206", "NF X 15-211", "ED 795", "PSM", "boîte à gants", "ATEX", "CMR"],
+      vignette: "sorbonne",
+      maj: "2026-11-03"
     }
   ]
 };
