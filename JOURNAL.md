@@ -2,6 +2,13 @@
 
 <!-- Dernière entrée en haut. Une entrée par session de travail ou par décision. Date au format AAAA-MM-JJ. -->
 
+## 2026-11-03 : cours clapet, ERP et locaux techniques publiés
+
+- Sur accord de l'utilisateur, `main` avancé sur `dev` et poussé avec le compte `mamalric` (commit 7b68f6a) ; déploiement GitHub Pages réussi.
+- Contrôlé sur le site en ligne, à 375 px : les 10, 9 et 11 étapes s'ouvrent sans défilement horizontal, le fusible et les seuils par type réagissent, console vide.
+- Carte : les tuiles d1, d2 et d3 passent à "en ligne". Elles restent en cours, car des affirmations sont encore à vérifier.
+- Reste à faire : lire M 2 en vigueur, NF EN 13501-3 et NF S 61-937 ; trancher les trois questions ouvertes de la carte.
+
 ## 2026-11-03 : cours pour débutant dans les fiches clapet, ERP et locaux techniques
 
 - À la demande de l'utilisateur, les trois fiches qui n'en avaient pas reçoivent la rubrique `cours`, au même format que les bases et la sorbonne : une étape par écran, un dessin, des phrases courtes, chaque mot défini à son arrivée, une image de la vie courante, une phrase à retenir, un exemple chiffré à la fin. Le moule ne change pas.
