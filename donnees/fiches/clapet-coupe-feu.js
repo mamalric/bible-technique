@@ -1,5 +1,8 @@
 /* Fiche : clapet coupe-feu.
    Chaque affirmation : { t: texte, s: type de source (voir registre.js), ref: référence }.
+   "comme" et "retenir" ne portent pas de badge : "comme" est une image sans chiffre ni règle, "retenir" redit une ligne badgée de l'étape.
+   Texte lu en novembre 2026 : article CH 32 du règlement ERP, version en vigueur depuis le 1er août 2025.
+   Les normes NF EN 13501-3 et NF S 61-937 n'ont pas été lues directement : ce qui en est dit vient de documents de fabricants.
    Site public : aucun nom d'affaire, de client, d'entreprise ni de personne. */
 
 window.BIBLE_FICHE = {
@@ -8,15 +11,156 @@ window.BIBLE_FICHE = {
   soustitre: "Il ferme la gaine de ventilation quand le feu arrive, pour que la paroi traversée garde son degré coupe-feu.",
   schema: "clapet",
 
+  cours: {
+    intro: "Aucun prérequis. On part du feu et de la gaine, et on arrive au choix d'un clapet sur un cas concret, en dix étapes. Si le mot gaine reste flou, voir d'abord <a href=\"fiche.html?f=bases-ventilation#pieces\">les pièces du système</a> dans le cours sur les bases de la ventilation.",
+    parties: [
+      { titre: "Le problème", chapitres: [
+        { id: "boites", titre: "Le feu et les boîtes", dessin: "cf_boites",
+          lignes: [
+            { t: "Le règlement des ERP cherche à limiter la propagation du feu et des fumées à travers le bâtiment. Pour cela, il le découpe en volumes fermés.", s: "texte", ref: "arrêté du 25 juin 1980, articles CO 23 à CO 26" },
+            { t: "Ces volumes sont notamment : les niveaux, les secteurs, les compartiments, les locaux à risques importants, les locaux à sommeil.", s: "texte", ref: "arrêté du 25 juin 1980, article CH 32 § 5" },
+            { t: "Leurs parois sont dites <b>coupe-feu</b> : elles retiennent le feu un temps donné, compté en minutes ou en heures. Ce temps s'appelle leur <b>degré</b>.", s: "texte", ref: "arrêté du 25 juin 1980, articles CO 24 et CO 25" },
+            { t: "Découper ainsi s'appelle le <b>compartimentage</b>. Dans le règlement, un <b>compartiment</b> est un de ces volumes précis, avec ses propres règles.", s: "texte", ref: "arrêté du 25 juin 1980, article CO 25" }
+          ],
+          comme: "Un navire et ses cloisons étanches : une voie d'eau remplit une cale, pas tout le bateau. Ici, c'est le feu qu'on enferme.",
+          retenir: "Le bâtiment est découpé en boîtes, et les parois de chaque boîte retiennent le feu un temps donné." },
+
+        { id: "trou", titre: "Le trou que fait la gaine", dessin: "cf_trou",
+          lignes: [
+            { t: "La ventilation transporte l'air dans des <b>gaines</b> : des conduits, faits d'un matériau qui ne brûle pas, qui passent d'une pièce à l'autre.", s: "texte", ref: "arrêté du 25 juin 1980, article CH 32 § 1" },
+            { t: "Quand une gaine traverse une paroi coupe-feu, elle y fait un passage. Le clapet sert à arrêter le feu à cet endroit.", s: "fabricant", ref: "fiche technique d'un fabricant de clapets" },
+            { t: "Le règlement l'impose <b>quelle que soit la section</b> de la gaine : une petite gaine n'y échappe pas. Le degré du clapet est égal à celui de la paroi franchie.", s: "texte", ref: "arrêté du 25 juin 1980, article CH 32 § 5" },
+            { t: "Exception : le clapet n'est pas exigé si le conduit ne dessert pas le volume qu'il traverse et si, avec sa gaine éventuelle, il a lui-même le degré voulu.", s: "texte", ref: "arrêté du 25 juin 1980, article CH 32 § 5" }
+          ],
+          comme: "Une chatière découpée dans une porte blindée : tant qu'elle reste ouverte, le blindage ne sert à rien.",
+          retenir: "Une gaine qui traverse une paroi coupe-feu y fait un passage : il faut un clapet du même degré que la paroi." },
+
+        { id: "quoi", titre: "Un clapet, c'est quoi ?", dessin: "cf_anatomie",
+          intro: "Les mots qu'on retrouve dans une fiche technique et dans un CCTP, le document qui décrit les travaux à faire.",
+          tuiles: [
+            { ico: "tunnel", titre: "Tunnel", t: "Le corps du clapet, en acier. Il se loge dans la paroi et se raccorde à la gaine des deux côtés.", s: "fabricant", ref: "fiche technique d'un fabricant de clapets" },
+            { ico: "lame", titre: "Lame", t: "La porte du tunnel. Ouverte quand la ventilation marche, c'est sa position d'attente. Fermée, elle vient sur sa butée.", s: "fabricant", ref: "fiche technique d'un fabricant de clapets" },
+            { ico: "meca", titre: "Mécanisme", t: "Il tient la lame et la libère. Le règlement veut qu'il reste accessible.", s: "texte", ref: "arrêté du 25 juin 1980, article CH 32 § 6" },
+            { ico: "fusible", titre: "Déclencheur thermique", t: "La pièce qui réagit à la chaleur et lance la fermeture. On dit aussi fusible.", s: "texte", ref: "arrêté du 25 juin 1980, article CH 32 § 6" },
+            { ico: "joints", titre: "Joints", t: "Un joint en caoutchouc pour l'étanchéité à froid, un joint intumescent, qui gonfle à la chaleur.", s: "fabricant", ref: "fiche technique d'un fabricant de clapets" },
+            { ico: "contact", titre: "Contact de position", t: "En option : il signale à distance si la lame est ouverte ou fermée.", s: "fabricant", ref: "fiche technique d'un fabricant de clapets" }
+          ],
+          comme: "Une porte coupe-feu à l'échelle d'un tuyau : ouverte tous les jours, fermée le jour du feu.",
+          retenir: "Une lame dans un tunnel : en attente, ouverte ; en cas de feu, fermée." }
+      ] },
+
+      { titre: "Lire et choisir", chapitres: [
+        { id: "lire-ei", titre: "Lire EI 120 (ve ho i↔o) S", dessin: "cf_ei",
+          lignes: [
+            { t: "<b>E</b>, étanchéité : les flammes et les gaz chauds ne passent pas.", s: "norme", ref: "NF EN 13501-3, classement lu dans des documents de fabricants" },
+            { t: "<b>I</b>, isolation : la chaleur ne passe pas assez pour mettre le feu de l'autre côté.", s: "norme", ref: "NF EN 13501-3, classement lu dans des documents de fabricants" },
+            { t: "<b>120</b> : la tenue, en minutes. On trouve aussi 30, 60 ou 90.", s: "norme", ref: "NF EN 13501-3, classement lu dans des documents de fabricants" },
+            { t: "<b>ve</b> : essayé dans une paroi verticale, un mur. <b>ho</b> : essayé dans une paroi horizontale, une dalle. <b>i↔o</b> : le feu peut venir d'un côté comme de l'autre.", s: "norme", ref: "NF EN 13501-3, classement lu dans des documents de fabricants" },
+            { t: "<b>S</b> : la fuite de fumée reste limitée.", s: "norme", ref: "NF EN 13501-3, classement lu dans des documents de fabricants" },
+            { t: "Un clapet n'a pas un seul classement : il change selon la paroi (béton, plaque de plâtre) et le rebouchage. Les vrais chiffres sont dans sa <b>déclaration des performances</b>, le document que le fabricant doit fournir.", s: "fabricant", ref: "déclarations des performances de fabricants ; NF EN 15650" }
+          ],
+          calcul: [
+            { q: "Paroi coupe-feu de 2 heures : quel clapet ?", op: "2 h × 60 min =", res: "EI 120", t: "Le degré du clapet est égal à celui de la paroi franchie.", s: "texte", ref: "arrêté du 25 juin 1980, article CH 32 § 5 ; arrêté du 22 mars 2026, annexe 2" }
+          ],
+          comme: "Une fiche d'identité : chaque lettre dit une qualité, et le nombre dit combien de temps elle tient.",
+          retenir: "EI 120 : ni les flammes ni trop de chaleur ne passent pendant 120 minutes." },
+
+        { id: "fusible", titre: "Le fusible à 70 °C", dessin: "cf_fusible",
+          intro: "Faire monter la température de l'air avec le curseur, et regarder ce qui se passe.",
+          lignes: [
+            { t: "En ERP, le clapet a un déclencheur thermique taré à 70 °C : il réagit à cette température-là.", s: "texte", ref: "arrêté du 25 juin 1980, article CH 32 § 6" },
+            { t: "Quand l'air de la gaine la dépasse, le fusible lâche et un ressort ferme la lame.", s: "fabricant", ref: "documentations de fabricants de clapets" },
+            { t: "Ce clapet est dit <b>autocommandé</b> : il se ferme seul, sans courant et sans câble.", s: "fabricant", ref: "fiche technique d'un fabricant de clapets" },
+            { t: "Après avoir fonctionné, le fusible se remplace.", s: "fabricant", ref: "fiche technique d'un fabricant de clapets" },
+            { t: "Une fiche de fabricant lue annonce 72 °C, pas 70 °C : au VISA, regarder la fiche et les certificats du clapet, sans s'arrêter au nombre.", s: "fabricant", ref: "fiche technique d'un fabricant de clapets ; la norme NF S 61-937-5 de mars 2012 vaut présomption de conformité selon arrêté du 25 juin 1980, article CH 32 § 6" },
+            { t: "Sa limite : il attend que la chaleur arrive jusqu'à lui. Des fumées encore froides passent.", s: "verifier" }
+          ],
+          comme: "Un bouchon de cire qui retient une porte à ressort : la cire fond, la porte claque.",
+          retenir: "Le fusible lâche à la chaleur et la lame se ferme, sans courant ni câble." },
+
+        { id: "ssi", titre: "Le télécommandé : SSI, CMSI, DAS", dessin: "cf_chaine",
+          intro: "Trois sigles qui font peur, et une idée simple : quelqu'un détecte, quelqu'un décide, quelqu'un obéit.",
+          tuiles: [
+            { ico: "ssi", titre: "SSI", t: "Système de sécurité incendie : tous les matériels qui recueillent les informations sur le feu et mettent le bâtiment en sécurité.", s: "texte", ref: "arrêté du 25 juin 1980, article MS 53" },
+            { ico: "cats", titre: "Catégories A à E", t: "Cinq niveaux de SSI, du plus sévère, A, au moins sévère, E. Les dispositions de chaque type d'ERP disent lequel il faut.", s: "texte", ref: "arrêté du 25 juin 1980, article MS 53" },
+            { ico: "cmsi", titre: "CMSI", t: "Centralisateur de mise en sécurité incendie : il donne les ordres. Compartimenter, désenfumer, arrêter les installations techniques.", s: "fabricant", ref: "notice d'un CMSI de fabricant" },
+            { ico: "das", titre: "DAS", t: "Dispositif actionné de sécurité : l'appareil qui obéit, comme un clapet ou une porte à ventouse. Il ne donne aucun ordre.", s: "norme", ref: "NF S 61-937-1, citée par des documents de fabricants" }
+          ],
+          lignes: [
+            { t: "Un clapet <b>télécommandé</b> reçoit l'ordre de fermer depuis le CMSI : il n'attend pas que la chaleur arrive.", s: "texte", ref: "arrêté du 25 juin 1980, article CH 32 § 6" },
+            { t: "<b>La règle en ERP</b> : si les dispositions du type exigent un SSI de catégorie A ou B, seuls les clapets télécommandés depuis le CMSI sont admis au droit des parois de compartimentage.", s: "texte", ref: "arrêté du 25 juin 1980, article CH 32 § 6" },
+            { t: "Le déclencheur thermique reste exigé : un télécommandé garde son fusible.", s: "texte", ref: "arrêté du 25 juin 1980, article CH 32 § 6" },
+            { t: "Hors de ce cas, le <b>coordinateur SSI</b>, qui organise ce système sur le projet, tranche. Sur un bâtiment à une seule zone de compartimentage, il a retenu le fusible seul.", s: "expert", ref: "avis d'un coordinateur SSI, octobre 2026" }
+          ],
+          comme: "Un chef d'orchestre : le détecteur lève la main, le chef donne le signal, et chaque musicien joue sa partie.",
+          retenir: "SSI de catégorie A ou B exigé : au droit des parois de compartimentage, clapet télécommandé depuis le CMSI." },
+
+        { id: "emission", titre: "Émission ou rupture", dessin: "cf_emission",
+          intro: "Deux façons de donner l'ordre. Choisir un type, puis couper le câble : c'est là que la différence se voit.",
+          lignes: [
+            { t: "<b>À émission</b> : au repos, aucun courant. Le CMSI envoie une impulsion pour fermer.", s: "fabricant", ref: "notice d'un CMSI de fabricant" },
+            { t: "<b>À rupture</b> : un courant permanent tient le clapet ouvert. Le CMSI le coupe pour fermer.", s: "fabricant", ref: "notice d'un CMSI de fabricant" },
+            { t: "<b>Sécurité positive</b> : à la coupure de courant, l'appareil passe de lui-même en position de sécurité. C'est le cas de la rupture.", s: "norme", ref: "NF S 61-937-1, citée par des documents de fabricants ; notice d'un CMSI de fabricant" },
+            { t: "L'émission demande une alimentation électrique de sécurité, suivant la NF S 61-940.", s: "fabricant", ref: "notice d'un CMSI de fabricant" },
+            { t: "Un câble coupé ne ferme pas un clapet à émission : sans surveillance de la ligne, la panne passe inaperçue.", s: "verifier" }
+          ],
+          comme: "La sonnette et le frein de train. La sonnette ne sonne que si on appuie. Le frein de secours serre dès que le câble lâche.",
+          retenir: "Émission : une impulsion ferme. Rupture : une coupure ferme, et un câble coupé aussi." }
+      ] },
+
+      { titre: "Sur le chantier", chapitres: [
+        { id: "pose", titre: "Bien le poser", dessin: "cf_pose",
+          lignes: [
+            { t: "Le clapet se place <b>au droit</b> de la paroi : à l'endroit même où la gaine la traverse.", s: "texte", ref: "arrêté du 25 juin 1980, article CH 32 § 5" },
+            { t: "Le tour de la gaine se rebouche avec un matériau qui rétablit la résistance au feu de la paroi. Ce rebouchage s'appelle le <b>calfeutrement</b>.", s: "texte", ref: "arrêté du 25 juin 1980, article CH 32 § 7" },
+            { t: "La <b>réservation</b>, le trou laissé dans la paroi, dépend du type de paroi : plaque de plâtre, carreaux de plâtre, paroi massive.", s: "fabricant", ref: "fiche technique d'un fabricant de clapets" },
+            { t: "Le <b>procès-verbal</b> (PV), le rapport d'essai du laboratoire, et la notice de pose disent ce qui a été essayé : parois, produit, épaisseur. La pose reste dans ce cadre.", s: "fabricant", ref: "notice de pose du fabricant ; NF EN 1366-2" },
+            { t: "La gaine se porte de chaque côté de la paroi : aucun effort sur le clapet.", s: "fabricant", ref: "notice de pose du fabricant" },
+            { t: "Le mécanisme doit rester accessible : dans un faux plafond, il faut une trappe en face.", s: "texte", ref: "arrêté du 25 juin 1980, article CH 32 § 6" },
+            { t: "Le mécanisme dépasse du mur, et la lame ouverte peut dépasser du tunnel sur les grands diamètres : prévoir la place.", s: "fabricant", ref: "fiche technique d'un fabricant de clapets" }
+          ],
+          comme: "Un hublot de bateau : il n'est bon que si le joint autour est bon aussi.",
+          retenir: "Posé au droit de la paroi, rebouché autour, mécanisme accessible." },
+
+        { id: "essais", titre: "Essayer, réarmer, suivre",
+          intro: "Un clapet ne sert presque jamais : il faut donc pouvoir vérifier qu'il marche.",
+          tuiles: [
+            { ico: "essai", titre: "Déclenchement manuel", t: "Il permet de faire fermer la lame sans feu.", s: "fabricant", ref: "fiche technique d'un fabricant de clapets" },
+            { ico: "rearme", titre: "Réarmement", t: "Remettre la lame en attente après une fermeture. Manuel en général, motorisé en option.", s: "fabricant", ref: "fiche technique d'un fabricant de clapets" },
+            { ico: "position", titre: "Position contrôlée", t: "Pour un DAS, la position d'attente et la position de sécurité sont contrôlées.", s: "norme", ref: "NF S 61-937-1, citée par des documents de fabricants" },
+            { ico: "registre", titre: "Registre de sécurité", t: "L'exploitant y note les travaux et les dates des contrôles.", s: "texte", ref: "code de la construction et de l'habitation, article R143-44" },
+            { ico: "liste", titre: "Liste et repérage", t: "Chaque clapet numéroté sur les plans, avec sa fiche et son PV au DOE, le dossier des ouvrages exécutés remis en fin de chantier.", s: "verifier" }
+          ],
+          lignes: [
+            { t: "À la réception, faire fermer et réarmer chaque clapet. Pour un télécommandé, vérifier que la centrale voit sa position.", s: "verifier" }
+          ],
+          comme: "Un extincteur : il ne sert presque jamais, et c'est justement pour ça qu'on vérifie qu'il marche.",
+          retenir: "Faire fermer et réarmer chaque clapet à la réception, et noter les contrôles au registre." },
+
+        { id: "exemple", titre: "Un exemple de A à Z", dessin: "cf_exemple",
+          intro: "Des bureaux recevant du public. Une gaine d'extraction sort d'un local à risques importants, à travers un mur en béton coupe-feu de 2 heures. Cas inventé pour l'exemple.",
+          calcul: [
+            { q: "La paroi est-elle concernée ?", op: "local à risques importants : dans la liste", res: "clapet exigé", s: "texte", ref: "arrêté du 25 juin 1980, article CH 32 § 5" },
+            { q: "Quel degré ?", op: "2 h × 60 min =", res: "EI 120", s: "texte", ref: "arrêté du 25 juin 1980, article CH 32 § 5 ; arrêté du 22 mars 2026, annexe 2" },
+            { q: "Quelle position ?", op: "un mur, le feu peut venir des deux côtés :", res: "ve i↔o", s: "norme", ref: "NF EN 13501-3, classement lu dans des documents de fabricants" },
+            { q: "Quelle commande ?", op: "pas de SSI A ou B exigé, pas une paroi de compartimentage :", res: "fusible", t: "À confirmer avec le coordinateur SSI. Rien à raccorder par le lot électricité.", s: "texte", ref: "arrêté du 25 juin 1980, article CH 32 § 6" },
+            { q: "Et si un SSI de catégorie A était exigé, sur une paroi de compartimentage ?", op: "seul admis :", res: "télécommandé", t: "On choisit alors émission ou rupture d'après le CMSI.", s: "texte", ref: "arrêté du 25 juin 1980, article CH 32 § 6" },
+            { q: "Au VISA de la fiche technique ?", op: "paroi en béton dans le PV, réservation, calfeutrement, trappe :", res: "à vérifier", s: "fabricant", ref: "notice de pose du fabricant ; déclaration des performances" }
+          ],
+          retenir: "Paroi concernée, degré égal, commande selon le SSI, pose selon le PV." }
+      ] }
+    ]
+  },
+
   essentiel: [
-    { t: "Un clapet coupe-feu se ferme dans la gaine, au droit de la paroi coupe-feu qu'elle traverse : le feu ne passe pas d'un local à l'autre par la ventilation.", s: "norme", ref: "NF EN 15650, norme produit des clapets coupe-feu" },
-    { t: "<b>Autocommandé</b> : un fusible thermique, en général à 70 °C, libère un ressort qui ferme la lame. Aucun câble.", s: "fabricant", ref: "documentations des fabricants de clapets" },
-    { t: "<b>Télécommandé</b> (un DAS) : la centrale incendie le ferme à distance, par émission ou par rupture de courant. Le fusible reste là en secours.", s: "fabricant", ref: "documentations des fabricants ; NF S 61-937 pour les DAS" },
-    { t: "Le choix revient au coordinateur SSI : sans asservissement demandé, le fusible suffit.", s: "expert", ref: "avis d'un coordinateur SSI, octobre 2026" }
+    { t: "Un clapet coupe-feu se ferme dans la gaine, au droit de la paroi coupe-feu qu'elle traverse : le feu ne passe pas d'un local à l'autre par la ventilation.", s: "texte", ref: "arrêté du 25 juin 1980, article CH 32 § 5 ; NF EN 15650 pour le produit" },
+    { t: "<b>Autocommandé</b> : un fusible thermique, taré à 70 °C en ERP, libère un ressort qui ferme la lame. Aucun câble.", s: "texte", ref: "arrêté du 25 juin 1980, article CH 32 § 6 ; documentations des fabricants de clapets" },
+    { t: "<b>Télécommandé</b> (un DAS) : la centrale incendie le ferme à distance, par émission ou par rupture de courant. Le fusible reste là en secours.", s: "fabricant", ref: "documentations des fabricants ; NF S 61-937 pour les DAS ; arrêté du 25 juin 1980, article CH 32 § 6" },
+    { t: "Si le type d'ERP exige un SSI de catégorie A ou B, seuls les télécommandés sont admis au droit des parois de compartimentage. Sinon, le coordinateur SSI tranche : sans asservissement demandé, le fusible suffit.", s: "texte", ref: "arrêté du 25 juin 1980, article CH 32 § 6 ; avis d'un coordinateur SSI, octobre 2026" }
   ],
 
   chiffres: [
-    { valeur: "70 °C", libelle: "Température de fusion courante du fusible : au-delà, le clapet se ferme seul.", s: "fabricant", ref: "documentations des fabricants" },
+    { valeur: "70 °C", libelle: "Tarage du déclencheur thermique en ERP : au-delà, le clapet se ferme seul. Une fiche de fabricant lue annonce 72 °C.", s: "texte", ref: "arrêté du 25 juin 1980, article CH 32 § 6 ; fiche technique d'un fabricant" },
     { valeur: "EI 60", libelle: "60 minutes d'étanchéité aux flammes (E) et d'isolation thermique (I). Même lecture pour EI 30, 90, 120.", s: "norme", ref: "NF EN 13501-3, classement des clapets" },
     { valeur: "1 zone", libelle: "Une seule zone de compartimentage : pas d'asservissement au SSI, le fusible suffit.", s: "expert", ref: "avis d'un coordinateur SSI, octobre 2026" },
     { valeur: "0 câble", libelle: "Pour un autocommandé : rien à raccorder par le lot électricité.", s: "fabricant", ref: "documentations des fabricants" }
@@ -26,31 +170,31 @@ window.BIBLE_FICHE = {
     titre: "Quel clapet poser ?",
     depart: "q1",
     noeuds: {
-      q1: { q: "La gaine traverse-t-elle une paroi ou un plancher qui a un degré coupe-feu ?", choix: [{ r: "Oui", vers: "q2" }, { r: "Non", vers: "v_non" }] },
-      v_non: { verdict: "Pas de clapet coupe-feu à cet endroit", texte: "Le clapet ne sert qu'à rétablir le degré d'une paroi traversée. Vérifier tout de même le classement réel de la paroi sur les plans de l'architecte.", s: "verifier" },
-      q2: { q: "Le degré est-il déjà assuré autrement, par un conduit ou une gaine technique eux-mêmes coupe-feu ?", choix: [{ r: "Oui", vers: "v_gaine" }, { r: "Non", vers: "q3" }] },
-      v_gaine: { verdict: "Pas de clapet, si le procès-verbal le couvre", texte: "Un conduit ou une gaine coupe-feu peut tenir lieu de clapet quand son PV couvre le cas. À faire valider par le contrôleur technique.", s: "verifier" },
-      q3: { q: "Le coordinateur SSI demande-t-il un asservissement ? C'est le cas courant en ERP de type J, U, O ou H, ou quand il y a plusieurs zones de compartimentage.", choix: [{ r: "Non", vers: "v_fusible" }, { r: "Oui", vers: "q4" }] },
+      q1: { q: "La gaine traverse-t-elle une paroi ou un plancher coupe-feu : entre niveaux, compartiment ou secteur, local à risques importants, local à sommeil ?", choix: [{ r: "Oui", vers: "q2" }, { r: "Non", vers: "v_non" }] },
+      v_non: { verdict: "Pas de clapet coupe-feu à cet endroit", texte: "Le règlement liste les parois où il l'exige : zones de mise en sécurité, isolements entre niveaux, secteurs et compartiments, locaux à risques importants, locaux à sommeil, espaces d'attente sécurisés. Vérifier le classement réel de la paroi sur les plans de l'architecte.", s: "texte", ref: "arrêté du 25 juin 1980, article CH 32 § 5" },
+      q2: { q: "Le conduit traverse-t-il ce volume sans le desservir, en ayant lui-même, ou avec sa gaine, le degré voulu ?", choix: [{ r: "Oui", vers: "v_gaine" }, { r: "Non", vers: "q3" }] },
+      v_gaine: { verdict: "Pas de clapet, si le procès-verbal le couvre", texte: "Le clapet n'est alors pas exigé. Le PV du conduit doit couvrir le cas, à faire valider par le contrôleur technique.", s: "texte", ref: "arrêté du 25 juin 1980, article CH 32 § 5" },
+      q3: { q: "Le type d'ERP exige-t-il un SSI de catégorie A ou B, sur une paroi de compartimentage ? Ou le coordinateur SSI demande-t-il un asservissement ?", choix: [{ r: "Non", vers: "v_fusible" }, { r: "Oui", vers: "q4" }] },
       v_fusible: { verdict: "Clapet autocommandé à fusible", texte: "Le fusible ferme le clapet tout seul quand l'air dépasse sa température. Rien à raccorder au SSI.", s: "expert", ref: "avis d'un coordinateur SSI, octobre 2026" },
       q4: { q: "Que sait commander la centrale incendie (le CMSI) ?", choix: [{ r: "Une impulsion de courant", vers: "v_emission" }, { r: "La coupure d'un courant permanent", vers: "v_rupture" }, { r: "Je ne sais pas", vers: "v_cssi" }] },
       v_emission: { verdict: "Clapet télécommandé à émission", texte: "Au repos, aucun courant. La centrale envoie une impulsion pour le fermer. Un câble coupé ne le ferme pas : la ligne doit être surveillée.", s: "verifier" },
-      v_rupture: { verdict: "Clapet télécommandé à rupture", texte: "Un courant permanent le tient ouvert. La centrale le coupe pour le fermer, et un câble coupé ou une panne le ferment aussi : c'est la sécurité positive.", s: "verifier" },
+      v_rupture: { verdict: "Clapet télécommandé à rupture", texte: "Un courant permanent le tient ouvert. La centrale le coupe pour le fermer, et un câble coupé ou une panne le ferment aussi : c'est la sécurité positive.", s: "fabricant", ref: "notice d'un CMSI de fabricant ; NF S 61-937-1" },
       v_cssi: { verdict: "Poser la question au coordinateur SSI", texte: "Le type de commande se cale sur la centrale existante ou prévue. C'est lui qui le fixe, avant le VISA des fiches techniques.", s: "expert", ref: "avis d'un coordinateur SSI, octobre 2026" }
     }
   },
 
   verifications: [
     { titre: "Au VISA", icone: "plan", points: [
-      { t: "Classement EI du clapet au moins égal à celui de la paroi traversée.", s: "verifier" },
+      { t: "Degré EI du clapet égal à celui de la paroi traversée.", s: "texte", ref: "arrêté du 25 juin 1980, article CH 32 § 5" },
       { t: "Déclaration des performances et PV qui couvrent le type de paroi (béton, cloison plâtre, plancher) et le mode de pose.", s: "norme", ref: "NF EN 15650 et NF EN 1366-2" },
       { t: "Mode de commande conforme à l'avis du coordinateur SSI : fusible ou télécommandé.", s: "expert", ref: "avis d'un coordinateur SSI, octobre 2026" },
       { t: "Chaque clapet repéré et numéroté sur les plans, avec sa trappe de visite.", s: "verifier" }
     ] },
     { titre: "Sur le chantier", icone: "casque", points: [
       { t: "Clapet posé dans l'épaisseur de la paroi, ou déporté seulement si le PV le permet.", s: "fabricant", ref: "notice de pose du fabricant" },
-      { t: "Calfeutrement avec le produit et l'épaisseur prévus par le PV.", s: "fabricant", ref: "notice de pose du fabricant" },
+      { t: "Calfeutrement avec le produit et l'épaisseur prévus par le PV : il doit rétablir la résistance au feu de la paroi.", s: "texte", ref: "arrêté du 25 juin 1980, article CH 32 § 7 ; notice de pose du fabricant" },
       { t: "Gaine supportée de part et d'autre : aucun effort sur le clapet.", s: "fabricant", ref: "notice de pose du fabricant" },
-      { t: "Mécanisme et fusible accessibles depuis la trappe.", s: "fabricant", ref: "notice de pose du fabricant" }
+      { t: "Mécanisme et fusible accessibles depuis la trappe.", s: "texte", ref: "arrêté du 25 juin 1980, article CH 32 § 6" }
     ] },
     { titre: "À la réception", icone: "cle", points: [
       { t: "Essai de fermeture et de réarmement de chaque clapet.", s: "verifier" },
@@ -62,7 +206,8 @@ window.BIBLE_FICHE = {
   pieges: [
     { t: "Le CCTP prévoit des clapets asservis au SSI alors que le coordinateur SSI ne le demande pas : télécommande et câblage payés pour rien, sur deux lots.", s: "cas" },
     { t: "Un plafond coupe-feu qui protège la charpente est décrit \"sans aucune traversée\", alors que les gaines doivent le traverser : à trancher avant la pose.", s: "cas" },
-    { t: "Clapet enfermé dans un faux plafond sans trappe : impossible à réarmer et à vérifier.", s: "verifier" },
+    { t: "Clapet enfermé dans un faux plafond sans trappe : impossible à réarmer et à vérifier, alors que le mécanisme doit rester accessible.", s: "texte", ref: "arrêté du 25 juin 1980, article CH 32 § 6" },
+    { t: "Citer l'ancien CH 32 : l'article a été réécrit par l'arrêté du 29 juillet 2025, en vigueur depuis le 1er août 2025. Prendre la version applicable à la date du dossier.", s: "texte", ref: "arrêté du 29 juillet 2025 modifiant le règlement ERP" },
     { t: "Un clapet à émission ne se ferme pas si son câble est coupé : sans surveillance de la ligne, la panne passe inaperçue.", s: "verifier" }
   ],
 
@@ -77,10 +222,10 @@ window.BIBLE_FICHE = {
   ],
 
   references: [
-    { s: "texte", t: "Règlement de sécurité contre les risques d'incendie et de panique dans les ERP, arrêté du 25 juin 1980 modifié : dispositions générales (CO, CH, MS) et dispositions propres à chaque type." },
+    { s: "texte", t: "Règlement de sécurité contre les risques d'incendie et de panique dans les ERP, arrêté du 25 juin 1980 modifié : dispositions générales (CO, CH, MS) et dispositions propres à chaque type. Article CH 32 en vigueur depuis le 1er août 2025 (arrêté du 29 juillet 2025), article MS 53 pour les catégories de SSI." },
     { s: "norme", t: "NF EN 15650 : clapets coupe-feu pour réseaux aérauliques (norme produit, marquage CE)." },
     { s: "norme", t: "NF EN 1366-2 : essais de résistance au feu des clapets ; NF EN 13501-3 : leur classement (EI, ve, ho, i↔o, S)." },
-    { s: "norme", t: "NF S 61-937 : dispositifs actionnés de sécurité (DAS) ; NF S 61-932 : règles d'installation du SSI." },
+    { s: "norme", t: "NF S 61-937 : dispositifs actionnés de sécurité (DAS), dont NF S 61-937-5 de mars 2012 pour les clapets, qui vaut présomption de conformité à l'article CH 32 ; NF S 61-932 : règles d'installation du SSI ; NF S 61-934 : CMSI ; NF S 61-940 : alimentations électriques de sécurité." },
     { s: "fabricant", t: "Notice de pose et déclaration des performances du clapet retenu : elles fixent les parois admises, le calfeutrement et les distances." }
   ]
 };

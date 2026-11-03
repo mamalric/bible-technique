@@ -28,11 +28,11 @@ window.BIBLE = {
     {
       id: "clapet-coupe-feu",
       titre: "Clapet coupe-feu",
-      resume: "Ce qui ferme la gaine de ventilation quand elle traverse une paroi coupe-feu. Fusible ou télécommandé, émission ou rupture : comment choisir et quoi vérifier.",
+      resume: "Un cours en 10 étapes, puis la fiche : ce qui ferme la gaine de ventilation quand elle traverse une paroi coupe-feu. Fusible ou télécommandé, émission ou rupture : comment choisir et quoi vérifier.",
       domaines: ["ventilation", "securite"],
-      motscles: ["clapet", "CF", "coupe-feu", "fusible", "DAS", "émission", "rupture", "CMSI", "SSI", "compartimentage", "EI", "autocommandé", "télécommandé"],
+      motscles: ["clapet", "CF", "coupe-feu", "fusible", "DAS", "émission", "rupture", "CMSI", "SSI", "compartimentage", "EI", "autocommandé", "télécommandé", "CH 32", "calfeutrement", "sécurité positive", "réarmement", "gaine"],
       vignette: "clapet",
-      maj: "2026-10-27"
+      maj: "2026-11-03"
     },
     {
       id: "erp",
