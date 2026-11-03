@@ -361,7 +361,7 @@
    "etat": "en_cours",
    "titre": "Clapet coupe-feu",
    "texte": [
-    "en ligne, cours de 10 étapes, 97 affirmations"
+    "en ligne, cours de 10 étapes, 99 affirmations"
    ],
    "note": "13 à vérifier"
   },
@@ -376,7 +376,7 @@
    "texte": [
     "en ligne, cours de 9 étapes, 89 affirmations"
    ],
-   "note": "5 à vérifier"
+   "note": "4 à vérifier"
   },
   {
    "id": "d3",
@@ -466,9 +466,7 @@
    "h": 160,
    "italique": false,
    "lignes": [
-    "1. L'accueil, la description du dépôt et FICHE.md citent encore CVC, plomberie, SSI et thermique, retirés de la carte du hub : on les aligne ?",
-    "2. Peut-on supprimer la branche locale backup/avant-anonymisation ?",
-    "3. Y a-t-il un accès pour lire NF X 15-206, NF X 15-211 et NF EN 14175 ?"
+    "1. B27 a-t-il un abonnement COBAZ pour lire NF EN 13501-3, NF S 61-937, NF X 15-206, NF X 15-211 et NF EN 14175, normes payantes ?"
    ]
   }
  ],

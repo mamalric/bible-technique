@@ -139,7 +139,7 @@
     var page = document.querySelector(".page");
     page.innerHTML =
       '<section class="entree"><h1>La <span>bible</span> technique</h1>' +
-      "<p>CVC, plomberie, sécurité incendie, thermique : une fiche par notion, un schéma pour comprendre, une liste pour vérifier.</p>" +
+      "<p>Une fiche par notion, un schéma pour comprendre, une liste pour vérifier.</p>" +
       '<div class="recherche">' + icone("loupe", 20) + '<input id="cherche" type="search" placeholder="Chercher une notion : clapet, fusible, DAS..." autocomplete="off"></div></section>' +
       '<div class="section-titre"><h2>Domaines</h2><small>cliquer pour filtrer</small></div><div class="domaines" id="domaines"></div>' +
       '<div class="section-titre"><h2 id="titre-fiches">Fiches</h2><small id="compte"></small></div><div class="fiches" id="fiches"></div>' +

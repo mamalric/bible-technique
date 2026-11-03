@@ -2,6 +2,26 @@
 
 <!-- Dernière entrée en haut. Une entrée par session de travail ou par décision. Date au format AAAA-MM-JJ. -->
 
+## 2026-11-03 : article M 2, accès aux normes, textes alignés, branche archivée
+
+- Fiche `erp` : article M 2 lu sur Légifrance, version en vigueur depuis le 1er décembre 2017 (arrêté du 15 novembre 2017). Une personne pour 3 m² de surface de vente en sous-sol, au rez-de-chaussée et au 1er étage, 6 m² au 2e étage, 15 m² au-dessus ; 9 m² en faible densité ; 5 m² de mail et 6 m² en boutique de moins de 300 m² dans un centre commercial. Le badge "à vérifier" est levé et la référence corrigée : le cours citait à tort l'arrêté du 13 juin 2017.
+- Fiche `clapet-coupe-feu` : l'annexe 2 de l'arrêté du 22 mars 2026, gratuite sur Légifrance, définit E, I, ve, ho et le sens du feu, et devient la source de ces lettres à la place de NF EN 13501-3. Elle apporte deux règles ajoutées au cours : en coupe-feu, un clapet n'est admis qu'avec le classement S, et sa pression de service ne dépasse pas celle de l'essai. Le S lui-même n'y est pas défini : son sens reste lu dans des documents de fabricants.
+- Fiche `clapet-coupe-feu` : MS 53, MS 59, MS 60 et MS 69 lus en version en vigueur. Ils ne définissent ni la position de sécurité, ni la sécurité positive, ni l'émission et la rupture : ces points restent sourcés par des certificats NF, des procès-verbaux de DAS et une notice de CMSI.
+- Fiche `locaux-techniques` : son piège sur les anciennes versions signale que l'arrêté du 22 mars 2026 vaut pour les demandes déposées depuis le 1er octobre 2026, et que l'arrêté du 19 février 2026 modifiera CO 28 et EL 5 pour les demandes déposées à partir du 1er juin 2027.
+- Normes : aucune n'a pu être lue. Aucune copie sur le OneDrive, aucun accès gratuit indiqué sur la boutique AFNOR. La gratuité légale ne vise que les normes rendues obligatoires, et NF S 61-937-5 n'est qu'une présomption de conformité dans CH 32. L'extrait gratuit de NF S 61-937-5 ne s'est pas ouvert dans le navigateur intégré. Éditions en vigueur et prix relevés le 3 novembre 2026, offre proposée par défaut (numérique, 3 utilisateurs) :
+  - NF EN 13501-3, août 2025, 30 pages : 281,74 € HT ;
+  - NF S 61-937-1, décembre 2003, 10 pages : 156,40 € HT ;
+  - NF S 61-937-5, mars 2012, 6 pages : 84,17 € HT ;
+  - NF X 15-206, août 2023, 6 pages : 84,17 € HT ;
+  - NF X 15-211, mai 2009, 13 pages : 196,99 € HT ;
+  - NF EN 14175-3, mai 2019, 30 pages : 281,74 € HT, une partie sur six.
+- Pistes d'accès, restées à confirmer : un abonnement COBAZ chez B27, ou une consultation sur rendez-vous dans une délégation AFNOR, vue seulement dans des programmes de 2017 à 2019. Rien n'a été acheté.
+- Textes alignés sur la description du portail : phrase d'accueil dans `bible.js`, description dans `index.html`, `pitch`, `tags` et objectif dans `FICHE.md`, description du dépôt GitHub, déjà changée en ligne. Les tuiles de domaine de l'accueil gardent Plomberie et Thermique : ce sont des rubriques de classement, pas la description du site. La description de la skill garde aussi ces mots, qui servent à la déclencher.
+- Branche `backup/avant-anonymisation` : 7 commits du 27 octobre 2026, jamais poussés, sans ancêtre commun avec `dev`. Elle est archivée dans `prive/backup-avant-anonymisation.bundle` (ignoré par git), restauration essayée (même commit, mêmes fichiers), puis supprimée : plus de risque de la pousser par erreur, et rien de perdu. La commande de relecture est dans `prive/traces.md`.
+- Carte : deux questions ouvertes retirées, la troisième devient celle de l'abonnement COBAZ. Tuiles d1 et d2 mises à jour.
+- Badges : 99 affirmations dont 13 à vérifier pour le clapet, 89 dont 4 pour les ERP, 118 dont 31 pour les locaux techniques.
+- Reste à faire : publier sur accord de l'utilisateur ; savoir si B27 a un abonnement COBAZ.
+
 ## 2026-11-03 : cours clapet, ERP et locaux techniques publiés
 
 - Sur accord de l'utilisateur, `main` avancé sur `dev` et poussé avec le compte `mamalric` (commit 7b68f6a) ; déploiement GitHub Pages réussi.
