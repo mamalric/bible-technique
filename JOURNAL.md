@@ -2,6 +2,33 @@
 
 <!-- Dernière entrée en haut. Une entrée par session de travail ou par décision. Date au format AAAA-MM-JJ. -->
 
+## 2026-11-03 : fiches sorbonne et bases de la ventilation
+
+- Demande de l'utilisateur : une fiche sur le fonctionnement des sorbonnes, puis une fiche sur les bases de la ventilation, parce qu'il lui manque des bases pour comprendre. La fiche des bases part donc de zéro et la fiche sorbonne y renvoie. Elles ne viennent pas d'une affaire : pas de rubrique "vu sur les affaires".
+- Sources lues :
+  - code du travail, articles R4222-1 à R4222-21 (Légifrance) ;
+  - règlement sanitaire départemental, article 64, lu dans le document d'un département : chaque département a le sien, et le tableau est en l/s ;
+  - arrêté du 24 mars 1982 (Légifrance) ;
+  - INRS, guide ED 795 sur les sorbonnes (mars 2009) ;
+  - INRS, note sur le passage de personnes devant une sorbonne (Hygiène et sécurité du travail n° 284, septembre 2026) : elle a apporté les chiffres sur la distance de passage et sur les sorbonnes basse vitesse ;
+  - INRS, guide ED 695, lu dans l'édition de 2015 alors qu'une édition de septembre 2022 existe : à relire ;
+  - INRS, focus juridique de juillet 2025, pour le contrôle annuel.
+- Normes non lues : NF X 15-206 (version d'août 2023 en vigueur, celle de décembre 2022 annulée), NF X 15-211 et NF EN 14175. Ce que les fiches en disent vient de l'INRS, et la fiche sorbonne le signale.
+- Fiche `bases-ventilation` (domaines ventilation et méthode) :
+  - schéma `schemas/ventilation.js` à quatre leçons : pourquoi ventiler (CO2 selon le débit par personne), les quatre systèmes (signe de pression et sens de l'air sous la porte), débit et vitesse (V = Q/S, repère du tableau de l'ED 695), perte de charge (coudes, encrassement, point de fonctionnement, valeurs d'illustration) ;
+  - arbre "Quel débit d'air neuf ?" à sept verdicts ;
+  - vignette `ventilation` dans `bible.js`.
+- Fiche `sorbonne` (domaines ventilation et sécurité incendie) :
+  - schéma `schemas/sorbonne.js` : coupe de profil, débit constant, débit variable ou recirculation, curseur d'ouverture de la guillotine, essais de passage à 0,4 m et à 1 m, panne d'extraction ;
+  - arbre "Sorbonne, ou autre chose ?" à neuf verdicts ;
+  - vignette `sorbonne` dans `bible.js`.
+- Changement commun : l'aide du badge "Expert" dans `donnees/registre.js` couvre aussi les guides d'un organisme de référence comme l'INRS, puisque ces deux fiches s'appuient sur eux. Les fiches existantes n'en sont pas changées.
+- Badges : 44 affirmations dont 3 à vérifier pour les bases, 50 dont 0 à vérifier pour la sorbonne. Ce zéro ne veut pas dire que les normes ont été lues : leurs valeurs portent le badge "Expert" parce qu'elles viennent de l'INRS.
+- Contrôles :
+  - `node tests/verifier_bible.js` : 5 fiches, 0 erreur, 0 alerte ;
+  - dans le navigateur : les quatre leçons, les modes et essais de la sorbonne, tous les verdicts des deux arbres, la recherche à l'accueil ("sorbonne", "débit", "perte de charge", "R4222-6", "hotte"), les vignettes, le thème clair et 375 px sans défilement horizontal, console vide.
+- Reste à faire : publier les deux fiches sur accord de l'utilisateur ; remplir `CARTE.json`, restée au modèle vierge ; relire l'ED 695 dans son édition de 2022.
+
 ## 2026-10-29 : fiche locaux techniques et sous-station
 
 - Demande de l'utilisateur : une fiche très complète sur les locaux techniques et la sous-station, en sous-sol notamment, avec les définitions, les obligations et la sécurité incendie. Elle ne vient pas d'une affaire : pas de rubrique "vu sur les affaires".
