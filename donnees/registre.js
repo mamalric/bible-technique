@@ -46,11 +46,11 @@ window.BIBLE = {
     {
       id: "locaux-techniques",
       titre: "Locaux techniques et sous-station",
-      resume: "Chaufferie, sous-station, local électrique, groupe froid : ce qui les distingue, ce que la réglementation impose, et la sécurité incendie d'un local technique, surtout en sous-sol.",
+      resume: "Un cours en 11 étapes, puis la fiche : chaufferie, sous-station, local électrique, groupe froid. Ce qui les distingue, ce que la réglementation impose, et la sécurité incendie d'un local technique, surtout en sous-sol.",
       domaines: ["chauffage", "securite"],
       motscles: ["local technique", "sous-station", "chaufferie", "réseau de chaleur", "échangeur", "primaire", "secondaire", "eau surchauffée", "sous-sol", "local à risques importants", "local à risques moyens", "CO 28", "arrêt d'urgence", "ventilation haute et basse", "puisard", "TGBT", "salle des machines", "NF EN 378", "70 kW", "ICPE 2910"],
       vignette: "local",
-      maj: "2026-10-29"
+      maj: "2026-11-03"
     },
     {
       id: "bases-ventilation",

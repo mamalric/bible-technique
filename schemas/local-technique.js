@@ -330,4 +330,225 @@
 
     reinitialiser();
   };
+  /* ---------- dessins du cours (donnees/fiches/locaux-techniques.js) ---------- */
+  window.BIBLE_DESSINS = window.BIBLE_DESSINS || {};
+  window.BIBLE_ICONES = window.BIBLE_ICONES || {};
+
+  var STYLE_COURS =
+    ".ltc-t{fill:var(--encre-2);font-size:16px;font-family:inherit}" +
+    ".ltc-b{fill:var(--encre);font-size:17px;font-weight:700;font-family:inherit}" +
+    ".ltc-p{fill:var(--discret);font-size:15px;font-family:inherit}" +
+    ".ltc-tt{fill:var(--discret);font-size:12.5px;font-weight:700;letter-spacing:1.5px;font-family:inherit}" +
+    ".ltc-g{fill:var(--encre);font-size:26px;font-weight:800;font-family:inherit}" +
+    ".ltc-air,.ltc-ch,.ltc-fr{fill:none;stroke-width:5;stroke-linecap:round;stroke-dasharray:10 12;animation:ltc-flux 1.1s linear infinite}" +
+    ".ltc-air{stroke:var(--s-air)}.ltc-ch{stroke:var(--danger)}.ltc-fr{stroke:var(--s-air)}" +
+    "@keyframes ltc-flux{to{stroke-dashoffset:-22}}" +
+    ".ltc-tube{fill:none;stroke:var(--s-gaine-bord);stroke-width:9;stroke-linecap:round}" +
+    ".ltc-paroi{fill:var(--s-paroi);stroke:var(--encre-2);stroke-width:1.5}" +
+    ".ltc-cadre{fill:var(--carte);stroke:var(--s-gaine-bord);stroke-width:2.5}" +
+    ".ltc-boite{fill:var(--carte);stroke:var(--encre-2);stroke-width:2}" +
+    ".ltc-gaine{fill:var(--s-gaine);stroke:var(--s-gaine-bord);stroke-width:2}" +
+    ".ltc-rep{stroke:var(--discret);stroke-width:1.3}" +
+    ".ltc-boutons{display:flex;gap:8px;flex-wrap:wrap;align-items:center;width:100%}";
+
+  function ltcStyle() {
+    if (document.getElementById("ltc-style")) return;
+    var s = document.createElement("style");
+    s.id = "ltc-style"; s.textContent = STYLE_COURS;
+    document.head.appendChild(s);
+  }
+  function dessinSvg(h, aria, c) { return '<svg viewBox="0 0 560 ' + h + '" role="img" aria-label="' + aria + '">' + c + "</svg>"; }
+  function tx(x, y, s, cls, ancre, id) {
+    return '<text class="' + (cls || "ltc-t") + '" x="' + x + '" y="' + y + '"' + (ancre ? ' text-anchor="' + ancre + '"' : "") + (id ? ' id="' + id + '"' : "") + ">" + s + "</text>";
+  }
+  function fl(cls, d, id) { return '<path class="' + cls + '" d="' + (d || "") + '"' + (id ? ' id="' + id + '"' : "") + "/>"; }
+  function rep(x1, y1, x2, y2, txt, ancre) { return '<path class="ltc-rep" d="M' + x1 + " " + y1 + "L" + x2 + " " + y2 + '"/>' + tx(x2 + (ancre === "end" ? -4 : 4), y2 + 5, txt, "ltc-p", ancre); }
+  function flamme1(x, y, e) {
+    return '<g transform="translate(' + x + " " + y + ") scale(" + (e || 1) + ')"><path fill="var(--danger)" d="M0 0C-16 0-20-16-12-28C-10-20-6-18-4-20C-8-32-2-44 6-50C4-38 14-32 16-20C18-8 12 0 0 0z"/><path fill="var(--s-chaud)" d="M0 0C-8 0-10-8-6-14C-4-10 0-10 0-14C4-10 8-6 6-2C5 0 3 0 0 0z"/></g>';
+  }
+  function plaques2(x, y, l, h) {
+    var c = '<rect class="ltc-boite" x="' + x + '" y="' + y + '" width="' + l + '" height="' + h + '"/>';
+    for (var i = 1; i < 6; i++) c += '<path d="M' + (x + i * l / 6) + " " + (y + 4) + "V" + (y + h - 4) + '" stroke="var(--encre-2)" stroke-width="2.5"/>';
+    return c;
+  }
+  function monterCours(fn) {
+    return function (el, ctx) {
+      ltcStyle();
+      el.innerHTML = '<div class="schema-cadre"></div><div class="schema-commandes"></div><p class="schema-note"></p>';
+      var note = el.querySelector(".schema-note"), cmd = el.querySelector(".schema-commandes");
+      fn(el.querySelector(".schema-cadre"), cmd, function (texte, s, ref) { note.innerHTML = texte + " " + ctx.badge(s, ref); });
+      if (!cmd.children.length) cmd.parentNode.removeChild(cmd);
+      if (!note.textContent) note.parentNode.removeChild(note);
+    };
+  }
+
+  window.BIBLE_DESSINS.lt_quoi = monterCours(function (cadre) {
+    function loc(x, y, l, h, nom, nom2) { return '<rect class="ltc-gaine" x="' + x + '" y="' + y + '" width="' + l + '" height="' + h + '"/>' + tx(x + l / 2, y + h / 2 + (nom2 ? -2 : 5), nom, "ltc-t", "middle") + (nom2 ? tx(x + l / 2, y + h / 2 + 18, nom2, "ltc-t", "middle") : ""); }
+    cadre.innerHTML = dessinSvg(320, "Bâtiment en coupe : en toiture le traitement d'air et le groupe froid, en sous-sol la production de chaleur et le local électrique",
+      '<rect class="ltc-cadre" x="60" y="70" width="440" height="160"/><path class="ltc-rep" d="M60 124H500M60 178H500"/>' +
+      tx(280, 104, "bureaux, salles, circulations", "ltc-p", "middle") + tx(280, 158, "le public est ici", "ltc-p", "middle") + tx(280, 210, "et ici", "ltc-p", "middle") +
+      loc(90, 16, 150, 54, "traitement d'air") + loc(320, 16, 150, 54, "groupe froid") +
+      '<path d="M0 230H560" stroke="var(--encre-2)" stroke-width="4"/>' +
+      '<rect class="ltc-paroi" x="60" y="230" width="440" height="80"/>' +
+      loc(78, 240, 190, 60, "chaufferie ou", "sous-station") + loc(292, 240, 190, 60, "local électrique"));
+  });
+
+  window.BIBLE_ICONES.chaudiere = '<svg viewBox="0 0 64 64" width="56" height="56" aria-hidden="true" fill="none" stroke="var(--encre-2)" stroke-width="2.5"><rect x="14" y="10" width="36" height="46"/><path fill="var(--s-chaud)" stroke="none" d="M32 48c-8 0-10-8-5-14 1 3 3 3 3 1-1-5 2-9 5-11-1 5 5 8 6 14 1 6-3 10-9 10z"/></svg>';
+  window.BIBLE_ICONES.echange = '<svg viewBox="0 0 64 64" width="56" height="56" aria-hidden="true" fill="none" stroke-width="3"><rect x="20" y="10" width="24" height="44" stroke="var(--encre-2)"/><path d="M28 10v44M36 10v44" stroke="var(--encre-2)"/><path d="M4 20h16M20 44H4" stroke="var(--danger)"/><path d="M44 20h16M60 44H44" stroke="var(--s-air)"/></svg>';
+  window.BIBLE_ICONES.eclair = '<svg viewBox="0 0 64 64" width="56" height="56" aria-hidden="true" fill="var(--s-chaud)" stroke="var(--encre-2)" stroke-width="2"><path d="M36 6L14 36h14l-4 22 24-32H32z"/></svg>';
+  window.BIBLE_ICONES.froid = '<svg viewBox="0 0 64 64" width="56" height="56" aria-hidden="true" fill="none" stroke="var(--s-air)" stroke-width="3" stroke-linecap="round"><path d="M32 8v48M11 20l42 24M53 20L11 44"/><path d="M26 12l6 6 6-6M26 52l6-6 6 6"/></svg>';
+  window.BIBLE_ICONES.cta = '<svg viewBox="0 0 64 64" width="56" height="56" aria-hidden="true" fill="none" stroke="var(--encre-2)" stroke-width="2.5"><rect x="6" y="18" width="52" height="28"/><path d="M20 18v28M40 18v28"/><circle cx="30" cy="32" r="7"/><path stroke="var(--s-air)" d="M46 32h8"/></svg>';
+  function ico_t(n) {
+    return '<svg viewBox="0 0 64 64" width="56" height="56" aria-hidden="true" fill="none" stroke="var(--encre-2)" stroke-width="2.5"><path d="M26 10a6 6 0 0 1 12 0v28a12 12 0 1 1-12 0z"/><circle cx="32" cy="48" r="7" fill="var(--danger)" stroke="none"/><rect x="29.5" y="' + (40 - n * 7) + '" width="5" height="' + (n * 7 + 4) + '" fill="var(--danger)" stroke="none"/></svg>';
+  }
+  window.BIBLE_ICONES.t1 = ico_t(1);
+  window.BIBLE_ICONES.t2 = ico_t(2);
+  window.BIBLE_ICONES.t3 = ico_t(3);
+  window.BIBLE_ICONES.t4 = ico_t(4);
+  function ico_l(s) { return '<svg viewBox="0 0 64 64" width="56" height="56" aria-hidden="true"><rect x="8" y="8" width="48" height="48" rx="6" fill="none" stroke="var(--encre-2)" stroke-width="2.5"/><text x="32" y="44" text-anchor="middle" font-size="34" font-weight="800" fill="var(--encre)">' + s + "</text></svg>"; }
+  window.BIBLE_ICONES.a = ico_l("a");
+  window.BIBLE_ICONES.b = ico_l("b");
+  window.BIBLE_ICONES.c = ico_l("c");
+
+  window.BIBLE_DESSINS.lt_chaufferie = monterCours(function (cadre) {
+    cadre.innerHTML = dessinSvg(340, "Chaufferie en coupe : chaudière et flamme, fumées vers le haut, air entrant en bas et sortant en haut, coupures hors du local, parois coupe-feu 2 heures",
+      '<rect class="ltc-paroi" x="60" y="30" width="400" height="14"/><rect class="ltc-paroi" x="60" y="290" width="400" height="14"/>' +
+      '<rect class="ltc-paroi" x="60" y="44" width="14" height="246"/><rect class="ltc-paroi" x="446" y="44" width="14" height="136"/><rect class="ltc-paroi" x="446" y="250" width="14" height="40"/>' +
+      '<rect class="ltc-boite" x="230" y="130" width="120" height="160"/>' + flamme1(290, 276, 1.1) +
+      '<rect class="ltc-gaine" x="278" y="10" width="24" height="120"/>' + fl("ltc-ch", "M290 124V6") +
+      fl("ltc-air", "M4 260H200") + fl("ltc-air", "M340 70H410V10") + '<rect x="60" y="248" width="14" height="24" fill="var(--carte)"/>' +
+      '<path d="M446 180V250" stroke="var(--encre)" stroke-width="5"/><path d="M446 250l50-22" stroke="var(--encre)" stroke-width="4"/>' +
+      '<rect x="490" y="50" width="56" height="44" rx="4" fill="var(--danger)"/>' + tx(518, 78, "OFF", "ltc-b", "middle") +
+      tx(518, 114, "coupures", "ltc-p", "middle") + tx(518, 134, "dehors", "ltc-p", "middle") + tx(510, 272, "porte", "ltc-p", "middle") +
+      tx(80, 248, "air", "ltc-p") + tx(350, 60, "air", "ltc-p") + tx(308, 24, "fumées", "ltc-p") +
+      tx(80, 110, "parois et", "ltc-t") + tx(80, 130, "plancher", "ltc-t") + tx(80, 150, "coupe-feu 2 h", "ltc-b") + tx(290, 326, "chaudière", "ltc-p", "middle"));
+  });
+
+  window.BIBLE_DESSINS.lt_reseau = monterCours(function (cadre) {
+    function immeuble(x) {
+      return '<rect class="ltc-cadre" x="' + x + '" y="30" width="96" height="110"/><rect class="ltc-boite" x="' + (x + 28) + '" y="146" width="40" height="30"/>' +
+        fl("ltc-ch", "M" + (x + 40) + " 146V60") + fl("ltc-fr", "M" + (x + 56) + " 60V146") + tx(x + 48, 24, "immeuble", "ltc-p", "middle");
+    }
+    cadre.innerHTML = dessinSvg(310, "Réseau de chaleur : une production, un primaire aller et retour, des sous-stations, et le secondaire dans chaque immeuble",
+      '<path d="M0 142H560" stroke="var(--encre-2)" stroke-width="3"/>' +
+      immeuble(240) + immeuble(420) +
+      '<rect class="ltc-boite" x="20" y="60" width="120" height="82"/>' + flamme1(80, 134, 0.8) + tx(80, 54, "production", "ltc-b", "middle") +
+      fl("ltc-ch", "M80 142V210H448V178") + fl("ltc-ch", "M268 210V178") + fl("ltc-fr", "M464 178V240H100V142") + fl("ltc-fr", "M284 178V240") +
+      tx(280, 268, "primaire : aller chaud, retour refroidi", "ltc-t", "middle") +
+      rep(266, 160, 206, 164, "sous-station", "end") + rep(296, 100, 346, 88, "secondaire") + tx(280, 298, "l'échangeur sépare les deux", "ltc-p", "middle"));
+  });
+
+  window.BIBLE_DESSINS.lt_echangeur = monterCours(function (cadre) {
+    cadre.innerHTML = dessinSvg(310, "Échangeur de sous-station : à gauche le primaire chaud entre et ressort refroidi, à droite le secondaire froid entre et ressort chaud, sans se mélanger",
+      tx(90, 28, "PRIMAIRE", "ltc-tt", "middle") + tx(470, 28, "SECONDAIRE", "ltc-tt", "middle") + tx(280, 28, "ÉCHANGEUR", "ltc-tt", "middle") +
+      '<path class="ltc-tube" d="M20 80H210M20 200H210M350 80H540M350 200H540"/>' +
+      plaques2(210, 46, 140, 188) +
+      fl("ltc-ch", "M24 80H204") + fl("ltc-fr", "M204 200H24") + fl("ltc-ch", "M356 80H536") + fl("ltc-fr", "M536 200H356") +
+      tx(100, 66, "arrive chaud", "ltc-p", "middle") + tx(100, 232, "repart refroidi", "ltc-p", "middle") + tx(450, 66, "repart chaud", "ltc-p", "middle") + tx(450, 232, "arrive refroidi", "ltc-p", "middle") +
+      '<circle cx="130" cy="150" r="22" fill="var(--carte)" stroke="var(--encre-2)" stroke-width="2.5"/>' + tx(130, 156, "kWh", "ltc-p", "middle") + '<path class="ltc-rep" d="M130 172V192"/>' +
+      tx(40, 120, "compteur", "ltc-p") +
+      tx(280, 270, "les eaux ne se touchent jamais", "ltc-b", "middle") + tx(280, 296, "la chaleur passe à travers les plaques", "ltc-p", "middle"));
+  });
+
+  window.BIBLE_DESSINS.lt_elec = monterCours(function (cadre) {
+    function bloc(x, l, a, b, acc) { return '<rect x="' + x + '" y="88" width="' + l + '" height="84" rx="6" fill="var(--carte)" stroke="' + (acc ? "var(--accent)" : "var(--encre-2)") + '" stroke-width="' + (acc ? 3 : 2) + '"/>' + tx(x + l / 2, 124, a, "ltc-b", "middle") + tx(x + l / 2, 150, b, "ltc-p", "middle"); }
+    cadre.innerHTML = dessinSvg(250, "Chemin de l'électricité : réseau du distributeur, poste de transformation, TGBT, tableaux des étages",
+      bloc(16, 110, "Réseau", "haute tension") + bloc(158, 110, "Poste", "il transforme") + bloc(300, 110, "TGBT", "il distribue", 1) + bloc(442, 106, "Tableaux", "des étages") +
+      fl("ltc-ch", "M126 130H156") + fl("ltc-ch", "M268 130H298") + fl("ltc-ch", "M410 130H440") +
+      tx(213, 60, "haute tension en entrée", "ltc-p", "middle") + tx(355, 60, "basse tension", "ltc-p", "middle") +
+      '<path class="ltc-rep" d="M213 66V86M355 66V86"/>' + tx(280, 214, "chaque local a son isolement selon ses matériels", "ltc-t", "middle"));
+  });
+
+  window.BIBLE_DESSINS.lt_froid = monterCours(function (cadre) {
+    cadre.innerHTML = dessinSvg(330, "Salle des machines en coupe : groupe froid, fuite qui s'étale au sol, détecteur en point bas, deux orifices vers l'extérieur à des hauteurs différentes",
+      '<rect class="ltc-paroi" x="40" y="26" width="440" height="14"/><rect class="ltc-paroi" x="40" y="280" width="440" height="14"/><rect class="ltc-paroi" x="40" y="40" width="14" height="240"/>' +
+      '<rect class="ltc-paroi" x="466" y="40" width="14" height="40"/><rect class="ltc-paroi" x="466" y="108" width="14" height="110"/><rect class="ltc-paroi" x="466" y="246" width="14" height="34"/>' +
+      '<rect class="ltc-boite" x="130" y="130" width="170" height="130"/><rect x="178" y="260" width="22" height="20" fill="var(--s-gaine-bord)"/>' + tx(215, 194, "groupe froid", "ltc-t", "middle") +
+      '<path d="M180 276H440" stroke="var(--s-chaud)" stroke-width="8" stroke-linecap="round" stroke-dasharray="4 10"/>' +
+      '<circle cx="430" cy="258" r="12" fill="var(--carte)" stroke="var(--danger)" stroke-width="3"/><path d="M430 250v8" stroke="var(--danger)" stroke-width="3"/>' +
+      fl("ltc-air", "M380 94H540") + fl("ltc-air", "M540 232H390") +
+      rep(466, 80, 432, 62, "orifice haut", "end") + rep(466, 220, 432, 170, "orifice bas", "end") +
+      rep(420, 258, 380, 200, "détecteur", "end") + tx(310, 314, "une fuite peut s'étaler au ras du sol", "ltc-p", "middle"));
+  });
+
+  window.BIBLE_DESSINS.lt_risques = monterCours(function (cadre) {
+    function col(x, nom, ep, p1, p2, p3) {
+      return tx(x + 80, 30, nom, "ltc-b", "middle") + '<rect class="ltc-gaine" x="' + (x + 30) + '" y="50" width="100" height="100"/>' +
+        (ep ? '<rect x="' + (x + 30) + '" y="50" width="100" height="100" fill="none" stroke="var(--danger)" stroke-width="' + ep + '"/>' : "") +
+        tx(x + 80, 186, p1, "ltc-t", "middle") + tx(x + 80, 212, p2, "ltc-p", "middle") + tx(x + 80, 234, p3, "ltc-p", "middle");
+    }
+    cadre.innerHTML = dessinSvg(250, "Trois niveaux de risque : importants avec une paroi très épaisse, moyens avec une paroi plus fine, courants sans isolement particulier",
+      col(10, "Importants", 14, "coupe-feu 2 h", "communication 1 h", "avec ferme-porte") +
+      col(195, "Moyens", 7, "coupe-feu 1 h", "porte 1/2 h", "avec ferme-porte") +
+      col(380, "Courants", 0, "rien de particulier", "", ""));
+  });
+
+  window.BIBLE_DESSINS.lt_traversees = monterCours(function (cadre) {
+    cadre.innerHTML = dessinSvg(320, "Paroi coupe-feu vue en coupe, traversée par une gaine avec clapet, et un tuyau avec rebouchage ; une porte avec ferme-porte",
+      '<rect class="ltc-paroi" x="256" y="20" width="44" height="280"/>' +
+      tx(120, 36, "local à risques", "ltc-b", "middle") + tx(440, 36, "le reste du bâtiment", "ltc-b", "middle") +
+      '<rect class="ltc-gaine" x="60" y="66" width="440" height="52"/><rect x="240" y="62" width="76" height="60" fill="var(--s-gaine)" stroke="var(--encre-2)" stroke-width="3"/>' +
+      '<path d="M278 66V118" stroke="var(--danger)" stroke-width="6"/>' + rep(316, 92, 356, 142, "clapet") +
+      '<path class="ltc-tube" d="M60 186H500"/><rect x="256" y="172" width="44" height="28" fill="var(--s-chaud)" fill-opacity=".8"/>' + rep(290, 200, 356, 222, "rebouchage") + tx(100, 174, "tuyau", "ltc-p") +
+      '<rect x="256" y="240" width="44" height="60" fill="var(--carte)" stroke="var(--encre)" stroke-width="2.5"/>' + '<path d="M278 240l-56-26" stroke="var(--encre-2)" stroke-width="3"/>' +
+      tx(214, 236, "ferme-porte", "ltc-p", "end") + rep(256, 280, 190, 280, "porte coupe-feu", "end") +
+      '<path d="M0 300H560" stroke="var(--encre-2)" stroke-width="3"/>');
+  });
+
+  window.BIBLE_DESSINS.lt_air_eau = monterCours(function (cadre, commandes, dire) {
+    cadre.innerHTML = dessinSvg(320, "Local technique en coupe : l'air entre en bas et sort en haut, un seuil et un puisard retiennent l'eau",
+      '<rect class="ltc-paroi" x="50" y="20" width="460" height="14"/><rect class="ltc-paroi" x="50" y="34" width="14" height="30"/><rect class="ltc-paroi" x="50" y="100" width="14" height="110"/><rect class="ltc-paroi" x="50" y="246" width="14" height="30"/>' +
+      '<rect class="ltc-paroi" x="496" y="34" width="14" height="242"/><rect class="ltc-paroi" x="50" y="276" width="460" height="14"/>' +
+      '<g id="lt-a-ch">' + '<rect class="ltc-boite" x="210" y="130" width="130" height="146"/>' + flamme1(275, 268, 1) + '<rect class="ltc-gaine" x="264" y="34" width="22" height="96"/>' + tx(275, 118, "chaudière", "ltc-p", "middle") + "</g>" +
+      '<g id="lt-a-ss">' + plaques2(210, 146, 130, 110) + '<path d="M210 256H340" stroke="none"/>' + tx(275, 134, "échangeur", "ltc-p", "middle") + "</g>" +
+      fl("ltc-air", "M0 228H180") + fl("ltc-air", "M170 82H0") + tx(80, 218, "air qui entre", "ltc-p") + tx(80, 72, "air qui sort", "ltc-p") +
+      '<rect x="64" y="262" width="432" height="14" fill="var(--s-air)" fill-opacity=".5"/>' + '<path d="M410 276v-24" stroke="var(--encre-2)" stroke-width="5"/>' +
+      '<rect x="424" y="276" width="52" height="36" fill="var(--s-air)" fill-opacity=".55" stroke="var(--encre-2)" stroke-width="2"/>' +
+      rep(410, 252, 424, 206, "seuil") + tx(428, 230, "0,15 m", "ltc-p") + rep(424, 296, 396, 308, "puisard", "end"));
+    commandes.innerHTML = '<div class="ltc-boutons"><button class="bouton" type="button" data-m="ch">Chaufferie</button><button class="bouton" type="button" data-m="ss">Sous-station</button></div>';
+    function choisir(m) {
+      cadre.querySelector("#lt-a-ch").style.display = m === "ch" ? "" : "none";
+      cadre.querySelector("#lt-a-ss").style.display = m === "ss" ? "" : "none";
+      Array.prototype.forEach.call(commandes.querySelectorAll("button"), function (b) { b.classList.toggle("actif", b.getAttribute("data-m") === m); });
+      if (m === "ch") dire("Une chaufferie consomme de l'air pour brûler : ventilation basse et haute.", "texte", "arrêté du 23 juin 1978, titre I");
+      else dire("Une sous-station ne brûle rien : sa ventilation sert à limiter la température du local.", "texte", "arrêté du 23 juin 1978, articles 27 et 28");
+    }
+    commandes.addEventListener("click", function (e) { var b = e.target.closest("button[data-m]"); if (b) choisir(b.getAttribute("data-m")); });
+    choisir("ss");
+  });
+
+  window.BIBLE_DESSINS.lt_soussol = monterCours(function (cadre, commandes, dire) {
+    cadre.innerHTML = dessinSvg(320, "Sous-station en sous-sol : selon la température du primaire, l'accès se fait par l'intérieur ou directement par l'extérieur",
+      '<path d="M0 110H560" stroke="var(--encre-2)" stroke-width="4"/><rect class="ltc-cadre" x="180" y="20" width="340" height="90"/>' + tx(350, 72, "le bâtiment", "ltc-p", "middle") +
+      '<rect class="ltc-paroi" x="170" y="110" width="360" height="14"/><rect class="ltc-paroi" x="170" y="290" width="360" height="14"/><rect class="ltc-paroi" x="170" y="124" width="14" height="166"/><rect class="ltc-paroi" x="516" y="124" width="14" height="166"/>' +
+      plaques2(330, 180, 120, 110) + tx(390, 168, "échangeur", "ltc-p", "middle") +
+      '<g id="lt-s-ext"><path d="M70 110L170 240H184" fill="none" stroke="var(--accent)" stroke-width="5" stroke-linecap="round"/><path d="M58 110h26M92 142h26M122 180h26" stroke="var(--encre-2)" stroke-width="3"/>' + tx(70, 96, "accès direct", "ltc-b", "middle") +
+      '<rect x="20" y="30" width="44" height="44" rx="4" fill="var(--danger)"/>' + tx(42, 58, "OFF", "ltc-b", "middle") + tx(72, 58, "coupures", "ltc-p") + "</g>" +
+      '<g id="lt-s-int"><path d="M240 110V200" stroke="var(--accent)" stroke-width="5" stroke-linecap="round"/><path d="M224 136h32M224 160h32M224 184h32" stroke="var(--encre-2)" stroke-width="3"/>' + tx(240, 94, "accès par l'intérieur", "ltc-b", "middle") + "</g>" +
+      fl("ltc-tube", "M0 200H184") + fl("ltc-ch", "", "lt-s-p") + '<path d="M184 200H330" fill="none" stroke="var(--s-gaine-bord)" stroke-width="9"/>' + fl("ltc-ch", "M190 200H326") +
+      tx(70, 226, "primaire", "ltc-p", "middle"));
+    commandes.innerHTML = '<div class="ltc-boutons"><button class="bouton" type="button" data-m="bas">Eau chaude, 110 °C au plus</button><button class="bouton" type="button" data-m="haut">Plus de 110 °C, ou vapeur</button></div>';
+    function choisir(m) {
+      var haut = m === "haut";
+      cadre.querySelector("#lt-s-ext").style.display = haut ? "" : "none";
+      cadre.querySelector("#lt-s-int").style.display = haut ? "none" : "";
+      cadre.querySelector("#lt-s-p").setAttribute("d", "M6 200H178");
+      Array.prototype.forEach.call(commandes.querySelectorAll("button"), function (b) { b.classList.toggle("actif", b.getAttribute("data-m") === m); });
+      if (haut) dire("Accès direct par l'extérieur, et coupures du primaire et de l'électricité depuis dehors.", "texte", "arrêté du 23 juin 1978, articles 22 et 29");
+      else dire("L'accès par l'intérieur reste possible : il n'est pas imposé par l'extérieur à cette température.", "expert", "Cerema, guide de raccordement des copropriétés aux réseaux de chaleur, juillet 2019, paragraphe 4.1.2");
+    }
+    commandes.addEventListener("click", function (e) { var b = e.target.closest("button[data-m]"); if (b) choisir(b.getAttribute("data-m")); });
+    choisir("bas");
+  });
+
+  window.BIBLE_DESSINS.lt_exemple = monterCours(function (cadre) {
+    function ligne(n, y, q, r, dernier) {
+      return '<circle cx="34" cy="' + y + '" r="16" fill="var(--carte)" stroke="var(--encre-2)" stroke-width="2"/>' + tx(34, y + 5, n, "ltc-b", "middle") +
+        tx(62, y + 5, q, "ltc-t") + tx(530, y + 5, r, "ltc-b", "end") + (dernier ? "" : '<path class="ltc-rep" d="M34 ' + (y + 16) + "V" + (y + 34) + '"/>');
+    }
+    cadre.innerHTML = dessinSvg(300, "Les questions de l'exemple : nom du local, puissance, température, ventilation, degré coupe-feu",
+      ligne(1, 30, "Une flamme ?", "non : sous-station") + ligne(2, 80, "Plus de 70 kW ?", "oui : titre II") + ligne(3, 130, "Plus de 110 °C ?", "non") +
+      ligne(4, 180, "Degré coupe-feu ?", "à décider, à écrire") + ligne(5, 230, "Limite du réseau ?", "à écrire", 1) +
+      tx(280, 286, "dans le CCTP et la notice de sécurité", "ltc-p", "middle"));
+  });
 })();
