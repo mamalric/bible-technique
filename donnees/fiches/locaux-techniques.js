@@ -224,7 +224,7 @@ window.BIBLE_FICHE = {
   ],
 
   pieges: [
-    { t: "Lire une ancienne version des textes : le chapitre CH du règlement ERP a été réécrit (version du 1er janvier 2026), le chapitre GZ aussi, et l'arrêté du 22 mars 2026 remplace celui de 2004 sur la résistance au feu. Prendre la version applicable à la date du dossier.", s: "texte", ref: "arrêté du 1er septembre 2025 (CH) ; arrêté du 23 février 2025 (GZ) ; arrêté du 22 mars 2026" },
+    { t: "Lire une ancienne version des textes : le chapitre CH du règlement ERP a été réécrit (version du 1er janvier 2026), le chapitre GZ aussi, et l'arrêté du 22 mars 2026 remplace celui de 2004 sur la résistance au feu, pour les demandes déposées depuis le 1er octobre 2026. À venir : CO 28 et EL 5 changent pour les demandes déposées à partir du 1er juin 2027. Prendre la version applicable à la date du dossier.", s: "texte", ref: "arrêté du 1er septembre 2025 (CH) ; arrêté du 23 février 2025 (GZ) ; arrêté du 22 mars 2026 ; arrêté du 19 février 2026" },
     { t: "Chercher dans les textes le degré coupe-feu d'une sous-station : il n'y en a pas. Le fixer avec le type d'ERP, la notice de sécurité et le réseau (souvent CF 2 h au-delà de 110 °C), et l'écrire.", s: "verifier", ref: "constat sur l'arrêté de 1978 (titre II) et l'article CH 11 ; exigence relevée dans des prescriptions de réseaux" },
     { t: "Traiter une sous-station comme une chaufferie, ou l'inverse : on impose un air de combustion inutile, ou on oublie l'isolement CF 2 h d'une vraie chaufferie.", s: "verifier" },
     { t: "Chaufferie au gaz en sous-sol d'un immeuble d'habitation : les emplacements de production d'énergie au gaz y sont interdits.", s: "texte", ref: "arrêté du 23 février 2018, article 8.2.2.2" },

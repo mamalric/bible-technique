@@ -439,7 +439,7 @@
         if (coupe) dire("Le câble est coupé et rien ne se voit : le clapet reste ouvert, et l'ordre n'arrivera pas. Il ne reste que son fusible.", "verifier");
         else if (ordre) dire("L'impulsion du CMSI a fermé le clapet.", "fabricant", CCM);
         else dire("Au repos, aucun courant : le clapet attend une impulsion du CMSI.", "fabricant", CCM);
-      } else if (coupe) dire("Câble coupé, courant coupé : le clapet se ferme. C'est la sécurité positive.", "norme", "NF S 61-937-1, citée par des documents de fabricants");
+      } else if (coupe) dire("Câble coupé, courant coupé : le clapet se ferme. C'est la sécurité positive.", "norme", "NF S 61-937-1 de décembre 2003, citée par des certificats et procès-verbaux de DAS");
       else if (ordre) dire("Le CMSI a coupé le courant : le clapet s'est fermé.", "fabricant", CCM);
       else dire("Un courant permanent tient le clapet ouvert.", "fabricant", CCM);
     }

@@ -1,7 +1,7 @@
 /* Fiche : ERP, établissement recevant du public (type et catégorie).
    Chaque affirmation : { t: texte, s: type de source (voir registre.js), ref: référence }.
    "comme" et "retenir" ne portent pas de badge : "comme" est une image sans chiffre ni règle, "retenir" redit une ligne badgée de l'étape.
-   Textes lus en novembre 2026 sur Légifrance : GN 1, GN 2, PE 1 à PE 4, N 2, W 2, GE 4 et CCH R143-34 à R143-44.
+   Textes lus en novembre 2026 sur Légifrance : GN 1, GN 2, PE 1 à PE 4, M 2, N 2, W 2, GE 4 et CCH R143-34 à R143-44.
    Site public : aucun nom d'affaire, de client, d'entreprise ni de personne. */
 
 window.BIBLE_FICHE = {
@@ -62,7 +62,7 @@ window.BIBLE_FICHE = {
             { t: "<b>Restaurant</b> : 2 personnes par m² debout, 3 par m² en file d'attente. Assis : le nombre de places déclaré, limité à une personne pour 2 m² ; sans déclaration, une personne par m².", s: "texte", ref: "arrêté du 25 juin 1980, article N 2, version de février 2022" },
             { t: "<b>Bureaux</b> : la déclaration du maître d'ouvrage. À défaut, une personne pour 10 m² de locaux aménagés pour recevoir du public, ou une pour 100 m² de plancher si ces aménagements ne sont pas prévus.", s: "texte", ref: "arrêté du 25 juin 1980, article W 2" },
             { t: "<b>Enseignement, bibliothèque, sport couvert, plein air</b> : déclaration du chef d'établissement ou du maître d'ouvrage.", s: "expert", ref: "préfecture de la Vienne, document sur les types d'ERP" },
-            { t: "<b>Magasin</b> : une densité par niveau, sur la surface de vente. Repère relevé : une personne pour 3 m² en sous-sol, au rez-de-chaussée et au 1er étage. À lire dans la version en vigueur.", s: "verifier", ref: "article M 2 réécrit par l'arrêté du 13 juin 2017, lu seulement dans des synthèses" },
+            { t: "<b>Magasin</b> : une personne pour 3 m² de surface de vente en sous-sol, au rez-de-chaussée et au 1er étage, pour 6 m² au 2e étage, pour 15 m² au-dessus. Faible densité de public : une pour 9 m², à tous les niveaux. Centre commercial : une pour 5 m² de mail, une pour 6 m² dans une boutique de moins de 300 m².", s: "texte", ref: "arrêté du 25 juin 1980, article M 2, version de décembre 2017" },
             { t: "Le <b>personnel</b> compte à part : seul s'ajoute celui qui n'a pas de <b>dégagements</b>, c'est-à-dire de passages pour sortir, indépendants de ceux du public.", s: "texte", ref: "arrêté du 25 juin 1980, article GN 1" }
           ],
           calcul: [
@@ -198,7 +198,7 @@ window.BIBLE_FICHE = {
 
   references: [
     { s: "texte", t: "Code de la construction et de l'habitation, partie réglementaire, articles R143-1 à R143-47 (ex-R123-1 et suivants) : R143-2 pour la définition, R143-19 pour les catégories, R143-34 à R143-44 pour le contrôle et l'ouverture." },
-    { s: "texte", t: "Règlement de sécurité contre les risques d'incendie et de panique dans les ERP, arrêté du 25 juin 1980 modifié : généralités (GN 1, GN 2), contrôle (GE 4), dispositions communes (CO...) et dispositions propres à chaque type (N 2, W 2...). Article M 2 réécrit en 2017, à lire dans sa version en vigueur." },
+    { s: "texte", t: "Règlement de sécurité contre les risques d'incendie et de panique dans les ERP, arrêté du 25 juin 1980 modifié : généralités (GN 1, GN 2), contrôle (GE 4), dispositions communes (CO...) et dispositions propres à chaque type (M 2, N 2, W 2...)." },
     { s: "texte", t: "Arrêté du 22 juin 1990 modifié : dispositions applicables aux ERP de 5e catégorie (articles PE). Tableau des seuils à l'article PE 2, version en vigueur depuis le 1er janvier 2026 (arrêté du 1er décembre 2025)." },
     { s: "expert", t: "Pour apprendre : supports de formation de la DREAL Normandie sur le classement et le contrôle des ERP ; document de la préfecture de la Vienne sur les types d'ERP et le calcul de l'effectif ; guide de l'exploitant de la préfecture de l'Aude (2016)." },
     { s: "texte", t: "Arrêté du 20 avril 2017 : accessibilité des ERP neufs aux personnes handicapées, un autre volet de la réglementation des ERP." }

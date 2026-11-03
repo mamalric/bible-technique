@@ -39,7 +39,7 @@ window.BIBLE = {
       titre: "ERP : type et catégorie",
       resume: "Un cours en 9 étapes, puis la fiche : établissement recevant du public, la lettre dit l'activité, le chiffre dit l'effectif. Comment compter et classer de la 5e à la 1re catégorie.",
       domaines: ["securite", "methode"],
-      motscles: ["ERP", "établissement recevant du public", "catégorie", "type", "effectif", "5e catégorie", "1er groupe", "2e groupe", "PE", "GN", "commission de sécurité", "notice de sécurité", "unité de passage", "IGH", "dégagement", "visite de réception", "registre de sécurité", "seuil"],
+      motscles: ["ERP", "établissement recevant du public", "catégorie", "type", "effectif", "5e catégorie", "1er groupe", "2e groupe", "PE", "GN", "commission de sécurité", "notice de sécurité", "unité de passage", "IGH", "dégagement", "visite de réception", "registre de sécurité", "seuil", "surface de vente"],
       vignette: "erp",
       maj: "2026-11-03"
     },
