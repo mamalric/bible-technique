@@ -27,7 +27,8 @@
 - Contrôles :
   - `node tests/verifier_bible.js` : 5 fiches, 0 erreur, 0 alerte ;
   - dans le navigateur : toutes les étapes des deux cours, leurs dessins et commandes, les boutons précédent et suivant, le sommaire, un lien direct vers une étape, l'arbre, la recherche à l'accueil ("échangeur", "hélicoïde", "CTA", "guillotine"), les thèmes clair et sombre, 375 px sans défilement horizontal sur chaque étape, console vide.
-- Reste à faire : publier les deux fiches sur accord de l'utilisateur ; remplir `CARTE.json`, restée au modèle vierge ; relire l'ED 695 dans son édition de 2022.
+- Publication : les deux fiches et leurs cours sont mis en ligne le 2026-11-03, sur accord de l'utilisateur : `main` avancé sur `dev`, poussé avec le compte `mamalric`.
+- Reste à faire : remplir `CARTE.json`, restée au modèle vierge ; relire l'ED 695 dans son édition de 2022.
 
 ## 2026-11-03 : fiches sorbonne et bases de la ventilation
 
