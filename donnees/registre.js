@@ -55,9 +55,9 @@ window.BIBLE = {
     {
       id: "bases-ventilation",
       titre: "Les bases de la ventilation",
-      resume: "Pourquoi on renouvelle l'air, comment il se déplace, et ce que veulent dire débit, dépression et perte de charge. Quatre leçons à manipuler, sans prérequis.",
+      resume: "Un cours en 17 étapes pour débutant, chaque mot expliqué : pourquoi on change l'air, ce que veulent dire débit, pression et perte de charge, et comment tout ça se calcule.",
       domaines: ["ventilation", "methode"],
-      motscles: ["ventilation", "VMC", "air neuf", "air vicié", "air recyclé", "débit", "vitesse", "section", "pression", "dépression", "surpression", "perte de charge", "simple flux", "double flux", "ventilateur", "point de fonctionnement", "compensation", "CO2", "R4222-6", "RSD", "article 64", "pollution spécifique", "bases", "débutant", "arrêté de 1982"],
+      motscles: ["ventilation", "VMC", "air neuf", "air vicié", "air recyclé", "débit", "vitesse", "section", "pression", "dépression", "surpression", "perte de charge", "simple flux", "double flux", "ventilateur", "point de fonctionnement", "compensation", "CO2", "R4222-6", "RSD", "article 64", "pollution spécifique", "bases", "débutant", "arrêté de 1982", "cours", "filtre", "batterie", "gaine", "bouche", "registre", "échangeur", "CTA", "hélicoïde", "centrifuge", "pascal", "ppm", "taux de renouvellement", "balayage", "captage", "dilution", "détalonnage", "dossier d'installation"],
       vignette: "ventilation",
       maj: "2026-11-03"
     },
