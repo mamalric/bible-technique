@@ -2,6 +2,33 @@
 
 <!-- Dernière entrée en haut. Une entrée par session de travail ou par décision. Date au format AAAA-MM-JJ. -->
 
+## 2026-11-03 : cours pour débutant dans les fiches bases de la ventilation et sorbonne
+
+- Retour de l'utilisateur sur les deux fiches du jour : trop légères, il faut le considérer comme débutant et tout réexpliquer. La fiche des bases devient un vrai cours, et la fiche sorbonne reçoit le sien.
+- Moule : nouvelle rubrique facultative `cours` dans `bible.js`, `bible.css` et `tests/verifier_bible.js`.
+  - Une étape à la fois, avec des numéros cliquables, un sommaire, un bouton vers l'étape suivante. Le lien `fiche.html?f=<fiche>#<étape>` ouvre une étape précise, et le navigateur retient la dernière étape vue.
+  - Une étape peut avoir une introduction, un dessin (`BIBLE_DESSINS`, dans le fichier du schéma), des lignes, des tuiles avec icône (`BIBLE_ICONES`), un calcul pas à pas, une image pour se représenter la notion, et une phrase à retenir.
+  - Le vérificateur contrôle chaque étape et compte ses affirmations. "comme" et "retenir" ne portent pas de badge : le premier est une image sans chiffre ni règle, le second redit une ligne badgée de l'étape.
+  - Les fiches clapet, ERP et locaux techniques n'ont pas de cours et ne changent pas : contrôlé dans le navigateur.
+- Fiche `bases-ventilation` : cours de 17 étapes en quatre parties (pourquoi ventiler, comment ça marche, dimensionner, en pratique), et un exemple complet sur une salle de réunion de 12 personnes.
+  - `schemas/ventilation.js` est réécrit. Le schéma de tête suit l'air de dehors à dehors, pièce par pièce, en 11 pastilles. Les quatre anciennes leçons deviennent des dessins d'étape, redessinés pour rester lisibles sur téléphone, avec dix autres dessins et un dictionnaire de pièces en icônes.
+  - La jauge de CO2 utilise maintenant les chiffres de l'INRS (20,2 l/h, 400 ppm dehors), au lieu de l'hypothèse de 16 l/h du premier jet : le minimum légal de 25 m³/h y donne environ 1 200 ppm.
+- Sources ajoutées pour ce cours :
+  - INRS, note NT 92 (Hygiène et sécurité du travail n° 264, septembre 2021) : l'origine du 25 m³/h (circulaire de 1985 : 16,2 l/h, 300 ppm dehors, soit 23 m³/h) et son actualisation à 34 m³/h ;
+  - INRS, page Qualité de l'air intérieur (mars 2024) : l'origine des polluants, le conseil d'au moins 50 m³/h par occupant dans le tertiaire ;
+  - INRS, page Ventilation et sobriété énergétique (avril 2023) ; INRS, guides ED 657 (2022) et ED 6008 ; aide-mémoire juridique TJ 5 ;
+  - Cerema Occitanie, présentation sur les systèmes de ventilation (juin 2026) ;
+  - le lexique et les tableaux de l'ED 695 (édition de 2015, toujours à relire dans l'édition de 2022), dont son annexe qui compare deux réseaux.
+- Fiche `sorbonne` : cours de 8 étapes (ce que c'est, ses pièces, l'air qui protège, la guillotine, ce qui casse le confinement, l'air du labo, les types, les contrôles), avec des liens vers les étapes du cours sur les bases.
+- Badges : 150 affirmations dont 8 à vérifier pour les bases, 90 dont 1 pour la sorbonne.
+  - Bases, restent à vérifier : ventiler ne chauffe pas ; le sens de l'air selon la pression ; le détalonnage ; la notation des gaines sur un plan ; le coefficient de 0,34 Wh/m³.K, vu dans une source pédagogique non relue ; le cumul de plusieurs textes ; deux lignes de l'exemple qui reposent sur des valeurs d'illustration.
+  - Trois anciens "à vérifier" des bases sont levés par l'ED 695 : accès aux filtres et trappes, valeurs de référence, encrassement du filtre.
+  - Sorbonne : seul le calcul de 9,5 kW reste à vérifier. Les normes NF X 15-206, NF X 15-211 et NF EN 14175 ne sont toujours pas lues : ce que la fiche en dit vient de l'INRS.
+- Contrôles :
+  - `node tests/verifier_bible.js` : 5 fiches, 0 erreur, 0 alerte ;
+  - dans le navigateur : toutes les étapes des deux cours, leurs dessins et commandes, les boutons précédent et suivant, le sommaire, un lien direct vers une étape, l'arbre, la recherche à l'accueil ("échangeur", "hélicoïde", "CTA", "guillotine"), les thèmes clair et sombre, 375 px sans défilement horizontal sur chaque étape, console vide.
+- Reste à faire : publier les deux fiches sur accord de l'utilisateur ; remplir `CARTE.json`, restée au modèle vierge ; relire l'ED 695 dans son édition de 2022.
+
 ## 2026-11-03 : fiches sorbonne et bases de la ventilation
 
 - Demande de l'utilisateur : une fiche sur le fonctionnement des sorbonnes, puis une fiche sur les bases de la ventilation, parce qu'il lui manque des bases pour comprendre. La fiche des bases part donc de zéro et la fiche sorbonne y renvoie. Elles ne viennent pas d'une affaire : pas de rubrique "vu sur les affaires".
