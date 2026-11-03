@@ -2,6 +2,19 @@
 
 <!-- Dernière entrée en haut. Une entrée par session de travail ou par décision. Date au format AAAA-MM-JJ. -->
 
+## 2026-11-03 : carte du parcours
+
+- Demande de l'utilisateur : remplir la carte, restée au modèle vierge depuis la création du projet. `CARTE.json` passe en version 1, encore en brouillon tant que l'utilisateur ne l'a pas validée. `CARTE.pdf`, `CARTE.dxf` et `CARTE.png` sont générés : "CONTRÔLES : aucune alerte", rendu regardé.
+- Quatre étapes : une notion entre dans la bible ; le lecteur arrive ; lire une fiche ; les fiches disponibles. Plus les zones "mis de côté" et "questions ouvertes".
+- États :
+  - en vert, ce qui a été vu dans le site qui tourne, y compris les cases à cocher, la bascule de thème et la rubrique "vu sur les affaires", revues sur le site public avant de les marquer ;
+  - en ocre, les cinq fiches en ligne : chacune garde des affirmations "à vérifier", dont le nombre est sur sa tuile ;
+  - en blanc pointillé, ce qui est hors du site : sources, Claude Code, `prive/`, publication, GitHub Pages, portail b27-hub ;
+  - en bordeaux, les fiches à venir ;
+  - en gris, la carte du hub à passer de bêta à en ligne, et les retouches de forme annoncées à la création.
+- Questions ouvertes portées sur la carte : un cours pour les trois autres fiches ; l'alignement du texte qui cite encore les métiers ; la suppression de `backup/avant-anonymisation` ; l'accès aux normes non lues.
+- Commité sur `dev` seulement, pas poussé : le site en ligne ne change pas.
+
 ## 2026-11-03 : cours pour débutant dans les fiches bases de la ventilation et sorbonne
 
 - Retour de l'utilisateur sur les deux fiches du jour : trop légères, il faut le considérer comme débutant et tout réexpliquer. La fiche des bases devient un vrai cours, et la fiche sorbonne reçoit le sien.

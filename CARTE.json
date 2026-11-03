@@ -1,79 +1,458 @@
 {
  "format": "carte-projet 1",
- "titre": "Nom du projet : le parcours de l'utilisateur",
+ "titre": "Bible technique : le parcours de l'utilisateur",
  "sous_titre": [
-  "Version 0, brouillon du AAAA-MM-JJ : à valider",
-  "À dessiner par Claude Code à partir des notes, avant la première ligne de code."
+  "Version 1, brouillon du 2026-11-03 : à valider",
+  "Première carte du projet, remplie d'après le journal et l'état du site en ligne."
+ ],
+ "titre_pos": [
+  40,
+  25
  ],
  "legende": {
-  "x": 1080.0,
-  "y": 20.0,
-  "l": 700.0,
-  "h": 100.0
+  "x": 1080,
+  "y": 20,
+  "l": 700,
+  "h": 100
  },
  "zones": [
   {
    "id": "z1",
-   "titre": "Première étape du parcours",
-   "x": 40.0,
-   "y": 140.0,
-   "l": 1740.0,
-   "h": 260.0
+   "titre": "Étape 1 : une notion entre dans la bible",
+   "x": 40,
+   "y": 140,
+   "l": 1740,
+   "h": 350
+  },
+  {
+   "id": "z2",
+   "titre": "Étape 2 : le lecteur arrive",
+   "x": 40,
+   "y": 530,
+   "l": 1740,
+   "h": 200
+  },
+  {
+   "id": "z3",
+   "titre": "Étape 3 : lire une fiche",
+   "x": 40,
+   "y": 770,
+   "l": 1740,
+   "h": 340
+  },
+  {
+   "id": "z4",
+   "titre": "Étape 4 : les fiches disponibles",
+   "x": 40,
+   "y": 1150,
+   "l": 1740,
+   "h": 200
   },
   {
    "id": "zp",
    "titre": "Mis de côté pour l'instant",
-   "x": 40.0,
-   "y": 440.0,
-   "l": 850.0,
-   "h": 180.0
+   "x": 40,
+   "y": 1390,
+   "l": 850,
+   "h": 220
   },
   {
    "id": "zq",
    "titre": "Questions ouvertes",
-   "x": 930.0,
-   "y": 440.0,
-   "l": 850.0,
-   "h": 180.0
+   "x": 930,
+   "y": 1390,
+   "l": 850,
+   "h": 220
   }
  ],
  "tuiles": [
   {
-   "id": "e1",
-   "x": 80.0,
-   "y": 200.0,
-   "l": 240.0,
-   "h": 80.0,
+   "id": "a1",
+   "x": 80,
+   "y": 200,
+   "l": 240,
+   "h": 100,
    "etat": "hors_app",
-   "titre": "Ce qui vient de l'extérieur",
+   "titre": "Une affaire ou une question",
    "texte": [
-    "fichier, personne, autre logiciel"
+    "notion tranchée, avis reçu, ou besoin de comprendre"
    ],
    "note": ""
   },
   {
-   "id": "e2",
-   "x": 380.0,
-   "y": 200.0,
-   "l": 240.0,
-   "h": 80.0,
-   "etat": "a_faire",
-   "titre": "Ce que l'utilisateur fait",
+   "id": "a2",
+   "x": 80,
+   "y": 340,
+   "l": 240,
+   "h": 100,
+   "etat": "hors_app",
+   "titre": "Les sources",
    "texte": [
-    "dans l'application"
+    "textes, guides INRS, Cerema, avis de spécialiste"
    ],
    "note": ""
   },
   {
-   "id": "e3",
-   "x": 680.0,
-   "y": 200.0,
-   "l": 240.0,
-   "h": 80.0,
-   "etat": "a_faire",
-   "titre": "Ce que l'application produit",
+   "id": "a3",
+   "x": 370,
+   "y": 270,
+   "l": 240,
+   "h": 100,
+   "etat": "hors_app",
+   "titre": "Claude Code et sa skill",
    "texte": [
-    "écran, calcul, alerte, export"
+    "écrit la fiche, le schéma, le cours et les badges"
+   ],
+   "note": ""
+  },
+  {
+   "id": "a4",
+   "x": 660,
+   "y": 200,
+   "l": 240,
+   "h": 100,
+   "etat": "hors_app",
+   "titre": "Dossier prive/",
+   "texte": [
+    "cas en clair et noms interdits, jamais publiés"
+   ],
+   "note": ""
+  },
+  {
+   "id": "a5",
+   "x": 660,
+   "y": 340,
+   "l": 240,
+   "h": 100,
+   "etat": "fait",
+   "titre": "Le vérificateur",
+   "texte": [
+    "sources, noms interdits, caractères, étapes du cours"
+   ],
+   "note": ""
+  },
+  {
+   "id": "a6",
+   "x": 950,
+   "y": 340,
+   "l": 240,
+   "h": 100,
+   "etat": "hors_app",
+   "titre": "Commit sur dev",
+   "texte": [
+    "contrôlé dans le navigateur avant de le proposer"
+   ],
+   "note": ""
+  },
+  {
+   "id": "a7",
+   "x": 1240,
+   "y": 340,
+   "l": 240,
+   "h": 100,
+   "etat": "hors_app",
+   "titre": "Publication sur accord",
+   "texte": [
+    "main avancé sur dev, à chaque fois sur demande"
+   ],
+   "note": ""
+  },
+  {
+   "id": "a8",
+   "x": 1530,
+   "y": 340,
+   "l": 240,
+   "h": 100,
+   "etat": "hors_app",
+   "titre": "Site en ligne",
+   "texte": [
+    "GitHub Pages, dépôt public mamalric/bible-technique"
+   ],
+   "note": ""
+  },
+  {
+   "id": "b1",
+   "x": 80,
+   "y": 590,
+   "l": 240,
+   "h": 100,
+   "etat": "hors_app",
+   "titre": "Portail b27-hub",
+   "texte": [
+    "carte bêta, dans Ressources et référentiels"
+   ],
+   "note": ""
+  },
+  {
+   "id": "b2",
+   "x": 370,
+   "y": 590,
+   "l": 240,
+   "h": 100,
+   "etat": "fait",
+   "titre": "Accueil",
+   "texte": [
+    "tuiles par domaine, fiches avec vignette"
+   ],
+   "note": ""
+  },
+  {
+   "id": "b3",
+   "x": 660,
+   "y": 590,
+   "l": 240,
+   "h": 100,
+   "etat": "fait",
+   "titre": "Recherche et filtre",
+   "texte": [
+    "par mot-clé ou par domaine"
+   ],
+   "note": ""
+  },
+  {
+   "id": "b4",
+   "x": 1240,
+   "y": 590,
+   "l": 240,
+   "h": 100,
+   "etat": "fait",
+   "titre": "Légende des badges",
+   "texte": [
+    "d'où vient chaque information"
+   ],
+   "note": ""
+  },
+  {
+   "id": "b5",
+   "x": 1530,
+   "y": 590,
+   "l": 240,
+   "h": 100,
+   "etat": "fait",
+   "titre": "Thème clair ou sombre",
+   "texte": [
+    "sur toutes les pages, à un clic"
+   ],
+   "note": ""
+  },
+  {
+   "id": "c1",
+   "x": 80,
+   "y": 830,
+   "l": 240,
+   "h": 100,
+   "etat": "fait",
+   "titre": "Le principe en image",
+   "texte": [
+    "schéma dessiné pour la bible, à manipuler"
+   ],
+   "note": ""
+  },
+  {
+   "id": "c2",
+   "x": 370,
+   "y": 830,
+   "l": 240,
+   "h": 100,
+   "etat": "fait",
+   "titre": "Le cours, pas à pas",
+   "texte": [
+    "une étape par écran, pour un débutant"
+   ],
+   "note": "facultatif : bases et sorbonne"
+  },
+  {
+   "id": "c3",
+   "x": 660,
+   "y": 830,
+   "l": 240,
+   "h": 100,
+   "etat": "fait",
+   "titre": "En 30 secondes et chiffres",
+   "texte": [
+    "l'essentiel en quelques lignes et tuiles"
+   ],
+   "note": ""
+  },
+  {
+   "id": "c4",
+   "x": 950,
+   "y": 830,
+   "l": 240,
+   "h": 100,
+   "etat": "fait",
+   "titre": "Arbre de décision",
+   "texte": [
+    "questions fermées jusqu'au verdict"
+   ],
+   "note": ""
+  },
+  {
+   "id": "c5",
+   "x": 1240,
+   "y": 830,
+   "l": 240,
+   "h": 100,
+   "etat": "fait",
+   "titre": "Ce que je vérifie",
+   "texte": [
+    "VISA, chantier, réception, à cocher"
+   ],
+   "note": ""
+  },
+  {
+   "id": "c6",
+   "x": 1530,
+   "y": 830,
+   "l": 240,
+   "h": 100,
+   "etat": "fait",
+   "titre": "Pièges",
+   "texte": [
+    "et notions à ne pas confondre"
+   ],
+   "note": ""
+  },
+  {
+   "id": "c7",
+   "x": 1240,
+   "y": 970,
+   "l": 240,
+   "h": 100,
+   "etat": "fait",
+   "titre": "Vu sur les affaires",
+   "texte": [
+    "cas anonymisés, seulement s'il y en a un"
+   ],
+   "note": ""
+  },
+  {
+   "id": "c8",
+   "x": 950,
+   "y": 970,
+   "l": 240,
+   "h": 100,
+   "etat": "fait",
+   "titre": "Pour aller plus loin",
+   "texte": [
+    "textes, normes et guides cités"
+   ],
+   "note": ""
+  },
+  {
+   "id": "c9",
+   "x": 80,
+   "y": 970,
+   "l": 530,
+   "h": 100,
+   "etat": "fait",
+   "titre": "Un badge par affirmation",
+   "texte": [
+    "texte, norme, fabricant, expert, affaire, à vérifier"
+   ],
+   "note": ""
+  },
+  {
+   "id": "d1",
+   "x": 80,
+   "y": 1210,
+   "l": 240,
+   "h": 100,
+   "etat": "en_cours",
+   "titre": "Clapet coupe-feu",
+   "texte": [
+    "en ligne, 37 affirmations"
+   ],
+   "note": "14 à vérifier"
+  },
+  {
+   "id": "d2",
+   "x": 370,
+   "y": 1210,
+   "l": 240,
+   "h": 100,
+   "etat": "en_cours",
+   "titre": "ERP : type et catégorie",
+   "texte": [
+    "en ligne, 35 affirmations"
+   ],
+   "note": "19 à vérifier"
+  },
+  {
+   "id": "d3",
+   "x": 660,
+   "y": 1210,
+   "l": 240,
+   "h": 100,
+   "etat": "en_cours",
+   "titre": "Locaux techniques",
+   "texte": [
+    "en ligne, 52 affirmations"
+   ],
+   "note": "22 à vérifier"
+  },
+  {
+   "id": "d4",
+   "x": 950,
+   "y": 1210,
+   "l": 240,
+   "h": 100,
+   "etat": "en_cours",
+   "titre": "Bases de la ventilation",
+   "texte": [
+    "en ligne, cours de 17 étapes, 150 affirmations"
+   ],
+   "note": "8 à vérifier"
+  },
+  {
+   "id": "d5",
+   "x": 1240,
+   "y": 1210,
+   "l": 240,
+   "h": 100,
+   "etat": "en_cours",
+   "titre": "Sorbonne",
+   "texte": [
+    "en ligne, cours de 8 étapes, 90 affirmations"
+   ],
+   "note": "1 à vérifier"
+  },
+  {
+   "id": "d6",
+   "x": 1530,
+   "y": 1210,
+   "l": 240,
+   "h": 100,
+   "etat": "a_faire",
+   "titre": "Fiches suivantes",
+   "texte": [
+    "au fil des affaires : froid, plomberie, thermique, électricité"
+   ],
+   "note": ""
+  },
+  {
+   "id": "p1",
+   "x": 80,
+   "y": 1450,
+   "l": 350,
+   "h": 100,
+   "etat": "de_cote",
+   "titre": "Carte du hub : de bêta à en ligne",
+   "texte": [
+    "quand le contenu sera jugé mûr"
+   ],
+   "note": ""
+  },
+  {
+   "id": "p2",
+   "x": 490,
+   "y": 1450,
+   "l": 350,
+   "h": 100,
+   "etat": "de_cote",
+   "titre": "Retouches de forme de détail",
+   "texte": [
+    "annoncées à la création, à recueillir"
    ],
    "note": ""
   }
@@ -81,34 +460,175 @@
  "textes": [
   {
    "id": "q1",
-   "x": 955.0,
-   "y": 485.0,
-   "l": 800.0,
-   "h": 120.0,
+   "x": 955,
+   "y": 1435,
+   "l": 800,
+   "h": 160,
+   "italique": false,
    "lignes": [
-    "1. Première question à trancher avant de valider la carte ?"
-   ],
-   "italique": false
+    "1. Un cours pour débutant dans les fiches clapet, ERP et locaux techniques ?",
+    "2. L'accueil, la description du dépôt et FICHE.md citent encore CVC, plomberie, SSI et thermique, retirés de la carte du hub : on les aligne ?",
+    "3. Peut-on supprimer la branche locale backup/avant-anonymisation ?",
+    "4. Y a-t-il un accès pour lire NF X 15-206, NF X 15-211 et NF EN 14175 ?"
+   ]
   }
  ],
  "liens": [
   {
-   "de": "e1",
-   "vers": "e2",
+   "de": "a1",
+   "vers": "a3",
    "libelle": "",
    "pointille": false,
    "points": []
   },
   {
-   "de": "e2",
-   "vers": "e3",
+   "de": "a2",
+   "vers": "a3",
    "libelle": "",
    "pointille": false,
    "points": []
+  },
+  {
+   "de": "a3",
+   "vers": "a4",
+   "libelle": "",
+   "pointille": true,
+   "points": []
+  },
+  {
+   "de": "a3",
+   "vers": "a5",
+   "libelle": "",
+   "pointille": false,
+   "points": []
+  },
+  {
+   "de": "a5",
+   "vers": "a6",
+   "libelle": "",
+   "pointille": false,
+   "points": []
+  },
+  {
+   "de": "a6",
+   "vers": "a7",
+   "libelle": "",
+   "pointille": false,
+   "points": []
+  },
+  {
+   "de": "a7",
+   "vers": "a8",
+   "libelle": "",
+   "pointille": false,
+   "points": []
+  },
+  {
+   "de": "a8",
+   "vers": "b2",
+   "libelle": "",
+   "pointille": false,
+   "points": [
+    [
+     1650,
+     510
+    ],
+    [
+     490,
+     510
+    ]
+   ]
+  },
+  {
+   "de": "b1",
+   "vers": "b2",
+   "libelle": "",
+   "pointille": false,
+   "points": []
+  },
+  {
+   "de": "b2",
+   "vers": "b3",
+   "libelle": "",
+   "pointille": false,
+   "points": []
+  },
+  {
+   "de": "b3",
+   "vers": "c1",
+   "libelle": "",
+   "pointille": false,
+   "points": [
+    [
+     780,
+     750
+    ],
+    [
+     290,
+     750
+    ]
+   ]
+  },
+  {
+   "de": "c1",
+   "vers": "c2",
+   "libelle": "",
+   "pointille": false,
+   "points": []
+  },
+  {
+   "de": "c2",
+   "vers": "c3",
+   "libelle": "",
+   "pointille": false,
+   "points": []
+  },
+  {
+   "de": "c3",
+   "vers": "c4",
+   "libelle": "",
+   "pointille": false,
+   "points": []
+  },
+  {
+   "de": "c4",
+   "vers": "c5",
+   "libelle": "",
+   "pointille": false,
+   "points": []
+  },
+  {
+   "de": "c5",
+   "vers": "c6",
+   "libelle": "",
+   "pointille": false,
+   "points": []
+  },
+  {
+   "de": "c6",
+   "vers": "c7",
+   "libelle": "",
+   "pointille": false,
+   "points": [
+    [
+     1650,
+     1020
+    ]
+   ]
+  },
+  {
+   "de": "c7",
+   "vers": "c8",
+   "libelle": "",
+   "pointille": false,
+   "points": []
+  },
+  {
+   "de": "d4",
+   "vers": "d5",
+   "libelle": "",
+   "pointille": true,
+   "points": []
   }
- ],
- "titre_pos": [
-  40.0,
-  25.0
  ]
 }
