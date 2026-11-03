@@ -64,7 +64,7 @@ window.BIBLE = {
     {
       id: "sorbonne",
       titre: "Sorbonne de laboratoire",
-      resume: "Comment une sorbonne retient les vapeurs par l'air qui entre, ce qui la perturbe, comment la choisir, l'implanter et la contrôler.",
+      resume: "Un cours en 8 étapes, puis la fiche : comment une sorbonne retient les vapeurs par l'air qui entre, ce qui la perturbe, comment la choisir, l'implanter et la contrôler.",
       domaines: ["ventilation", "securite"],
       motscles: ["sorbonne", "hotte", "laboratoire", "guillotine", "vitesse frontale", "confinement", "SF6", "plenum", "débit variable", "recirculation", "air de compensation", "NF EN 14175", "NF X 15-206", "NF X 15-211", "ED 795", "PSM", "boîte à gants", "ATEX", "CMR"],
       vignette: "sorbonne",

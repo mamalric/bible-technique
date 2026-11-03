@@ -1,5 +1,6 @@
 /* Fiche : sorbonne de laboratoire.
    Chaque affirmation : { t: texte, s: type de source (voir registre.js), ref: référence }.
+   "comme" et "retenir" ne portent pas de badge : "comme" est une image sans chiffre ni règle, "retenir" redit une ligne badgée de l'étape.
    Sources principales : guide INRS ED 795 (2009) et note INRS de septembre 2026.
    NF EN 14175 et NF X 15-206 n'ont pas été lues directement : leurs valeurs viennent de l'INRS.
    Site public : aucun nom d'affaire, de client, d'entreprise ni de personne. */
@@ -9,6 +10,107 @@ window.BIBLE_FICHE = {
   titre: "Sorbonne de laboratoire",
   soustitre: "Une enceinte ventilée qui aspire l'air du labo par une ouverture réglable : c'est ce courant d'air entrant, plus que la vitre, qui retient les vapeurs loin de la personne qui manipule.",
   schema: "sorbonne",
+
+  cours: {
+    intro: "Si les mots débit, dépression ou compensation restent flous, commencer par <a href=\"fiche.html?f=bases-ventilation\">le cours sur les bases de la ventilation</a>. Ici, on repart de zéro sur la sorbonne, en huit étapes.",
+    parties: [
+      { titre: "Comprendre", chapitres: [
+        { id: "quoi", titre: "Une sorbonne, c'est quoi ?", dessin: "sb_quoi",
+          lignes: [
+            { t: "C'est une grande boîte, ouverte devant, posée sur un plan de travail. Un ventilateur en aspire l'air et le rejette dehors : l'intérieur est en <b>dépression</b>.", s: "expert", ref: "INRS, guide ED 795, paragraphe 1.1" },
+            { t: "Elle protège la personne qui manipule contre le fait de respirer des produits chimiques dangereux, gaz ou particules. C'est une protection collective.", s: "expert", ref: "INRS, guide ED 795, paragraphe 1.1" },
+            { t: "Elle ne protège ni contre les micro-organismes ni contre les particules radioactives.", s: "expert", ref: "INRS, guide ED 795, paragraphe 1.1" },
+            { t: "C'est un <b>captage</b> : le polluant est aspiré à sa source. Voir l'étape <a href=\"fiche.html?f=bases-ventilation#capter\">Diluer ou capter</a> du cours sur les bases.", s: "expert", ref: "INRS, guide ED 795, paragraphe 1.1" }
+          ],
+          comme: "Une cabine avec une grande bouche ouverte : l'air de la pièce s'y engouffre en permanence, et ce qui est dedans ne ressort pas.",
+          retenir: "Une boîte qui aspire : l'air entre par devant et repart dehors par derrière." },
+
+        { id: "pieces-sorbonne", titre: "Ses pièces",
+          intro: "Les mots qu'on retrouve dans une notice, un CCTP ou un procès-verbal d'essai.",
+          tuiles: [
+            { ico: "enceinte", titre: "Volume de travail", t: "L'intérieur de la boîte, entre les parois fixes et l'écran. On y manipule.", s: "expert", ref: "INRS, guide ED 795, paragraphe 1.1" },
+            { ico: "ecran", titre: "Écran, ou guillotine", t: "La paroi mobile et transparente de la face avant. Elle règle la taille de l'ouverture.", s: "expert", ref: "INRS, guide ED 795, paragraphe 1.1" },
+            { ico: "butee", titre: "Butée", t: "Elle arrête la guillotine à la hauteur de travail. Au-delà, on est en position de maintenance.", s: "expert", ref: "INRS, guide ED 795, paragraphe 1.1 et chapitre 3" },
+            { ico: "plan", titre: "Plan de travail", t: "Il porte le matériel. Ses rebords retiennent ce qui se renverse.", s: "expert", ref: "INRS, guide ED 795, chapitre 3" },
+            { ico: "plenum", titre: "Plenum et fentes", t: "Le double fond, au dos. Il répartit l'aspiration entre les fentes, en haut et en bas.", s: "expert", ref: "INRS, guide ED 795, paragraphe 1.1" },
+            { ico: "conduit", titre: "Conduit et ventilateur", t: "Ils emportent l'air dehors. Le ventilateur va hors du bâtiment ou en toiture, pour garder le conduit en dépression.", s: "expert", ref: "INRS, guide ED 795, paragraphe 5.2" },
+            { ico: "rejet", titre: "Rejet", t: "Vertical, à 15 à 20 m/s, à l'écart des prises d'air.", s: "expert", ref: "INRS, guide ED 795, chapitre 2 et paragraphe 5.2" },
+            { ico: "alarme", titre: "Alarme de débit", t: "Elle prévient si l'aspiration faiblit, par un signal visuel et sonore.", s: "texte", ref: "code du travail, article R4222-13 ; INRS, guide ED 795, chapitre 3" }
+          ],
+          retenir: "Écran pour régler, plenum pour répartir, ventilateur pour aspirer, alarme pour prévenir." },
+
+        { id: "protege", titre: "Ce qui protège : l'air qui entre", dessin: "sb_duel",
+          lignes: [
+            { t: "Ce n'est pas la vitre qui retient les vapeurs : c'est le courant d'air qui rentre par l'ouverture. Sa vitesse s'appelle la <b>vitesse frontale</b>. Retenir ainsi les vapeurs s'appelle le <b>confinement</b>.", s: "expert", ref: "INRS, guide ED 795, paragraphe 1.1" },
+            { t: "Repère français : au moins 0,4 m/s en chaque point de l'ouverture, guillotine à 500 mm.", s: "expert", ref: "INRS, guide ED 795, tableaux 1 et 3" },
+            { t: "C'est peu : une personne qui marche va à environ 1 m/s, plus vite que cet air. C'est pour cela qu'un simple passage peut le perturber.", s: "expert", ref: "INRS, Hygiène et sécurité du travail n° 284, septembre 2026" },
+            { t: "L'air doit être intense, homogène et constant : il faut la bonne vitesse partout, et tout le temps.", s: "expert", ref: "INRS, guide ED 795, chapitre 5" }
+          ],
+          calcul: [
+            { q: "Quelle surface d'ouverture ?", op: "1,5 m de large × 0,5 m de haut =", res: "0,75 m²", s: "expert", ref: "INRS, guide ED 695, paragraphe 3.2.2" },
+            { q: "Quel débit pour 0,4 m/s ?", op: "0,4 m/s × 0,75 m² =", res: "0,30 m³/s", s: "expert", ref: "INRS, guide ED 695, paragraphe 3.2.2" },
+            { q: "En m³/h ?", op: "0,30 × 3 600 =", res: "1 080 m³/h", t: "Pour comparer : c'est l'air neuf de 36 personnes en salle de réunion, à 30 m³/h chacune.", s: "texte", ref: "code du travail, article R4222-6, pour la comparaison" }
+          ],
+          comme: "Un rideau d'air à l'entrée d'un magasin, mais tourné vers l'intérieur : il ne bloque rien de solide, et pourtant il retient.",
+          retenir: "Pas de courant d'air, pas de protection. La vitre seule ne suffit pas." },
+
+        { id: "guillotine", titre: "La guillotine", dessin: "sb_ouverture",
+          lignes: [
+            { t: "À débit constant, la vitesse est inverse de la surface : ouverture divisée par deux, vitesse multipliée par deux.", s: "expert", ref: "INRS, guide ED 795, paragraphe 1.1" },
+            { t: "On travaille <b>aussi bas que possible</b>, juste de quoi passer les bras. On baisse à la butée quand personne ne manipule.", s: "expert", ref: "INRS, guide ED 795, paragraphes 1.1 et 7.1" },
+            { t: "La vitre sert aussi d'écran contre les projections. Jamais la tête dans l'enceinte.", s: "expert", ref: "INRS, guide ED 795, paragraphes 1.1 et 7.1" }
+          ],
+          comme: "Le pouce sur le tuyau d'arrosage : moins de passage, ça sort plus vite. Voir l'étape <a href=\"fiche.html?f=bases-ventilation#vitesse\">Débit, vitesse, section</a>.",
+          retenir: "Basse pour manipuler, à la butée au repos. Grande ouverte seulement pour l'entretien." }
+      ] },
+
+      { titre: "Dans le labo", chapitres: [
+        { id: "perturbe", titre: "Ce qui casse le confinement", dessin: "sb_plan",
+          lignes: [
+            { t: "Le passage de personnes est la perturbation la plus fréquente : dans le labo étudié par l'INRS, un passage toutes les deux minutes en moyenne.", s: "expert", ref: "INRS, Hygiène et sécurité du travail n° 284, septembre 2026" },
+            { t: "Passer à 1 m plutôt qu'à 0,4 m divise le risque par plus de 10.", s: "expert", ref: "INRS, Hygiène et sécurité du travail n° 284, septembre 2026" },
+            { t: "Sont aussi en cause : les portes, les bouches de soufflage, les mouvements rapides, et le manque d'air de compensation.", s: "expert", ref: "INRS, guide ED 795, paragraphes 5.1, 5.3 et 7.1" },
+            { t: "Dedans aussi : la source reste à 15 ou 20 cm au moins de l'ouverture, le plus bas possible, et l'enceinte n'est pas encombrée.", s: "expert", ref: "INRS, guide ED 795, paragraphe 7.1" }
+          ],
+          comme: "La flamme d'une bougie : elle tient tant que personne ne passe trop près.",
+          retenir: "Une sorbonne se place à l'écart du passage. Le plan du labo compte autant que l'appareil." },
+
+        { id: "air-labo", titre: "L'air doit venir de quelque part", dessin: "sb_labo",
+          lignes: [
+            { t: "Une sorbonne extrait beaucoup d'air. Elle ne doit pas être installée sans que la compensation soit prévue. Voir l'étape <a href=\"fiche.html?f=bases-ventilation#compensation\">Tout ce qui sort doit rentrer</a>.", s: "expert", ref: "INRS, guide ED 795, paragraphe 5.1" },
+            { t: "L'air de compensation doit être salubre : de l'air neuf, ou l'air de locaux voisins sans pollution spécifique.", s: "expert", ref: "INRS, guide ED 795, paragraphe 5.1" },
+            { t: "Le labo est tenu en légère dépression, 10 à 20 Pa, par rapport aux locaux voisins sans pollution spécifique.", s: "expert", ref: "INRS, guide ED 795, paragraphe 5.1" },
+            { t: "Ce débit se chauffe : 1 080 m³/h, de −7 à 19 °C, c'est 0,34 × 1 080 × 26 = 9,5 kW pour une seule sorbonne, sans récupération.", s: "verifier", ref: "calcul d'illustration ; voir l'étape L'air neuf, il faut le chauffer de la fiche des bases" }
+          ],
+          comme: "Une paille dans une bouteille fermée : elle se pince, et plus rien ne vient. Une sorbonne dans un labo sans entrée d'air, c'est pareil.",
+          retenir: "On étudie ensemble l'extraction des sorbonnes et l'arrivée d'air du labo." }
+      ] },
+
+      { titre: "Choisir et contrôler", chapitres: [
+        { id: "types", titre: "Quel type de sorbonne ?",
+          intro: "Il s'agit toujours de tenir la vitesse à l'ouverture, en rejetant moins d'air chauffé quand c'est possible.",
+          tuiles: [
+            { ico: "constant", titre: "Débit constant", t: "Le ventilateur aspire toujours pareil. Simple, mais la vitesse change avec l'ouverture.", s: "expert", ref: "INRS, guide ED 795, paragraphe 1.1" },
+            { ico: "deux", titre: "Deux vitesses", t: "Petite vitesse guillotine basse, grande vitesse à partir de 10 à 15 cm d'ouverture.", s: "expert", ref: "INRS, guide ED 795, paragraphe 1.1" },
+            { ico: "variable", titre: "Débit variable", t: "Le débit suit l'ouverture pour garder la vitesse. Moins d'air à chauffer, mais une régulation délicate, avec une compensation asservie.", s: "expert", ref: "INRS, guide ED 795, paragraphe 1.2" },
+            { ico: "recirculation", titre: "Recirculation", t: "L'air filtré revient dans le labo, sans conduit. Réservée à des produits connus, jamais de CMR, c'est-à-dire de produits cancérogènes, mutagènes ou toxiques pour la reproduction.", s: "expert", ref: "INRS, guide ED 795, encadré 1" },
+            { titre: "Basse vitesse : non", t: "De 0,4 à 0,2 m/s, le risque est multiplié par environ 20. L'INRS préconise désormais de les proscrire.", s: "expert", ref: "INRS, Hygiène et sécurité du travail n° 284, septembre 2026" }
+          ],
+          retenir: "Par défaut, une sorbonne classique raccordée dehors. Variable si le chauffage de l'air pèse lourd. L'arbre plus bas aide à trancher." },
+
+        { id: "controle", titre: "Comment on vérifie qu'elle protège", dessin: "sb_points",
+          lignes: [
+            { t: "<b>La vitesse</b> : on la mesure en plusieurs points de l'ouverture, guillotine à 500 mm, sorbonne vide, dans son local.", s: "expert", ref: "INRS, guide ED 795, chapitre 6 et annexe" },
+            { t: "<b>Le confinement</b> : on émet un gaz traceur, le SF6, dans l'enceinte et on mesure ce qui en sort. Il doit rester sous 0,1 ppm.", s: "expert", ref: "INRS, guide ED 795, tableau 1 et encadré 2" },
+            { t: "<b>Le fumigène</b> : il rend l'air visible, tous les six mois.", s: "expert", ref: "INRS, guide ED 795, paragraphe 7.2 et annexe" },
+            { t: "Les vitesses de réception sont les <b>valeurs de référence</b>. Si elles baissent d'environ 30 % en un point, on refait une mesure de confinement.", s: "expert", ref: "INRS, guide ED 795, chapitre 6 et encadré 7" },
+            { t: "Ensuite : débit chaque jour, alarmes chaque semaine, vitesses, débit et perte de charge chaque année.", s: "expert", ref: "INRS, guide ED 795, paragraphe 7.2 ; arrêté du 8 octobre 1987" }
+          ],
+          comme: "On n'attend pas qu'il pleuve pour tester l'étanchéité d'un toit : on envoie de l'eau et on regarde où elle passe.",
+          retenir: "Vitesse et confinement à la réception, puis on compare à ces valeurs toute la vie de la sorbonne." }
+      ] }
+    ]
+  },
 
   essentiel: [
     { t: "Une <b>sorbonne</b> est une enceinte en dépression : elle aspire l'air du local et le rejette dehors avec un ventilateur. C'est une protection collective contre les gaz et les particules chimiques, pas contre les micro-organismes ni les particules radioactives.", s: "expert", ref: "INRS, guide ED 795, paragraphe 1.1" },
