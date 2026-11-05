@@ -2,6 +2,15 @@
 
 <!-- Dernière entrée en haut. Une entrée par session de travail ou par décision. Date au format AAAA-MM-JJ. -->
 
+## 2026-11-05 : pas d'accès aux normes payantes
+
+- L'utilisateur répond que B27 n'a pas d'accès aux normes payantes. NF EN 13501-3, NF S 61-937, NF X 15-206, NF X 15-211 et NF EN 14175 restent donc non lues, sauf achat ou document apporté par l'utilisateur. Rien n'a été acheté ; les prix relevés sont dans l'entrée du 3 novembre.
+- Conséquence sur les fiches : les références qui citaient une norme sans dire qu'elle n'avait pas été lue le disent maintenant. Fiche `clapet-coupe-feu` : NF EN 15650, NF S 61-937 et les normes du SSI. Fiche `sorbonne` : NF EN 14175. Fiche `locaux-techniques` : NF EN 378, NF C 15-100, NF C 13-100, NF P 52-211.
+- Fiche `clapet-coupe-feu`, ligne sur la déclaration des performances et les PV : badge "norme" remplacé par "fabricant", car c'est dans ces documents qu'elle a été lue, comme dans le cours.
+- Constat : sur les 57 affirmations "à vérifier" du site, une seule cite une norme, la NF C 13-100, en simple renvoi.
+- Carte : la question de l'abonnement est retirée, la zone "Questions ouvertes" indique qu'il n'y en a plus. La version validée reste la version 1, et les comptes de badges "à vérifier" ne changent pas.
+- Reste à faire : publier sur accord de l'utilisateur.
+
 ## 2026-11-05 : corrections du 3 novembre publiées
 
 - Sur accord de l'utilisateur, `main` avancé sur `dev` et poussé avec le compte `mamalric` (commit 6713cf6) ; déploiement GitHub Pages réussi.

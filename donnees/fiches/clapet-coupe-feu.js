@@ -187,7 +187,7 @@ window.BIBLE_FICHE = {
   verifications: [
     { titre: "Au VISA", icone: "plan", points: [
       { t: "Degré EI du clapet égal à celui de la paroi traversée.", s: "texte", ref: "arrêté du 25 juin 1980, article CH 32 § 5" },
-      { t: "Déclaration des performances et PV qui couvrent le type de paroi (béton, cloison plâtre, plancher) et le mode de pose.", s: "norme", ref: "NF EN 15650 et NF EN 1366-2" },
+      { t: "Déclaration des performances et PV qui couvrent le type de paroi (béton, cloison plâtre, plancher) et le mode de pose.", s: "fabricant", ref: "déclarations des performances et notices de pose de fabricants ; NF EN 15650 et NF EN 1366-2, non lues" },
       { t: "Mode de commande conforme à l'avis du coordinateur SSI : fusible ou télécommandé.", s: "expert", ref: "avis d'un coordinateur SSI, octobre 2026" },
       { t: "Chaque clapet repéré et numéroté sur les plans, avec sa trappe de visite.", s: "verifier" }
     ] },
@@ -224,10 +224,10 @@ window.BIBLE_FICHE = {
 
   references: [
     { s: "texte", t: "Règlement de sécurité contre les risques d'incendie et de panique dans les ERP, arrêté du 25 juin 1980 modifié : dispositions générales (CO, CH, MS) et dispositions propres à chaque type. Article CH 32 en vigueur depuis le 1er août 2025 (arrêté du 29 juillet 2025), article MS 53 pour les catégories de SSI." },
-    { s: "norme", t: "NF EN 15650 : clapets coupe-feu pour réseaux aérauliques (norme produit, marquage CE)." },
+    { s: "norme", t: "NF EN 15650 : clapets coupe-feu pour réseaux aérauliques (norme produit, marquage CE). Norme payante, non lue." },
     { s: "texte", t: "Arrêté du 22 mars 2026 relatif aux performances de résistance au feu, qui remplace celui de 2004 : annexe 2 pour les lettres et le classement des clapets. Il vaut pour les demandes déposées depuis le 1er octobre 2026." },
     { s: "norme", t: "NF EN 1366-2 : essais de résistance au feu des clapets ; NF EN 13501-3, édition d'août 2025 : leur classement (EI, ve, ho, i↔o, S). Normes payantes, non lues." },
-    { s: "norme", t: "NF S 61-937 : dispositifs actionnés de sécurité (DAS), dont NF S 61-937-5 de mars 2012 pour les clapets, qui vaut présomption de conformité à l'article CH 32 ; NF S 61-932 : règles d'installation du SSI ; NF S 61-934 : CMSI ; NF S 61-940 : alimentations électriques de sécurité." },
+    { s: "norme", t: "NF S 61-937 : dispositifs actionnés de sécurité (DAS), dont NF S 61-937-5 de mars 2012 pour les clapets, qui vaut présomption de conformité à l'article CH 32 ; NF S 61-932 : règles d'installation du SSI ; NF S 61-934 : CMSI ; NF S 61-940 : alimentations électriques de sécurité. Normes payantes, non lues." },
     { s: "fabricant", t: "Notice de pose et déclaration des performances du clapet retenu : elles fixent les parois admises, le calfeutrement et les distances." }
   ]
 };

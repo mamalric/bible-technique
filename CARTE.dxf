@@ -21,7 +21,7 @@ $EXTMIN
   9
 $EXTMAX
  10
-1965.88
+1919.2240000000002
  20
 -19.49915
  30
@@ -565,7 +565,7 @@ AcDbViewportTableRecord
  21
 1.0
  12
-999.1050000000001
+975.7770000000002
  22
 -815.0
  13
@@ -6851,7 +6851,7 @@ AcDbText
  40
 8.64
   1
-1. B27 a-t-il un abonnement COBAZ pour lire NF EN 13501-3, NF S 61-937, NF X 15-206, NF X 15-211 et NF EN 14175, normes payantes ?
+Aucune pour l'instant. B27 n'a pas d'accès aux normes payantes : elles restent citées par leur numéro et signalées non lues.
   7
 CARTE_NORMAL
  11

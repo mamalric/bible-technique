@@ -196,7 +196,7 @@ window.BIBLE_FICHE = {
   references: [
     { s: "expert", t: "INRS, guide pratique de ventilation n° 18, ED 795, Sorbonnes de laboratoire, 2e édition, mars 2009 : la référence, encore citée par l'INRS en 2026." },
     { s: "expert", t: "INRS, Hygiène et sécurité du travail n° 284, septembre 2026, Passage de personnes devant une sorbonne de laboratoire : quel impact sur son efficacité ?" },
-    { s: "norme", t: "NF EN 14175 : parties 1 (vocabulaire), 2 (exigences), 3 (essais de type), 4 (essais sur site), 6 (débit variable), et TS 14175-5 (installation). Méthodes d'essai, sans seuil de performance." },
+    { s: "norme", t: "NF EN 14175 : parties 1 (vocabulaire), 2 (exigences), 3 (essais de type), 4 (essais sur site), 6 (débit variable), et TS 14175-5 (installation). Méthodes d'essai, sans seuil de performance, d'après l'INRS. Norme payante, non lue." },
     { s: "norme", t: "NF X 15-206, août 2023 : seuils pour les essais de confinement et de vitesse (non lue, valeur de confinement connue par l'INRS). NF X 15-211, mai 2009 : sorbonnes à recirculation." },
     { s: "texte", t: "Code du travail : R4222-13 (avertissement automatique de défaillance), R4222-20 et R4222-21 (entretien, consigne), R4212-7 (notice du maître d'ouvrage), R4227-42 et suivants (atmosphères explosives). Arrêté du 8 octobre 1987 (contrôles périodiques)." }
   ]

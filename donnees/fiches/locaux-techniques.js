@@ -247,7 +247,7 @@ window.BIBLE_FICHE = {
     { s: "texte", t: "Arrêté du 22 juin 1990 (ERP de 5e catégorie), article PE 21 ; arrêté du 23 février 2018 (gaz en habitation), article 8.2.2." },
     { s: "texte", t: "Nomenclature des ICPE : rubrique 2910 (combustion) et rubrique 1185 (gaz à effet de serre fluorés). Directive 2014/68/UE sur les équipements sous pression." },
     { s: "texte", t: "Arrêté du 22 mars 2026 relatif à la résistance au feu des produits et éléments de construction, qui remplace l'arrêté du 22 mars 2004." },
-    { s: "norme", t: "NF EN 378 (systèmes frigorifiques et pompes à chaleur, sécurité) ; NF C 15-100 (installations basse tension) ; NF C 13-100 (postes de livraison HTA, édition 2015) ; NF P 52-211, DTU 65.3 (sous-stations), cité par les réseaux de chaleur." },
+    { s: "norme", t: "NF EN 378 (systèmes frigorifiques et pompes à chaleur, sécurité) ; NF C 15-100 (installations basse tension) ; NF C 13-100 (postes de livraison HTA, édition 2015) ; NF P 52-211, DTU 65.3 (sous-stations), cité par les réseaux de chaleur. Normes payantes, non lues." },
     { s: "verifier", t: "Règlement de service et cahier des prescriptions du réseau de chaleur concerné : ils fixent le local de la sous-station et la limite de prestation." },
     { s: "expert", t: "Pour apprendre : Cerema, guide de raccordement des copropriétés aux réseaux de chaleur (juillet 2019) et bases techniques des réseaux de chaleur (2014)." }
   ]
