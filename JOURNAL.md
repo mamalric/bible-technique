@@ -9,7 +9,8 @@
 - Fiche `clapet-coupe-feu`, ligne sur la déclaration des performances et les PV : badge "norme" remplacé par "fabricant", car c'est dans ces documents qu'elle a été lue, comme dans le cours.
 - Constat : sur les 57 affirmations "à vérifier" du site, une seule cite une norme, la NF C 13-100, en simple renvoi.
 - Carte : la question de l'abonnement est retirée, la zone "Questions ouvertes" indique qu'il n'y en a plus. La version validée reste la version 1, et les comptes de badges "à vérifier" ne changent pas.
-- Reste à faire : publier sur accord de l'utilisateur.
+- Sur accord de l'utilisateur, `main` avancé sur `dev` et poussé avec le compte `mamalric` (commit ffeeb77) ; déploiement GitHub Pages réussi.
+- Contrôlé sur le site en ligne, à 375 px : les quatre mentions "non lue" et le badge Fabricant du clapet s'affichent, pas de défilement horizontal, console vide sur les fiches clapet, sorbonne et locaux techniques.
 
 ## 2026-11-05 : corrections du 3 novembre publiées
 
