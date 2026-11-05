@@ -2,6 +2,12 @@
 
 <!-- Dernière entrée en haut. Une entrée par session de travail ou par décision. Date au format AAAA-MM-JJ. -->
 
+## 2026-11-05 : corrections du 3 novembre publiées
+
+- Sur accord de l'utilisateur, `main` avancé sur `dev` et poussé avec le compte `mamalric` (commit 6713cf6) ; déploiement GitHub Pages réussi.
+- Contrôlé sur le site en ligne, à 375 px : phrase d'accueil et description alignées, densités des magasins dans la fiche ERP, ligne EI 120-S dans le cours du clapet, date du 1er juin 2027 dans la fiche des locaux techniques, recherche "surface de vente", console vide, pas de défilement horizontal sur les pages vues.
+- Reste à faire : savoir si B27 a un abonnement COBAZ pour lire les normes payantes.
+
 ## 2026-11-03 : article M 2, accès aux normes, textes alignés, branche archivée
 
 - Fiche `erp` : article M 2 lu sur Légifrance, version en vigueur depuis le 1er décembre 2017 (arrêté du 15 novembre 2017). Une personne pour 3 m² de surface de vente en sous-sol, au rez-de-chaussée et au 1er étage, 6 m² au 2e étage, 15 m² au-dessus ; 9 m² en faible densité ; 5 m² de mail et 6 m² en boutique de moins de 300 m² dans un centre commercial. Le badge "à vérifier" est levé et la référence corrigée : le cours citait à tort l'arrêté du 13 juin 2017.
