@@ -33,7 +33,9 @@
   - bac à graisses : 149 dont 6, puis 152 dont 5.
 - Vérificateur à 0 erreur. Contrôlé dans le navigateur à 375 px : console vide, pas de défilement horizontal. Les modes émission et rupture du clapet, câble coupé compris, affichent leurs nouveaux badges, ainsi que les pastilles du groupe froid.
 - Carte : tuiles du clapet, des locaux, de la sorbonne et du bac à graisses mises à jour, sous-titre raccourci. La version 2 reste en brouillon.
-- Reste à faire : publier sur accord de l'utilisateur ; relire la rubrique 1185 dans la nomenclature des ICPE.
+- Publié le même jour sur accord de l'utilisateur : `main` avancé sur `dev` (48745d7) et poussé. Le déploiement de GitHub Pages a échoué deux fois côté GitHub ("Deployment failed, try again later"), et la relance d'un déploiement échoué est restée bloquée en file. Une nouvelle construction demandée par l'API `pages/builds` a réussi. Contrôlé en ligne : les quatre fiches montrent les nouvelles lignes, la console est vide.
+- Normes rangées pour les fiches à venir de la liste de mots clés : 26 PDF et leur texte dans `prive/sources/pour-plus-tard` (salles propres, zones à environnement maîtrisé, ventilation et réseaux de conduits, désenfumage, chauffage, froid, GTB, réseau de chaleur), téléchargés en un seul ZIP. NF EN 14511-1 n'a pas de PDF sur Batipédia. Absentes de l'abonnement : NF EN 1822, NF EN ISO 29463, NF EN ISO 16890, NF EN 1886, NF EN 13053, NF EN 15232, NF EN ISO 14644-2, -3 et -7.
+- Reste à faire : relire la rubrique 1185 dans la nomenclature des ICPE.
 
 ## 2026-11-06 : fiche bac à graisses
 
