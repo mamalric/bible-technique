@@ -31,7 +31,11 @@
   - la tuile d7 "Bac à graisses" est ajoutée, en cours ;
   - la zone des fiches disponibles s'agrandit d'une rangée, et les zones du bas descendent d'autant ;
   - la tuile du cours indique 6 fiches.
-- Reste à faire : publier sur accord de l'utilisateur ; ajouter la ligne "fiche bible ajoutée" au journal de l'affaire (laissée à la session de l'affaire) ; demander si l'accès CSTB peut servir aux normes restées non lues des autres fiches.
+- La session de l'affaire a ajouté à son journal la ligne "fiche bible ajoutée", avec les points des § 7.2 et 7.3 utiles à la réception.
+- Sur accord de l'utilisateur, `main` avancé sur `dev` et poussé avec le compte `mamalric` (commit d041388) ; déploiement GitHub Pages réussi, plus lent que d'habitude.
+- Contrôlé sur le site en ligne, à 375 px : les 13 étapes s'ouvrent sans défilement horizontal, le schéma réagit, les 6 badges "à vérifier" s'affichent, console vide.
+- Carte : la tuile d7 passe à "en ligne" ; elle reste en cours, car 6 affirmations sont à vérifier.
+- Reste à faire : demander si l'accès CSTB peut servir aux normes restées non lues des autres fiches.
 
 ## 2026-11-06 : douze fiches à venir, carte version 2 en brouillon
 
