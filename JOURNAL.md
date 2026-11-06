@@ -2,6 +2,14 @@
 
 <!-- Dernière entrée en haut. Une entrée par session de travail ou par décision. Date au format AAAA-MM-JJ. -->
 
+## 2026-11-06 : douze fiches à venir, carte version 2 en brouillon
+
+- L'utilisateur donne une liste de mots clés à développer dans la bible : chauffage, climatisation, ventilation et traitement d'air, désenfumage, production et distribution d'énergie, régulation et GTB, installations CVC complexes selon les typologies de bâtiments, gestion de pression, filtration absolue, mesure d'empoussièrement, salles à environnement contrôlé, salles blanches, réseau de chaleur urbain ou de froid.
+- Ce que les fiches en ligne couvrent déjà : la ventilation (cours de 17 étapes), le réseau de chaleur et la sous-station vus depuis le local technique, le désenfumage cité seulement par le clapet et les ERP. Rien sur les salles propres, la filtration absolue, la cascade de pression, la GTB ou l'empoussièrement.
+- Découpage proposé, une fiche par notion qu'on cherche sous ce nom : réseau de chaleur et de froid, les bases du chauffage, les bases de la climatisation, production et distribution (réseau hydraulique), régulation et GTB, installations complexes (une fiche par typologie), traitement d'air (la CTA, suite des bases de la ventilation), désenfumage, salle propre (salles blanches et zones à environnement contrôlé réunies), filtration absolue, gestion de pression, mesure d'empoussièrement.
+- Carte : version 2 en brouillon. Une zone "À venir" est ajoutée à droite, pour que la carte reste lisible en A3 paysage sans déplacer les tuiles existantes : douze tuiles à faire, avec des liens en pointillé de la salle propre vers la filtration, la pression et la mesure. La tuile "Fiches suivantes" devient "Autres fiches" (plomberie, thermique, électricité). Quatre questions ouvertes : l'ordre, le sens de "mesure d'empoussièrement", le découpage de "production et distribution", les typologies à traiter d'abord.
+- Reste à faire : faire valider la version 2, puis écrire les fiches dans l'ordre validé.
+
 ## 2026-11-05 : pas d'accès aux normes payantes
 
 - L'utilisateur répond que B27 n'a pas d'accès aux normes payantes. NF EN 13501-3, NF S 61-937, NF X 15-206, NF X 15-211 et NF EN 14175 restent donc non lues, sauf achat ou document apporté par l'utilisateur. Rien n'a été acheté ; les prix relevés sont dans l'entrée du 3 novembre.

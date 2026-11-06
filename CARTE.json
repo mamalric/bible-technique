@@ -2,8 +2,8 @@
  "format": "carte-projet 1",
  "titre": "Bible technique : le parcours de l'utilisateur",
  "sous_titre": [
-  "Version 1, validée le 2026-11-03",
-  "Première carte du projet, remplie d'après le journal et l'état du site en ligne."
+  "Version 2, brouillon du 2026-11-06, à valider",
+  "Version 1 validée le 2026-11-03 ; fiches à venir ajoutées d'après la liste de mots clés du 6 novembre 2026."
  ],
  "titre_pos": [
   40,
@@ -63,6 +63,14 @@
    "y": 1390,
    "l": 850,
    "h": 220
+  },
+  {
+   "id": "z5",
+   "titre": "À venir : les fiches demandées le 6 novembre",
+   "x": 1820,
+   "y": 140,
+   "l": 610,
+   "h": 1470
   }
  ],
  "tuiles": [
@@ -424,9 +432,9 @@
    "l": 240,
    "h": 100,
    "etat": "a_faire",
-   "titre": "Fiches suivantes",
+   "titre": "Autres fiches",
    "texte": [
-    "au fil des affaires : froid, plomberie, thermique, électricité"
+    "au fil des affaires : plomberie, thermique, électricité"
    ],
    "note": ""
   },
@@ -455,6 +463,162 @@
     "annoncées à la création, à recueillir"
    ],
    "note": ""
+  },
+  {
+   "id": "e1",
+   "x": 1860,
+   "y": 200,
+   "l": 240,
+   "h": 100,
+   "etat": "a_faire",
+   "titre": "Réseau de chaleur et de froid",
+   "texte": [
+    "primaire, secondaire, raccordement"
+   ],
+   "note": "proposée en premier"
+  },
+  {
+   "id": "e2",
+   "x": 1860,
+   "y": 450,
+   "l": 240,
+   "h": 100,
+   "etat": "a_faire",
+   "titre": "Les bases du chauffage",
+   "texte": [
+    "besoin, production, réseau, émetteurs"
+   ],
+   "note": ""
+  },
+  {
+   "id": "e3",
+   "x": 1860,
+   "y": 700,
+   "l": 240,
+   "h": 100,
+   "etat": "a_faire",
+   "titre": "Les bases de la climatisation",
+   "texte": [
+    "cycle du froid, PAC, DRV, eau glacée"
+   ],
+   "note": ""
+  },
+  {
+   "id": "e4",
+   "x": 1860,
+   "y": 950,
+   "l": 240,
+   "h": 100,
+   "etat": "a_faire",
+   "titre": "Production et distribution",
+   "texte": [
+    "réseau hydraulique : circuits, pompes, équilibrage"
+   ],
+   "note": "découpage à confirmer"
+  },
+  {
+   "id": "e5",
+   "x": 1860,
+   "y": 1200,
+   "l": 240,
+   "h": 100,
+   "etat": "a_faire",
+   "titre": "Régulation et GTB",
+   "texte": [
+    "boucle de régulation, sondes, vannes, supervision"
+   ],
+   "note": ""
+  },
+  {
+   "id": "e6",
+   "x": 1860,
+   "y": 1450,
+   "l": 240,
+   "h": 100,
+   "etat": "a_faire",
+   "titre": "Installations complexes",
+   "texte": [
+    "une fiche par typologie de bâtiment"
+   ],
+   "note": "typologies à choisir"
+  },
+  {
+   "id": "f1",
+   "x": 2150,
+   "y": 200,
+   "l": 240,
+   "h": 100,
+   "etat": "a_faire",
+   "titre": "Traitement d'air : la CTA",
+   "texte": [
+    "batteries, récupération, filtres, humidité"
+   ],
+   "note": ""
+  },
+  {
+   "id": "f2",
+   "x": 2150,
+   "y": 450,
+   "l": 240,
+   "h": 100,
+   "etat": "a_faire",
+   "titre": "Désenfumage",
+   "texte": [
+    "naturel ou mécanique, ERP, travail, habitation"
+   ],
+   "note": ""
+  },
+  {
+   "id": "f3",
+   "x": 2150,
+   "y": 700,
+   "l": 240,
+   "h": 100,
+   "etat": "a_faire",
+   "titre": "Salle propre",
+   "texte": [
+    "salle blanche, zone à environnement contrôlé"
+   ],
+   "note": ""
+  },
+  {
+   "id": "f4",
+   "x": 2150,
+   "y": 950,
+   "l": 240,
+   "h": 100,
+   "etat": "a_faire",
+   "titre": "Filtration absolue",
+   "texte": [
+    "filtres HEPA et ULPA, essai d'intégrité"
+   ],
+   "note": ""
+  },
+  {
+   "id": "f5",
+   "x": 2150,
+   "y": 1200,
+   "l": 240,
+   "h": 100,
+   "etat": "a_faire",
+   "titre": "Gestion de pression",
+   "texte": [
+    "cascade, sas, surpression ou dépression"
+   ],
+   "note": ""
+  },
+  {
+   "id": "f6",
+   "x": 2150,
+   "y": 1450,
+   "l": 240,
+   "h": 100,
+   "etat": "a_faire",
+   "titre": "Mesure d'empoussièrement",
+   "texte": [
+    "comptage de particules"
+   ],
+   "note": "sens à confirmer"
   }
  ],
  "textes": [
@@ -466,7 +630,10 @@
    "h": 160,
    "italique": false,
    "lignes": [
-    "Aucune pour l'instant. B27 n'a pas d'accès aux normes payantes : elles restent citées par leur numéro et signalées non lues."
+    "1. Ordre : le réseau de chaleur et de froid d'abord, puis les autres dans l'ordre de ta liste ?",
+    "2. Mesure d'empoussièrement : comptage de particules en salle propre, ou poussières au poste de travail (amiante, chantier) ?",
+    "3. Production et distribution : une fiche sur le réseau hydraulique, la production allant dans les fiches chauffage, climatisation et réseau de chaleur ?",
+    "4. Installations complexes : quelles typologies d'abord (hôpital, laboratoire, piscine, cuisine professionnelle, salle informatique) ?"
    ]
   }
  ],
@@ -623,6 +790,27 @@
   {
    "de": "d4",
    "vers": "d5",
+   "libelle": "",
+   "pointille": true,
+   "points": []
+  },
+  {
+   "de": "f3",
+   "vers": "f4",
+   "libelle": "",
+   "pointille": true,
+   "points": []
+  },
+  {
+   "de": "f4",
+   "vers": "f5",
+   "libelle": "",
+   "pointille": true,
+   "points": []
+  },
+  {
+   "de": "f5",
+   "vers": "f6",
    "libelle": "",
    "pointille": true,
    "points": []
