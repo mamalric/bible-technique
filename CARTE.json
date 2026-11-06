@@ -2,7 +2,7 @@
  "format": "carte-projet 1",
  "titre": "Bible technique : le parcours de l'utilisateur",
  "sous_titre": [
-  "Version 2, brouillon du 2026-11-06, à valider",
+  "Version 2, brouillon du 2026-11-06, en attente",
   "Version 1 validée le 2026-11-03 ; fiches à venir ajoutées d'après la liste de mots clés du 6 novembre 2026."
  ],
  "titre_pos": [
@@ -66,7 +66,7 @@
   },
   {
    "id": "z5",
-   "titre": "À venir : les fiches demandées le 6 novembre",
+   "titre": "En attente : la liste du 6 novembre, à reprendre plus tard",
    "x": 1820,
    "y": 140,
    "l": 610,
@@ -470,7 +470,7 @@
    "y": 1200,
    "l": 240,
    "h": 100,
-   "etat": "a_faire",
+   "etat": "de_cote",
    "titre": "Réseau de chaleur et de froid",
    "texte": [
     "primaire, secondaire, raccordement"
@@ -483,7 +483,7 @@
    "y": 450,
    "l": 240,
    "h": 100,
-   "etat": "a_faire",
+   "etat": "de_cote",
    "titre": "Les bases du chauffage",
    "texte": [
     "besoin, production, réseau, émetteurs"
@@ -496,7 +496,7 @@
    "y": 700,
    "l": 240,
    "h": 100,
-   "etat": "a_faire",
+   "etat": "de_cote",
    "titre": "Les bases de la climatisation",
    "texte": [
     "cycle du froid, PAC, DRV, eau glacée"
@@ -509,7 +509,7 @@
    "y": 950,
    "l": 240,
    "h": 100,
-   "etat": "a_faire",
+   "etat": "de_cote",
    "titre": "Production et distribution",
    "texte": [
     "réseau hydraulique : circuits, pompes, équilibrage"
@@ -522,7 +522,7 @@
    "y": 200,
    "l": 240,
    "h": 100,
-   "etat": "a_faire",
+   "etat": "de_cote",
    "titre": "Régulation et GTB",
    "texte": [
     "boucle de régulation, sondes, vannes, supervision"
@@ -535,7 +535,7 @@
    "y": 1450,
    "l": 240,
    "h": 100,
-   "etat": "a_faire",
+   "etat": "de_cote",
    "titre": "Installations complexes",
    "texte": [
     "une fiche par typologie de bâtiment"
@@ -548,7 +548,7 @@
    "y": 1200,
    "l": 240,
    "h": 100,
-   "etat": "a_faire",
+   "etat": "de_cote",
    "titre": "Traitement d'air : la CTA",
    "texte": [
     "batteries, récupération, filtres, humidité"
@@ -561,7 +561,7 @@
    "y": 1450,
    "l": 240,
    "h": 100,
-   "etat": "a_faire",
+   "etat": "de_cote",
    "titre": "Désenfumage",
    "texte": [
     "naturel ou mécanique, ERP, travail, habitation"
@@ -574,12 +574,12 @@
    "y": 200,
    "l": 240,
    "h": 100,
-   "etat": "a_faire",
+   "etat": "de_cote",
    "titre": "Salle propre",
    "texte": [
     "salle blanche, zone à environnement contrôlé"
    ],
-   "note": "proposée en premier"
+   "note": "première à la reprise"
   },
   {
    "id": "f4",
@@ -587,7 +587,7 @@
    "y": 450,
    "l": 240,
    "h": 100,
-   "etat": "a_faire",
+   "etat": "de_cote",
    "titre": "Filtration absolue",
    "texte": [
     "filtres HEPA et ULPA, essai d'intégrité"
@@ -600,7 +600,7 @@
    "y": 700,
    "l": 240,
    "h": 100,
-   "etat": "a_faire",
+   "etat": "de_cote",
    "titre": "Gestion de pression",
    "texte": [
     "cascade, sas, surpression ou dépression"
@@ -613,7 +613,7 @@
    "y": 950,
    "l": 240,
    "h": 100,
-   "etat": "a_faire",
+   "etat": "de_cote",
    "titre": "Mesure d'empoussièrement",
    "texte": [
     "comptage de particules en salle propre"
@@ -630,7 +630,7 @@
    "h": 160,
    "italique": false,
    "lignes": [
-    "1. Ordre : la salle propre et ses trois fiches liées d'abord, puis le reste de la colonne de gauche, puis celle de droite, de haut en bas ?",
+    "1. À la reprise, ordre : la salle propre et ses trois fiches liées d'abord, puis le reste de la colonne de gauche, puis celle de droite, de haut en bas ?",
     "2. Production et distribution : une fiche sur le réseau hydraulique, la production allant dans les fiches chauffage, climatisation et réseau de chaleur ?",
     "3. Installations complexes : quelles typologies d'abord (industrie pharmaceutique, bloc opératoire, laboratoire, salle informatique) ?"
    ]
