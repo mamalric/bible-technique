@@ -466,8 +466,8 @@
   },
   {
    "id": "e1",
-   "x": 1860,
-   "y": 200,
+   "x": 2150,
+   "y": 1200,
    "l": 240,
    "h": 100,
    "etat": "a_faire",
@@ -475,11 +475,11 @@
    "texte": [
     "primaire, secondaire, raccordement"
    ],
-   "note": "proposée en premier"
+   "note": ""
   },
   {
    "id": "e2",
-   "x": 1860,
+   "x": 2150,
    "y": 450,
    "l": 240,
    "h": 100,
@@ -492,7 +492,7 @@
   },
   {
    "id": "e3",
-   "x": 1860,
+   "x": 2150,
    "y": 700,
    "l": 240,
    "h": 100,
@@ -505,7 +505,7 @@
   },
   {
    "id": "e4",
-   "x": 1860,
+   "x": 2150,
    "y": 950,
    "l": 240,
    "h": 100,
@@ -518,8 +518,8 @@
   },
   {
    "id": "e5",
-   "x": 1860,
-   "y": 1200,
+   "x": 2150,
+   "y": 200,
    "l": 240,
    "h": 100,
    "etat": "a_faire",
@@ -531,7 +531,7 @@
   },
   {
    "id": "e6",
-   "x": 1860,
+   "x": 2150,
    "y": 1450,
    "l": 240,
    "h": 100,
@@ -544,8 +544,8 @@
   },
   {
    "id": "f1",
-   "x": 2150,
-   "y": 200,
+   "x": 1860,
+   "y": 1200,
    "l": 240,
    "h": 100,
    "etat": "a_faire",
@@ -557,8 +557,8 @@
   },
   {
    "id": "f2",
-   "x": 2150,
-   "y": 450,
+   "x": 1860,
+   "y": 1450,
    "l": 240,
    "h": 100,
    "etat": "a_faire",
@@ -570,8 +570,8 @@
   },
   {
    "id": "f3",
-   "x": 2150,
-   "y": 700,
+   "x": 1860,
+   "y": 200,
    "l": 240,
    "h": 100,
    "etat": "a_faire",
@@ -579,12 +579,12 @@
    "texte": [
     "salle blanche, zone à environnement contrôlé"
    ],
-   "note": ""
+   "note": "proposée en premier"
   },
   {
    "id": "f4",
-   "x": 2150,
-   "y": 950,
+   "x": 1860,
+   "y": 450,
    "l": 240,
    "h": 100,
    "etat": "a_faire",
@@ -596,8 +596,8 @@
   },
   {
    "id": "f5",
-   "x": 2150,
-   "y": 1200,
+   "x": 1860,
+   "y": 700,
    "l": 240,
    "h": 100,
    "etat": "a_faire",
@@ -609,16 +609,16 @@
   },
   {
    "id": "f6",
-   "x": 2150,
-   "y": 1450,
+   "x": 1860,
+   "y": 950,
    "l": 240,
    "h": 100,
    "etat": "a_faire",
    "titre": "Mesure d'empoussièrement",
    "texte": [
-    "comptage de particules"
+    "comptage de particules en salle propre"
    ],
-   "note": "sens à confirmer"
+   "note": ""
   }
  ],
  "textes": [
@@ -630,10 +630,9 @@
    "h": 160,
    "italique": false,
    "lignes": [
-    "1. Ordre : le réseau de chaleur et de froid d'abord, puis les autres dans l'ordre de ta liste ?",
-    "2. Mesure d'empoussièrement : comptage de particules en salle propre, ou poussières au poste de travail (amiante, chantier) ?",
-    "3. Production et distribution : une fiche sur le réseau hydraulique, la production allant dans les fiches chauffage, climatisation et réseau de chaleur ?",
-    "4. Installations complexes : quelles typologies d'abord (hôpital, laboratoire, piscine, cuisine professionnelle, salle informatique) ?"
+    "1. Ordre : la salle propre et ses trois fiches liées d'abord, puis le reste de la colonne de gauche, puis celle de droite, de haut en bas ?",
+    "2. Production et distribution : une fiche sur le réseau hydraulique, la production allant dans les fiches chauffage, climatisation et réseau de chaleur ?",
+    "3. Installations complexes : quelles typologies d'abord (industrie pharmaceutique, bloc opératoire, laboratoire, salle informatique) ?"
    ]
   }
  ],
