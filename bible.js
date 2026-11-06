@@ -78,7 +78,17 @@
       '<rect x="16" y="8" width="4" height="38" fill="var(--s-air)" stroke="var(--encre)" stroke-width="1"/>' +
       '<path d="M2 54H14Q36 50 58 54" fill="none" stroke="var(--s-air)" stroke-width="3" stroke-linecap="round" stroke-dasharray="5 5"/>' +
       '<path d="M38 56C40 42 50 40 58 42" fill="none" stroke="var(--s-chaud)" stroke-width="3" stroke-linecap="round"/>' +
-      '<rect x="62" y="4" width="6" height="18" fill="var(--s-gaine)" stroke="var(--s-gaine-bord)"/></svg>'
+      '<rect x="62" y="4" width="6" height="18" fill="var(--s-gaine)" stroke="var(--s-gaine-bord)"/></svg>',
+    graisses:
+      '<svg viewBox="0 0 86 86" width="86" height="86" aria-hidden="true">' +
+      '<rect x="14" y="26" width="58" height="46" rx="4" fill="var(--s-gaine)" stroke="var(--encre-2)" stroke-width="2.5"/>' +
+      '<rect x="16" y="40" width="54" height="30" fill="var(--s-air)" fill-opacity=".3"/>' +
+      '<rect x="32" y="36" width="24" height="9" fill="var(--s-chaud)" fill-opacity=".7"/>' +
+      '<path d="M30 26v30M56 26v34" stroke="var(--encre-2)" stroke-width="2.5"/>' +
+      '<path d="M2 32H22V48" fill="none" stroke="var(--s-gaine-bord)" stroke-width="5"/>' +
+      '<path d="M66 40H84" stroke="var(--s-gaine-bord)" stroke-width="5"/>' +
+      '<circle cx="40" cy="54" r="2.5" fill="var(--s-chaud)"/><circle cx="47" cy="60" r="2" fill="var(--s-chaud)"/>' +
+      '<path d="M20 70Q25 63 29 70z" fill="var(--s-hachure)"/></svg>'
   };
 
   function echapper(s) {

@@ -69,6 +69,15 @@ window.BIBLE = {
       motscles: ["sorbonne", "hotte", "laboratoire", "guillotine", "vitesse frontale", "confinement", "SF6", "plenum", "débit variable", "recirculation", "air de compensation", "NF EN 14175", "NF X 15-206", "NF X 15-211", "ED 795", "PSM", "boîte à gants", "ATEX", "CMR"],
       vignette: "sorbonne",
       maj: "2026-11-03"
+    },
+    {
+      id: "bac-a-graisses",
+      titre: "Bac à graisses",
+      resume: "Un cours en 13 étapes, puis la fiche : comment un séparateur retient les graisses d'une cuisine, qui l'impose, comment le dimensionner et le raccorder, ce que demande la traversée d'un plancher en ERP, et comment le vidanger.",
+      domaines: ["plomberie", "securite"],
+      motscles: ["bac à graisses", "BAG", "séparateur à graisses", "débourbeur", "NF EN 1825", "taille nominale", "NS", "restaurant", "cuisine", "eaux grasses", "EG", "pente", "2 %", "DTU 60.11", "DTU 60.1", "DTU 60.33", "culotte", "45°", "ventilation", "vidange", "aspiration", "raccord pompier", "fonte", "PVC", "PP", "PE", "PVC pression", "lave-vaisselle", "CO 31", "pare-flammes", "collier coupe-feu", "règlement d'assainissement", "assimilé domestique", "fécules", "Avis Technique"],
+      vignette: "graisses",
+      maj: "2026-11-06"
     }
   ]
 };

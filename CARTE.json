@@ -3,7 +3,7 @@
  "titre": "Bible technique : le parcours de l'utilisateur",
  "sous_titre": [
   "Version 2, brouillon du 2026-11-06, en attente",
-  "Version 1 validée le 2026-11-03 ; fiches à venir ajoutées d'après la liste de mots clés du 6 novembre 2026."
+  "Version 1 validée le 2026-11-03 ; fiches à venir ajoutées d'après la liste de mots clés du 6 novembre 2026 ; fiche bac à graisses ajoutée le même jour."
  ],
  "titre_pos": [
   40,
@@ -46,13 +46,13 @@
    "x": 40,
    "y": 1150,
    "l": 1740,
-   "h": 200
+   "h": 340
   },
   {
    "id": "zp",
    "titre": "Mis de côté pour l'instant",
    "x": 40,
-   "y": 1390,
+   "y": 1530,
    "l": 850,
    "h": 220
   },
@@ -60,7 +60,7 @@
    "id": "zq",
    "titre": "Questions ouvertes",
    "x": 930,
-   "y": 1390,
+   "y": 1530,
    "l": 850,
    "h": 220
   },
@@ -267,7 +267,7 @@
    "texte": [
     "une étape par écran, pour un débutant"
    ],
-   "note": "facultatif : dans les 5 fiches"
+   "note": "facultatif : dans les 6 fiches"
   },
   {
    "id": "c3",
@@ -441,7 +441,7 @@
   {
    "id": "p1",
    "x": 80,
-   "y": 1450,
+   "y": 1590,
    "l": 350,
    "h": 100,
    "etat": "de_cote",
@@ -454,7 +454,7 @@
   {
    "id": "p2",
    "x": 490,
-   "y": 1450,
+   "y": 1590,
    "l": 350,
    "h": 100,
    "etat": "de_cote",
@@ -619,13 +619,26 @@
     "comptage de particules en salle propre"
    ],
    "note": ""
+  },
+  {
+   "id": "d7",
+   "x": 80,
+   "y": 1350,
+   "l": 240,
+   "h": 100,
+   "etat": "en_cours",
+   "titre": "Bac à graisses",
+   "texte": [
+    "sur dev, cours de 13 étapes, 149 affirmations"
+   ],
+   "note": "6 à vérifier"
   }
  ],
  "textes": [
   {
    "id": "q1",
    "x": 955,
-   "y": 1435,
+   "y": 1575,
    "l": 800,
    "h": 160,
    "italique": false,

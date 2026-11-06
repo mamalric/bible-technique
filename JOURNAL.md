@@ -2,6 +2,37 @@
 
 <!-- Dernière entrée en haut. Une entrée par session de travail ou par décision. Date au format AAAA-MM-JJ. -->
 
+## 2026-11-06 : fiche bac à graisses
+
+- Demande de l'utilisateur, transmise par la session d'une affaire en cours : une fiche sur les bacs à graisses, qu'il maîtrise mal. Les questions soulevées sur cette affaire ont fixé le plan : rang des textes, pentes, matériaux et températures, raccordements et ventilation, vidange et aspiration, taille nominale et changement de taille, coupe-feu des traversées en ERP.
+- Fiche `bac-a-graisses` : un cours de 13 étapes pour débutant, en quatre parties (comprendre, le choisir, le réseau qui y mène, l'entretenir), puis la fiche complète. Schéma `graisses` : une coupe du séparateur, entre la cuisine et l'égout, avec deux cas d'eau (tiède, ou très chaude avec détergents). On fait passer le temps jusqu'à ce que les graisses partent à l'égout, puis on vidange. Dix dessins pour le cours, dont un calculateur de taille nominale et une règle des diamètres de CO 31. Vignette `graisses` dans `bible.js`. L'arbre de décision dit si une traversée doit tenir au feu en ERP.
+- Sources :
+  - lues sous la licence CSTB du bureau d'études et reformulées, jamais recopiées : NF EN 1825-2 de novembre 2002 (§ 1 à 8), NF DTU 60.11 P2 (§ 6.1 et 6.3), NF DTU 60.1 P1-1-2 (§ 5.4) et P1-2 (§ 4.1), NF DTU 60.33 P1-2 (§ 3.1), et l'Avis Technique d'un tube PP d'évacuation ;
+  - lus sur Légifrance : CO 31 dans sa version du 8 octobre 2008 et CO 32, le code de la santé publique (L1331-7-1, L1331-10, L1331-15), l'arrêté du 21 décembre 2007 et le décret n° 2009-697, article 17 ;
+  - trois règlements d'assainissement de collectivités, une note de veille du GRAIE (2006), et des fiches de fabricants.
+- NF EN 1825-1 n'a pas été lue : la liste des tailles nominales vient de la note du GRAIE.
+- Points tranchés par les textes :
+  - la NF EN 1825-2 demande 2 % de pente en amont du séparateur (§ 7.3), quand aucune règle locale n'en dispose autrement ; les DTU donnent 1 % pour les évacuations ordinaires ;
+  - le passage de la verticale à l'horizontale se fait par deux coudes à 45° séparés d'au moins 250 mm, puis une longueur droite d'au moins 10 fois le diamètre ;
+  - il faut une ventilation de plus si la plus proche est à plus de 10 m en amont (§ 7.4) ;
+  - la vidange se fait au moins une fois par mois, sauf autre prescription (§ 8) ;
+  - l'Avis Technique du tube PP lu ne vise pas les cuisines industrielles, alors que la page de son fabricant admet les eaux grasses de restauration avec des joints NBR : l'écart est signalé dans les pièges ;
+  - le PVC pression est un tube d'eau potable, que le DTU du PVC d'évacuation ne cite pas comme tube ;
+  - un fourreau coupe-feu pour câbles ne vaut pas pour des tubes.
+- Site public : aucun fabricant n'est nommé. Les noms de l'affaire et des fabricants cités sont ajoutés à `prive/noms-interdits.txt`, et le cas en clair va dans `prive/traces.md`.
+- Badges : 149 affirmations, dont 6 à vérifier. Vérificateur à 0 erreur. Contrôlé dans le navigateur :
+  - console vide ;
+  - les deux modes du schéma, le temps qui passe et la vidange fonctionnent ;
+  - le calculateur donne NS 4 pour 200 repas et NS 10 pour 600 repas à plus de 60 °C ;
+  - les neuf verdicts de l'arbre sont atteints ;
+  - pas de défilement horizontal à 375 px sur les 13 étapes ;
+  - le thème clair reste lisible, et la carte et la vignette s'affichent sur l'accueil.
+- Carte, version 2 toujours en brouillon :
+  - la tuile d7 "Bac à graisses" est ajoutée, en cours ;
+  - la zone des fiches disponibles s'agrandit d'une rangée, et les zones du bas descendent d'autant ;
+  - la tuile du cours indique 6 fiches.
+- Reste à faire : publier sur accord de l'utilisateur ; ajouter la ligne "fiche bible ajoutée" au journal de l'affaire (laissée à la session de l'affaire) ; demander si l'accès CSTB peut servir aux normes restées non lues des autres fiches.
+
 ## 2026-11-06 : douze fiches à venir, carte version 2 en brouillon
 
 - L'utilisateur donne une liste de mots clés à développer dans la bible : chauffage, climatisation, ventilation et traitement d'air, désenfumage, production et distribution d'énergie, régulation et GTB, installations CVC complexes selon les typologies de bâtiments, gestion de pression, filtration absolue, mesure d'empoussièrement, salles à environnement contrôlé, salles blanches, réseau de chaleur urbain ou de froid.
