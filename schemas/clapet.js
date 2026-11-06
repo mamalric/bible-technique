@@ -102,8 +102,8 @@
 
   var NOTES = {
     auto: ["Au repos, la lame est dans le sens de l'air : le débit passe. Lancez un incendie pour voir le fusible jouer.", "fabricant"],
-    emission: ["Au repos, aucun courant dans le câble. Pour fermer le clapet, la centrale envoie une impulsion.", "verifier"],
-    rupture: ["Au repos, un courant permanent (les pointillés jaunes) tient la lame ouverte. Pour fermer le clapet, la centrale le coupe.", "verifier"]
+    emission: ["Au repos, aucun courant dans le câble. Pour fermer le clapet, la centrale envoie une impulsion.", "norme", "NF S 61-937-1, décembre 2003, § 6.2.3 et § 6.2.4"],
+    rupture: ["Au repos, un courant permanent (les pointillés jaunes) tient la lame ouverte. Pour fermer le clapet, la centrale le coupe.", "norme", "NF S 61-937-1, décembre 2003, § 6.2.3 ; NF S 61-937-5, mars 2012, § 10.3"]
   };
 
   window.BIBLE_SCHEMAS.clapet = function (cadre, ctx) {
@@ -121,7 +121,7 @@
     var mode = "auto", ferme = false, minuteurs = [];
 
     function plus(c) { svg.classList.add(c); }
-    function dire(texte, source) { note.innerHTML = texte + " " + ctx.badge(source); }
+    function dire(texte, source, ref) { note.innerHTML = texte + " " + ctx.badge(source, ref); }
     function plusTard(f, ms) { minuteurs.push(setTimeout(f, ms)); }
     function etat() {
       var e = commandes.querySelector(".schema-etat");
@@ -134,7 +134,7 @@
       minuteurs.forEach(clearTimeout); minuteurs = []; ferme = false;
       svg.setAttribute("class", mode === "auto" ? "auto" : mode);
       var p = svg.querySelector(".sc-impulsion"); p.style.opacity = 0;
-      dire(NOTES[mode][0], NOTES[mode][1]);
+      dire(NOTES[mode][0], NOTES[mode][1], NOTES[mode][2]);
       boutons();
     }
 
@@ -167,17 +167,17 @@
     function ordre() {
       if (ferme) return;
       if (mode === "emission") {
-        dire("La centrale envoie une impulsion de courant...", "verifier");
+        dire("La centrale envoie une impulsion de courant...", "norme", "NF S 61-937-1, décembre 2003, § 6.2.3 et § 6.2.4");
         impulsion(function () {
           plus("declenche"); fermer();
-          dire("L'impulsion a libéré le déclencheur : la lame se ferme. Il a fallu du courant pour fermer.", "verifier");
+          dire("L'impulsion a libéré le déclencheur : la lame se ferme. Il a fallu du courant pour fermer.", "norme", "NF S 61-937-1, décembre 2003, § 6.2.3");
         });
       } else {
         plus("sans-courant");
-        dire("La centrale coupe le courant permanent...", "verifier");
+        dire("La centrale coupe le courant permanent...", "norme", "NF S 61-937-1, décembre 2003, § 6.2.3");
         plusTard(function () {
           plus("declenche"); fermer();
-          dire("Plus de courant, plus rien ne tient la lame : elle se ferme.", "verifier");
+          dire("Plus de courant, plus rien ne tient la lame : elle se ferme.", "norme", "NF S 61-937-5, mars 2012, § 10.3");
         }, 600);
       }
     }
@@ -186,12 +186,12 @@
       if (ferme) return;
       plus("cable-coupe");
       if (mode === "emission") {
-        dire("Câble coupé, et pourtant le clapet reste ouvert : à émission, une coupure ne ferme rien. Seule une surveillance de la ligne la signale.", "verifier");
+        dire("Câble coupé, et pourtant le clapet reste ouvert : à émission, une coupure ne ferme rien. Seule la surveillance de la ligne, obligatoire, la signale.", "norme", "NF S 61-937-1, décembre 2003, § 6.2.3 ; NF S 61-932, décembre 2024, § 7.1");
       } else {
         plus("sans-courant");
         plusTard(function () {
           plus("declenche"); fermer();
-          dire("Câble coupé : plus de courant, le clapet se ferme tout seul. C'est la sécurité positive de la rupture.", "verifier");
+          dire("Câble coupé : plus de courant, le clapet se ferme tout seul. C'est la sécurité positive de la rupture.", "norme", "NF S 61-937-5, mars 2012, § 7 et § 10.3");
         }, 600);
       }
     }
@@ -436,10 +436,10 @@
       cadre.querySelector("#cf-e-e2").textContent = ferme ? "le clapet est en sécurité" : "l'air passe";
       Array.prototype.forEach.call(commandes.querySelectorAll("button[data-t]"), function (b) { b.classList.toggle("actif", b.getAttribute("data-t") === mode); });
       if (mode === "emission") {
-        if (coupe) dire("Le câble est coupé et rien ne se voit : le clapet reste ouvert, et l'ordre n'arrivera pas. Il ne reste que son fusible.", "verifier");
+        if (coupe) dire("Le câble est coupé : le clapet reste ouvert, et l'ordre n'arrivera pas. Seule la surveillance de la ligne, obligatoire, signale le défaut ; en attendant, il ne reste que son fusible.", "norme", "NF S 61-937-1, décembre 2003, § 6.2.3 ; NF S 61-932, décembre 2024, § 7.1 ; NF S 61-937-5, mars 2012, § 9.2");
         else if (ordre) dire("L'impulsion du CMSI a fermé le clapet.", "fabricant", CCM);
         else dire("Au repos, aucun courant : le clapet attend une impulsion du CMSI.", "fabricant", CCM);
-      } else if (coupe) dire("Câble coupé, courant coupé : le clapet se ferme. C'est la sécurité positive.", "norme", "NF S 61-937-1 de décembre 2003, citée par des certificats et procès-verbaux de DAS");
+      } else if (coupe) dire("Câble coupé, courant coupé : le clapet se ferme. C'est la sécurité positive.", "norme", "NF S 61-937-5, mars 2012, § 10.3 : sous 10 % de la tension nominale, plus rien ne retient le clapet");
       else if (ordre) dire("Le CMSI a coupé le courant : le clapet s'est fermé.", "fabricant", CCM);
       else dire("Un courant permanent tient le clapet ouvert.", "fabricant", CCM);
     }

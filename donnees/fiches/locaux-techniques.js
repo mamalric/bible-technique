@@ -3,6 +3,7 @@
    Textes lus en octobre 2026 : chapitre CH du règlement ERP dans sa version du 1er janvier 2026.
    "comme" et "retenir" ne portent pas de badge : "comme" est une image sans chiffre ni règle, "retenir" redit une ligne badgée de l'étape.
    Cours : guides du Cerema pour le réseau de chaleur, les valeurs de cette fiche pour les textes.
+   NF C 13-100 d'avril 2015, NF EN 378-1+A1 et NF EN 378-3+A1 d'octobre 2020 et DTU 65.3 (NF P 52-211-1) de mai 1993 lus le 6 novembre 2026 sous la licence du bureau d'études, reformulés, jamais recopiés.
    Site public : aucun nom d'affaire, de client, d'entreprise ni de personne. */
 
 window.BIBLE_FICHE = {
@@ -74,7 +75,7 @@ window.BIBLE_FICHE = {
 
         { id: "electrique", titre: "Le local électrique", dessin: "lt_elec",
           lignes: [
-            { t: "Sur un gros bâtiment, l'électricité arrive en haute tension. Le <b>poste</b> la reçoit du distributeur et la transforme en basse tension.", s: "verifier", ref: "explication générale ; le poste suit la NF C 13-100" },
+            { t: "Sur un gros bâtiment, l'électricité arrive en haute tension, plus de 1 000 V et jusqu'à 33 kV. Le <b>poste de livraison</b> la reçoit du réseau public ; il comprend en général un transformateur qui la passe en basse tension.", s: "norme", ref: "NF C 13-100, avril 2015, § 1" },
             { t: "Le <b>TGBT</b>, tableau général basse tension, distribue ensuite le courant dans tout le bâtiment.", s: "verifier", ref: "explication générale" }
           ],
           tuiles: [
@@ -88,9 +89,11 @@ window.BIBLE_FICHE = {
         { id: "froid-air", titre: "Le froid et l'air", dessin: "lt_froid",
           lignes: [
             { t: "Un groupe froid ou une pompe à chaleur contient un <b>fluide frigorigène</b>, le liquide qui transporte le froid. Leur local s'appelle la <b>salle des machines</b>.", s: "texte", ref: "arrêté du 25 juin 1980, article CH 35 ; NF EN 378 pour la sécurité de ces systèmes" },
+            { t: "La NF EN 378-1 range chaque installation dans une <b>classe d'emplacement</b> : machine dans l'espace occupé (I), compresseurs en salle des machines ou dehors (II), tout le circuit en salle des machines ou dehors (III), enceinte ventilée (IV). La charge de fluide admise en découle, avec la toxicité et l'inflammabilité du fluide et l'accès du public.", s: "norme", ref: "NF EN 378-1+A1, octobre 2020, § 5.1, § 5.3 et annexe C" },
+            { t: "Au-delà de 300 kg de gaz fluorés au total, dans des équipements de plus de 2 kg chacun, l'installation est classée pour l'environnement : déclaration avec contrôle périodique.", s: "verifier", ref: "nomenclature des ICPE, rubrique 1185, citée par des rapports d'inspection publiés ; texte de la nomenclature à relire" },
             { t: "En ERP, c'est un local à risques courants, avec deux orifices vers l'extérieur à des hauteurs différentes.", s: "texte", ref: "arrêté du 25 juin 1980, articles CH 35 et CO 28" },
             { t: "Si une fuite peut atteindre la limite d'inflammabilité : ventilation mécanique, et isolement en risques moyens.", s: "texte", ref: "arrêté du 25 juin 1980, articles CH 35 et CO 28" },
-            { t: "En sous-sol, une fuite peut s'accumuler au sol : la détection se place en point bas.", s: "verifier" },
+            { t: "Un fluide plus lourd que l'air s'accumule en bas : la détection se place dans la salle la plus basse, là où la fuite se concentre.", s: "norme", ref: "NF EN 378-3+A1, octobre 2020, § 9.2" },
             { t: "Un local réservé à une <b>centrale de traitement d'air</b>, ou CTA, est un local à risques courants. Une centrale ne va pas dans un local à risques particuliers, sauf si elle ne dessert que lui.", s: "texte", ref: "arrêté du 25 juin 1980, article CH 36" }
           ],
           comme: "Une cave où l'eau monte par le bas : c'est au ras du sol qu'on s'en aperçoit d'abord.",
@@ -137,6 +140,7 @@ window.BIBLE_FICHE = {
           intro: "Le sous-sol cumule les difficultés. Comparer les deux réseaux.",
           lignes: [
             { t: "Au-delà de 110 °C ou en vapeur haute pression : accès direct par l'extérieur, deux au-delà de 2 000 kW, et coupures du primaire et de l'électricité depuis l'extérieur.", s: "texte", ref: "arrêté du 23 juin 1978, articles 22 et 29" },
+            { t: "Le DTU des sous-stations à eau chaude sous pression demande aussi de pouvoir isoler la sous-station depuis l'extérieur : vanne à volant reporté dehors, vanne en chambre étanche extérieure, ou vanne télécommandée. Et, sur chaque porte, une plaque qui interdit l'accès au public.", s: "norme", ref: "NF P 52-211-1 (DTU 65.3), mai 1993, § 2.2.2 et § 2.5.1" },
             { t: "En ERP, dans ce cas, aucune communication directe avec le public, sauf par un sas à portes pleines ventilé en haut vers l'extérieur, de 4 dm² au moins.", s: "texte", ref: "arrêté du 25 juin 1980, article CH 11" },
             { t: "Réseau basse température : l'accès peut se faire par l'intérieur.", s: "expert", ref: "Cerema, guide de raccordement des copropriétés aux réseaux de chaleur, juillet 2019, paragraphe 4.1.2" },
             { t: "Réseau haute température : le primaire passe dehors. S'il entre dans le bâtiment, il va dans un caniveau ventilé et résistant, hors de portée du public.", s: "expert", ref: "Cerema, guide de raccordement des copropriétés aux réseaux de chaleur, juillet 2019, paragraphe 4.1.2" },
@@ -231,7 +235,7 @@ window.BIBLE_FICHE = {
     { t: "Sous-station en sous-sol sans puisard : une fuite du primaire noie le local, les pompes et les armoires.", s: "verifier" },
     { t: "Primaire en eau surchauffée sous-estimé : la fuite se vaporise, brûle et sature le local de vapeur.", s: "verifier" },
     { t: "Aucun passage prévu pour sortir l'échangeur ou la chaudière : le remplacement oblige à démolir.", s: "verifier" },
-    { t: "Fluide frigorigène en sous-sol sans détection en point bas : la fuite s'accumule au sol sans alerte.", s: "verifier" }
+    { t: "Fluide frigorigène plus lourd que l'air en sous-sol, sans détection en point bas : la fuite s'accumule au sol sans alerte.", s: "norme", ref: "NF EN 378-3+A1, octobre 2020, § 9.1 et § 9.2" }
   ],
 
   confondre: [
@@ -247,7 +251,7 @@ window.BIBLE_FICHE = {
     { s: "texte", t: "Arrêté du 22 juin 1990 (ERP de 5e catégorie), article PE 21 ; arrêté du 23 février 2018 (gaz en habitation), article 8.2.2." },
     { s: "texte", t: "Nomenclature des ICPE : rubrique 2910 (combustion) et rubrique 1185 (gaz à effet de serre fluorés). Directive 2014/68/UE sur les équipements sous pression." },
     { s: "texte", t: "Arrêté du 22 mars 2026 relatif à la résistance au feu des produits et éléments de construction, qui remplace l'arrêté du 22 mars 2004." },
-    { s: "norme", t: "NF EN 378 (systèmes frigorifiques et pompes à chaleur, sécurité) ; NF C 15-100 (installations basse tension) ; NF C 13-100 (postes de livraison HTA, édition 2015) ; NF P 52-211, DTU 65.3 (sous-stations), cité par les réseaux de chaleur. Normes payantes, non lues." },
+    { s: "norme", t: "NF EN 378-3+A1, octobre 2020 : salles des machines, ventilation d'urgence et détecteurs ; NF C 13-100, avril 2015 : postes de livraison HTA ; NF P 52-211-1 (DTU 65.3), mai 1993 : sous-stations à eau chaude sous pression ; NF EN 378-1+A1, octobre 2020 : classes d'emplacement et limites de charge. Lus le 6 novembre 2026. NF C 15-100 (installations basse tension), non lue." },
     { s: "verifier", t: "Règlement de service et cahier des prescriptions du réseau de chaleur concerné : ils fixent le local de la sous-station et la limite de prestation." },
     { s: "expert", t: "Pour apprendre : Cerema, guide de raccordement des copropriétés aux réseaux de chaleur (juillet 2019) et bases techniques des réseaux de chaleur (2014)." }
   ]

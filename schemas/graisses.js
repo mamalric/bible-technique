@@ -363,7 +363,7 @@
       Array.prototype.forEach.call(commandes.querySelectorAll("button[data-r]"), function (b) { b.classList.toggle("actif", +b.getAttribute("data-r") === etat.repas); });
       commandes.querySelector('[data-f="chaud"]').classList.toggle("actif", etat.chaud);
       commandes.querySelector('[data-f="deterg"]').classList.toggle("actif", etat.deterg);
-      dire("Qs = repas × 50 litres × 8,5 ÷ (3 600 × 12 heures), pour un restaurant. On multiplie par les facteurs, puis on prend la taille suivante de la liste : 1, 2, 4, 7, 10, 15, 20, 25. Le débourbeur fait au moins 100 litres par unité de taille.", "norme", en("§ 6.1, § 6.2 et § 6.4") + " ; volume par repas et coefficient d'une note de veille du GRAIE, 2006");
+      dire("Qs = repas × 50 litres × 8,5 ÷ (3 600 × 12 heures), pour un restaurant. On multiplie par les facteurs, puis on prend la taille suivante de la liste : 1, 2, 4, 7, 10, 15, 20, 25. Le débourbeur fait au moins 100 litres par unité de taille.", "norme", en("§ 6.1, § 6.2 et § 6.4") + " ; liste de la NF EN 1825-1, décembre 2004, § 4 ; volume par repas et coefficient d'une note de veille du GRAIE, 2006");
     }
     commandes.addEventListener("click", function (e) {
       var b = e.target.closest("button"); if (!b) return;

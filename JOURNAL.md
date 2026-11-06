@@ -2,6 +2,39 @@
 
 <!-- Dernière entrée en haut. Une entrée par session de travail ou par décision. Date au format AAAA-MM-JJ. -->
 
+## 2026-11-06 : normes CSTB lues pour les autres fiches
+
+- L'utilisateur a accepté que l'accès CSTB du bureau d'études (Batipédia, Reef) serve aux normes restées non lues des autres fiches. Il s'est connecté lui-même. Les PDF et leur texte restent dans `prive/sources`, ignoré par git : rien n'est versé au dépôt, tout est reformulé avec le numéro de paragraphe, jamais recopié.
+- Téléchargement : à sa demande, plus de boîte de dialogue par norme. Les PDF sont lus dans la page de Batipédia par script, puis regroupés en un seul ZIP : une seule confirmation pour tout le lot.
+- Normes lues : NF EN 13501-3 (août 2025), NF S 61-937-1 (décembre 2003), NF S 61-937-5 (mars 2012), NF S 61-932 (décembre 2024, avec l'amendement A1 de mai 2026), NF S 61-934 (1991), NF S 61-940 (2000), NF EN 378-1+A1 et NF EN 378-3+A1 (octobre 2020), NF C 13-100 (avril 2015), DTU 65.3 (NF P 52-211-1, mai 1993), NF EN 14175-2 (octobre 2003), XP CEN/TS 14175-5 (août 2010), NF EN 1825-1 (décembre 2004) et son complément national NF P 16-500-1/CN (janvier 2007).
+- Absentes de l'abonnement, donc toujours non lues : NF EN 15650, NF EN 1366-2, NF X 15-206, NF X 15-211, et les parties 1, 3, 4 et 6 de la NF EN 14175.
+- Clapet coupe-feu :
+  - le classement S et i↔o renvoient à la NF EN 13501-3 ;
+  - la fermeture en moins de 30 secondes vient de la NF S 61-937-5 ;
+  - émission et rupture s'appuient sur la NF S 61-937-1 (§ 6.2.3), et la surveillance obligatoire des lignes à émission sur la NF S 61-932 (§ 7.1) ;
+  - ajouts : catégorie des câbles de télécommande, aucune ligne dans une gaine (§ 4.5), rupture réservée aux DAS dont un déclenchement intempestif est sans danger (§ 9.3.1), retour de position obligatoire pour un clapet commun à plusieurs zones (§ 9.3.2.1) ;
+  - correction : la "sécurité positive" était attribuée à tort à la NF S 61-937-1, où le mot n'apparaît pas ; elle renvoie maintenant à la NF S 61-937-5 (§ 7 et § 10.3).
+- Locaux techniques :
+  - salle des machines frigorifique : arrêt d'urgence dehors et dedans (§ 5.6), ventilation d'urgence à deux commandes (§ 5.13.3), détecteur au point bas ou haut selon le fluide (§ 9.2), d'après la NF EN 378-3 ;
+  - nouvelle ligne : les quatre classes d'emplacement de la NF EN 378-1 ;
+  - le seuil ICPE de 300 kg (rubrique 1185) n'est confirmé que par des sources secondaires : il passe sur sa propre ligne et reste à vérifier ;
+  - le poste de livraison renvoie à la NF C 13-100 et le sous-sol au DTU 65.3.
+- Sorbonne :
+  - ajouts tirés de la NF EN 14175-2 : ouverture de travail (500 mm de préférence, 600 mm au plus), vitre et butée, indicateur de débit, alimentations, marquages et manuel ;
+  - ajouts tirés de la TS 14175-5 : distances d'implantation, air calme devant la façade et hauteur sous plafond, sorbonne mise à l'arrêt ;
+  - correction : la norme européenne n'est pas "sans seuil", elle laisse le seuil de confinement aux normes nationales (§ 8.1).
+- Bac à graisses :
+  - la liste des tailles nominales vient maintenant de la NF EN 1825-1 (§ 4), et non plus de la note du GRAIE ;
+  - ajouts tirés de la même norme : définition de la taille nominale, diamètres minimaux des tuyaux (tableau 1, jusqu'à DN 200), chute d'au moins 70 mm, stockage d'au moins 40 litres par unité de taille, couvercles étanches aux odeurs, plaque d'identification, notice du fabricant.
+- Badges, avant puis après :
+  - clapet : 99 affirmations dont 13 à vérifier, puis 103 dont 9 ;
+  - locaux : 118 dont 31, puis 121 dont 29 ;
+  - sorbonne : 90 dont 1, puis 97 dont 1 ;
+  - bac à graisses : 149 dont 6, puis 152 dont 5.
+- Vérificateur à 0 erreur. Contrôlé dans le navigateur à 375 px : console vide, pas de défilement horizontal. Les modes émission et rupture du clapet, câble coupé compris, affichent leurs nouveaux badges, ainsi que les pastilles du groupe froid.
+- Carte : tuiles du clapet, des locaux, de la sorbonne et du bac à graisses mises à jour, sous-titre raccourci. La version 2 reste en brouillon.
+- Reste à faire : publier sur accord de l'utilisateur ; relire la rubrique 1185 dans la nomenclature des ICPE.
+
 ## 2026-11-06 : fiche bac à graisses
 
 - Demande de l'utilisateur, transmise par la session d'une affaire en cours : une fiche sur les bacs à graisses, qu'il maîtrise mal. Les questions soulevées sur cette affaire ont fixé le plan : rang des textes, pentes, matériaux et températures, raccordements et ventilation, vidange et aspiration, taille nominale et changement de taille, coupe-feu des traversées en ERP.

@@ -223,14 +223,14 @@
       pastilles: [
         pt(P.paroi, "Parois", "Local à risques courants. Si une fuite peut atteindre la limite inférieure d'inflammabilité du fluide, il est isolé comme un local à risques moyens : CF 1 h.", "texte", "arrêté du 25 juin 1980, articles CH 35 et CO 28"),
         pt(P.porte, "Porte", "Isolé en risques moyens, le local a un bloc-porte CF 1/2 h avec ferme-porte. La salle des machines est distincte d'une chaufferie.", "texte", "arrêté du 25 juin 1980, articles CH 35 et CO 28"),
-        pt(P.au, "Arrêt d'urgence", "Arrêt de la machine et commande de la ventilation de secours hors du local.", "verifier"),
+        pt(P.au, "Arrêt d'urgence", "Un interrupteur d'urgence arrête la machine : un dehors, près de la porte, un second dedans. La ventilation d'urgence a, elle aussi, deux commandes indépendantes, une dehors et une dedans.", "norme", "NF EN 378-3+A1, octobre 2020, § 5.6 et § 5.13.3"),
         pt(P.vh, "Orifices vers l'extérieur", "Deux orifices donnent sur l'extérieur, à des hauteurs différentes.", "texte", "arrêté du 25 juin 1980, article CH 35"),
         pt(P.vb, "Ventilation mécanique", "Exigée si une fuite peut atteindre la limite d'inflammabilité. Respecter la NF EN 378 vaut présomption de conformité pour les débits.", "texte", "arrêté du 25 juin 1980, article CH 35"),
-        pt(P.puisard, "Point bas", "La plupart des fluides sont plus lourds que l'air : en sous-sol, une fuite s'accumule au sol.", "verifier"),
+        pt(P.puisard, "Point bas", "Un fluide plus lourd que l'air descend et s'accumule au sol : au moins un détecteur dans la salle la plus basse. Un fluide plus léger se détecte au point le plus haut.", "norme", "NF EN 378-3+A1, octobre 2020, § 9.2"),
         pt(P.acces, "Accès", "Réservé au personnel d'exploitation.", "verifier"),
-        [470, 270, "Machine frigorifique", "Selon le fluide, sa charge et l'emplacement, la NF EN 378 impose ou non une salle des machines. Au-delà de 300 kg de gaz fluorés au total (équipements de plus de 2 kg), c'est une installation classée.", "verifier", "NF EN 378 ; nomenclature des ICPE, rubrique 1185"],
-        [630, 340, "Détecteur de fluide", "Au-delà de la limite pratique du fluide, il déclenche l'alarme et la ventilation de secours.", "verifier", "NF EN 378-3, d'après une source secondaire"],
-        [277, 230, "Extraction basse", "Pour un fluide plus lourd que l'air. Exigée par l'ancienne NF E 35-400 ; à confirmer avec la NF EN 378.", "verifier"]
+        [470, 270, "Machine frigorifique", "La charge de fluide admise dépend du fluide, de l'accès du public et de l'emplacement : machine dans l'espace occupé, compresseurs seuls en salle des machines, tout le circuit en salle des machines, ou enceinte ventilée.", "norme", "NF EN 378-1+A1, octobre 2020, § 5.3 et annexe C"],
+        [630, 340, "Détecteur de fluide", "Là où le fluide risque de dépasser sa limite pratique, il déclenche au moins une alarme et, en salle des machines, la ventilation mécanique d'urgence. Il se place là où la fuite se concentre.", "norme", "NF EN 378-3+A1, octobre 2020, § 9.1 et § 9.2"],
+        [277, 230, "Extraction basse", "Les bouches sont placées pour évacuer le fluide quelle que soit la fuite, selon ses caractéristiques : un fluide plus lourd que l'air descend. La ventilation d'urgence a deux commandes, une dehors et une dedans ; 15 volumes par heure suffisent.", "norme", "NF EN 378-3+A1, octobre 2020, § 5.13.3 à § 5.13.5"]
       ]
     }
   };
@@ -297,7 +297,7 @@
       if (mode === "froid") {
         plus("fuite-fr");
         etat("Fuite de fluide");
-        dire("Le fluide fuit et descend au sol. Le détecteur en point bas déclenche l'alarme et l'extraction basse.", "verifier");
+        dire("Le fluide fuit et descend au sol. Le détecteur en point bas déclenche l'alarme et la ventilation mécanique d'urgence.", "norme", "NF EN 378-3+A1, octobre 2020, § 9.1 et § 9.2");
       } else {
         plus("fuite-eau");
         etat("Fuite d'eau");

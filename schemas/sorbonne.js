@@ -193,7 +193,7 @@
       etat.textContent = hors ? "Position de maintenance : pas de manipulation" : "Position de travail";
       if (sansNote) return;
       if (hors) {
-        dire("Au-delà de la butée, c'est la position de maintenance : le confinement n'est plus suffisant et la protection contre les projections est plus faible. Le dépassement doit être délibéré et déclencher une alarme.", "expert", ED795 + ", paragraphes 1.1 et 3");
+        dire("Au-delà de la butée, c'est la position de maintenance : le confinement n'est plus suffisant et la protection contre les projections est plus faible. Le dépassement doit être délibéré et déclencher une alarme.", "expert", ED795 + ", paragraphes 1.1 et 3 ; NF EN 14175-2, octobre 2003, § 7.3.2");
       } else if (mode === "constant" && h < 100) {
         dire("Guillotine presque fermée : l'air entre très vite. Elle ne doit jamais pouvoir se fermer totalement, pour garder une entrée d'air (de l'ordre de 25 mm au minimum).", "expert", ED795 + ", paragraphe 3");
       } else {

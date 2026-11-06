@@ -2,7 +2,8 @@
    Chaque affirmation : { t: texte, s: type de source (voir registre.js), ref: référence }.
    "comme" et "retenir" ne portent pas de badge : "comme" est une image sans chiffre ni règle, "retenir" redit une ligne badgée de l'étape.
    Texte lu en novembre 2026 : article CH 32 du règlement ERP, version en vigueur depuis le 1er août 2025.
-   Les normes NF EN 13501-3 et NF S 61-937 sont payantes et n'ont pas été lues : le classement vient de l'arrêté du 22 mars 2026, annexe 2, le reste de documents de fabricants et de certificats de DAS.
+   NF EN 13501-3 d'août 2025, NF S 61-937-1 de décembre 2003 et NF S 61-937-5 de mars 2012 lues le 6 novembre 2026 sous la licence du bureau d'études, reformulées, jamais recopiées.
+   NF S 61-932 de décembre 2024, avec son amendement A1 de mai 2026, lue le 6 novembre 2026. NF EN 15650 et NF EN 1366-2 n'ont pas été lues.
    Site public : aucun nom d'affaire, de client, d'entreprise ni de personne. */
 
 window.BIBLE_FICHE = {
@@ -55,8 +56,8 @@ window.BIBLE_FICHE = {
             { t: "<b>E</b>, étanchéité : les flammes et les gaz chauds ne passent pas.", s: "texte", ref: "arrêté du 22 mars 2026, annexe 2" },
             { t: "<b>I</b>, isolation thermique : la chaleur ne passe pas assez pour mettre le feu de l'autre côté.", s: "texte", ref: "arrêté du 22 mars 2026, annexe 2" },
             { t: "<b>120</b> : la tenue, en minutes. On trouve aussi 30, 60 ou 90.", s: "texte", ref: "arrêté du 22 mars 2026, article 4" },
-            { t: "<b>ve</b> : essayé dans une paroi verticale, un mur. <b>ho</b> : essayé dans une paroi horizontale, une dalle. <b>i↔o</b> : le feu peut venir d'un côté comme de l'autre.", s: "texte", ref: "arrêté du 22 mars 2026, annexe 2 ; le texte écrit (i o) pour le sens du feu, i↔o est la notation des déclarations des performances" },
-            { t: "<b>S</b> : la fuite de fumée reste limitée.", s: "norme", ref: "NF EN 13501-3, édition d'août 2025, sens lu dans des documents de fabricants ; l'arrêté du 22 mars 2026 cite le S sans le définir" },
+            { t: "<b>ve</b> : essayé dans une paroi verticale, un mur. <b>ho</b> : essayé dans une paroi horizontale, une dalle. <b>i↔o</b> : le feu peut venir d'un côté comme de l'autre.", s: "texte", ref: "arrêté du 22 mars 2026, annexe 2 ; le texte écrit (i o) pour le sens du feu ; NF EN 13501-3, août 2025, annexe B, garde i↔o pour un clapet essayé des deux côtés" },
+            { t: "<b>S</b> : la fuite de fumée reste limitée, à 200 m³ par heure et par m² de clapet au plus, avant le feu et après ses cinq premières minutes.", s: "norme", ref: "NF EN 13501-3, août 2025, § 5.1.4 et § 7.2.3.3.3 ; l'arrêté du 22 mars 2026 cite le S sans le définir" },
             { t: "En coupe-feu, le règlement n'admet pour un clapet que le classement avec S : EI 60-S, EI 120-S. Et sa pression de service ne doit pas dépasser celle de l'essai.", s: "texte", ref: "arrêté du 22 mars 2026, annexe 2" },
             { t: "Un clapet n'a pas un seul classement : il change selon la paroi (béton, plaque de plâtre) et le rebouchage. Les vrais chiffres sont dans sa <b>déclaration des performances</b>, le document que le fabricant doit fournir.", s: "fabricant", ref: "déclarations des performances de fabricants ; NF EN 15650" }
           ],
@@ -73,6 +74,7 @@ window.BIBLE_FICHE = {
             { t: "Quand l'air de la gaine la dépasse, le fusible lâche et un ressort ferme la lame.", s: "fabricant", ref: "documentations de fabricants de clapets" },
             { t: "Ce clapet est dit <b>autocommandé</b> : il se ferme seul, sans courant et sans câble.", s: "fabricant", ref: "fiche technique d'un fabricant de clapets" },
             { t: "Après avoir fonctionné, le fusible se remplace.", s: "fabricant", ref: "fiche technique d'un fabricant de clapets" },
+            { t: "Fusible déclenché ou ordre reçu, la lame doit être fermée en moins de 30 secondes.", s: "norme", ref: "NF S 61-937-5, mars 2012, § 9.2" },
             { t: "Une fiche de fabricant lue annonce 72 °C, pas 70 °C : au VISA, regarder la fiche et les certificats du clapet, sans s'arrêter au nombre.", s: "fabricant", ref: "fiche technique d'un fabricant de clapets ; la norme NF S 61-937-5 de mars 2012 vaut présomption de conformité selon arrêté du 25 juin 1980, article CH 32 § 6" },
             { t: "Sa limite : il attend que la chaleur arrive jusqu'à lui. Des fumées encore froides passent.", s: "verifier" }
           ],
@@ -85,7 +87,7 @@ window.BIBLE_FICHE = {
             { ico: "ssi", titre: "SSI", t: "Système de sécurité incendie : tous les matériels qui recueillent les informations sur le feu et mettent le bâtiment en sécurité.", s: "texte", ref: "arrêté du 25 juin 1980, article MS 53" },
             { ico: "cats", titre: "Catégories A à E", t: "Cinq niveaux de SSI, du plus sévère, A, au moins sévère, E. Les dispositions de chaque type d'ERP disent lequel il faut.", s: "texte", ref: "arrêté du 25 juin 1980, article MS 53" },
             { ico: "cmsi", titre: "CMSI", t: "Centralisateur de mise en sécurité incendie : il donne les ordres. Compartimenter, désenfumer, arrêter les installations techniques.", s: "fabricant", ref: "notice d'un CMSI de fabricant ; arrêté du 25 juin 1980, article MS 59" },
-            { ico: "das", titre: "DAS", t: "Dispositif actionné de sécurité : l'appareil qui obéit, comme un clapet ou une porte à ventouse. Il ne donne aucun ordre.", s: "norme", ref: "NF S 61-937-1 de décembre 2003, citée par des certificats et procès-verbaux de DAS ; arrêté du 25 juin 1980, article MS 59" }
+            { ico: "das", titre: "DAS", t: "Dispositif actionné de sécurité : l'appareil qui obéit, comme un clapet ou une porte à ventouse. Il ne donne aucun ordre.", s: "norme", ref: "NF S 61-937-1, décembre 2003, § 3.1 et § 4.3 ; arrêté du 25 juin 1980, article MS 59" }
           ],
           lignes: [
             { t: "Un clapet <b>télécommandé</b> reçoit l'ordre de fermer depuis le CMSI : il n'attend pas que la chaleur arrive.", s: "texte", ref: "arrêté du 25 juin 1980, article CH 32 § 6" },
@@ -101,9 +103,10 @@ window.BIBLE_FICHE = {
           lignes: [
             { t: "<b>À émission</b> : au repos, aucun courant. Le CMSI envoie une impulsion pour fermer.", s: "fabricant", ref: "notice d'un CMSI de fabricant" },
             { t: "<b>À rupture</b> : un courant permanent tient le clapet ouvert. Le CMSI le coupe pour fermer.", s: "fabricant", ref: "notice d'un CMSI de fabricant" },
-            { t: "<b>Sécurité positive</b> : à la coupure de courant, l'appareil passe de lui-même en position de sécurité. C'est le cas de la rupture.", s: "norme", ref: "NF S 61-937-1 de décembre 2003, citée par des certificats et procès-verbaux de DAS ; notice d'un CMSI de fabricant" },
+            { t: "<b>Sécurité positive</b> : à la coupure de courant, l'appareil passe de lui-même en position de sécurité. C'est le cas de la rupture : quand la tension tombe sous 10 % de sa valeur nominale, plus rien ne retient le clapet, et son ressort le ferme.", s: "norme", ref: "NF S 61-937-5, mars 2012, § 7 et § 10.3 ; le mot vient d'une notice de CMSI de fabricant" },
             { t: "L'émission demande une alimentation électrique de sécurité, suivant la NF S 61-940.", s: "fabricant", ref: "notice d'un CMSI de fabricant" },
-            { t: "Un câble coupé ne ferme pas un clapet à émission : sans surveillance de la ligne, la panne passe inaperçue.", s: "verifier" }
+            { t: "Un câble coupé ne ferme pas un clapet à émission : il faut du courant pour donner l'ordre. C'est pourquoi la surveillance de sa ligne est obligatoire ; sans elle, la panne passerait inaperçue.", s: "norme", ref: "NF S 61-937-1, décembre 2003, § 6.2.3 ; NF S 61-932, décembre 2024, § 7.1" },
+            { t: "La rupture n'est permise que pour un DAS dont un déclenchement intempestif ne peut pas compromettre la mise en sécurité du bâtiment.", s: "norme", ref: "NF S 61-932, décembre 2024, § 9.3.1" }
           ],
           comme: "La sonnette et le frein de train. La sonnette ne sonne que si on appuie. Le frein de secours serre dès que le câble lâche.",
           retenir: "Émission : une impulsion ferme. Rupture : une coupure ferme, et un câble coupé aussi." }
@@ -128,7 +131,7 @@ window.BIBLE_FICHE = {
           tuiles: [
             { ico: "essai", titre: "Déclenchement manuel", t: "Il permet de faire fermer la lame sans feu.", s: "fabricant", ref: "fiche technique d'un fabricant de clapets" },
             { ico: "rearme", titre: "Réarmement", t: "Remettre la lame en attente après une fermeture. Manuel en général, motorisé en option.", s: "fabricant", ref: "fiche technique d'un fabricant de clapets" },
-            { ico: "position", titre: "Position contrôlée", t: "Pour un DAS, la position d'attente et la position de sécurité sont contrôlées.", s: "norme", ref: "NF S 61-937-1 de décembre 2003, citée par des certificats et procès-verbaux de DAS" },
+            { ico: "position", titre: "Position contrôlée", t: "Un DAS a de quoi contrôler ses positions, et il signale sa position de sécurité quand elle est vraiment atteinte. Pour un clapet, c'est la position fermée.", s: "norme", ref: "NF S 61-937-1, décembre 2003, § 3.3 et § 5.1 ; NF S 61-937-5, mars 2012, § 5" },
             { ico: "registre", titre: "Registre de sécurité", t: "L'exploitant y note les travaux et les dates des contrôles.", s: "texte", ref: "code de la construction et de l'habitation, article R143-44" },
             { ico: "liste", titre: "Liste et repérage", t: "Chaque clapet numéroté sur les plans, avec sa fiche et son PV au DOE, le dossier des ouvrages exécutés remis en fin de chantier.", s: "verifier" }
           ],
@@ -156,7 +159,7 @@ window.BIBLE_FICHE = {
   essentiel: [
     { t: "Un clapet coupe-feu se ferme dans la gaine, au droit de la paroi coupe-feu qu'elle traverse : le feu ne passe pas d'un local à l'autre par la ventilation.", s: "texte", ref: "arrêté du 25 juin 1980, article CH 32 § 5 ; NF EN 15650 pour le produit" },
     { t: "<b>Autocommandé</b> : un fusible thermique, taré à 70 °C en ERP, libère un ressort qui ferme la lame. Aucun câble.", s: "texte", ref: "arrêté du 25 juin 1980, article CH 32 § 6 ; documentations des fabricants de clapets" },
-    { t: "<b>Télécommandé</b> (un DAS) : la centrale incendie le ferme à distance, par émission ou par rupture de courant. Le fusible reste là en secours.", s: "fabricant", ref: "documentations des fabricants ; NF S 61-937 pour les DAS ; arrêté du 25 juin 1980, article CH 32 § 6" },
+    { t: "<b>Télécommandé</b> (un DAS) : la centrale incendie le ferme à distance, par émission ou par rupture de courant. Le fusible reste là en secours.", s: "fabricant", ref: "documentations des fabricants ; NF S 61-937-5, mars 2012, § 7 ; arrêté du 25 juin 1980, article CH 32 § 6" },
     { t: "Si le type d'ERP exige un SSI de catégorie A ou B, seuls les télécommandés sont admis au droit des parois de compartimentage. Sinon, le coordinateur SSI tranche : sans asservissement demandé, le fusible suffit.", s: "texte", ref: "arrêté du 25 juin 1980, article CH 32 § 6 ; avis d'un coordinateur SSI, octobre 2026" }
   ],
 
@@ -178,8 +181,8 @@ window.BIBLE_FICHE = {
       q3: { q: "Le type d'ERP exige-t-il un SSI de catégorie A ou B, sur une paroi de compartimentage ? Ou le coordinateur SSI demande-t-il un asservissement ?", choix: [{ r: "Non", vers: "v_fusible" }, { r: "Oui", vers: "q4" }] },
       v_fusible: { verdict: "Clapet autocommandé à fusible", texte: "Le fusible ferme le clapet tout seul quand l'air dépasse sa température. Rien à raccorder au SSI.", s: "expert", ref: "avis d'un coordinateur SSI, octobre 2026" },
       q4: { q: "Que sait commander la centrale incendie (le CMSI) ?", choix: [{ r: "Une impulsion de courant", vers: "v_emission" }, { r: "La coupure d'un courant permanent", vers: "v_rupture" }, { r: "Je ne sais pas", vers: "v_cssi" }] },
-      v_emission: { verdict: "Clapet télécommandé à émission", texte: "Au repos, aucun courant. La centrale envoie une impulsion pour le fermer. Un câble coupé ne le ferme pas : la ligne doit être surveillée.", s: "verifier" },
-      v_rupture: { verdict: "Clapet télécommandé à rupture", texte: "Un courant permanent le tient ouvert. La centrale le coupe pour le fermer, et un câble coupé ou une panne le ferment aussi : c'est la sécurité positive.", s: "fabricant", ref: "notice d'un CMSI de fabricant ; NF S 61-937-1" },
+      v_emission: { verdict: "Clapet télécommandé à émission", texte: "Au repos, aucun courant. La centrale envoie une impulsion pour le fermer. Un câble coupé ne le ferme pas : la surveillance de la ligne est obligatoire.", s: "norme", ref: "NF S 61-937-1, décembre 2003, § 6.2.3 ; NF S 61-932, décembre 2024, § 7.1" },
+      v_rupture: { verdict: "Clapet télécommandé à rupture", texte: "Un courant permanent le tient ouvert. La centrale le coupe pour le fermer, et un câble coupé ou une panne le ferment aussi : c'est la sécurité positive.", s: "norme", ref: "NF S 61-937-5, mars 2012, § 10.3 ; notice d'un CMSI de fabricant" },
       v_cssi: { verdict: "Poser la question au coordinateur SSI", texte: "Le type de commande se cale sur la centrale existante ou prévue. C'est lui qui le fixe, avant le VISA des fiches techniques.", s: "expert", ref: "avis d'un coordinateur SSI, octobre 2026" }
     }
   },
@@ -189,6 +192,7 @@ window.BIBLE_FICHE = {
       { t: "Degré EI du clapet égal à celui de la paroi traversée.", s: "texte", ref: "arrêté du 25 juin 1980, article CH 32 § 5" },
       { t: "Déclaration des performances et PV qui couvrent le type de paroi (béton, cloison plâtre, plancher) et le mode de pose.", s: "fabricant", ref: "déclarations des performances et notices de pose de fabricants ; NF EN 15650 et NF EN 1366-2, non lues" },
       { t: "Mode de commande conforme à l'avis du coordinateur SSI : fusible ou télécommandé.", s: "expert", ref: "avis d'un coordinateur SSI, octobre 2026" },
+      { t: "Lignes de télécommande à émission en câble CR1, ou C2 dans un cheminement protégé ; à rupture, C2 au moins. Ces lignes ne passent jamais dans une gaine de ventilation.", s: "norme", ref: "NF S 61-932, décembre 2024, § 4.5 et § 7.1" },
       { t: "Chaque clapet repéré et numéroté sur les plans, avec sa trappe de visite.", s: "verifier" }
     ] },
     { titre: "Sur le chantier", icone: "casque", points: [
@@ -200,7 +204,7 @@ window.BIBLE_FICHE = {
     { titre: "À la réception", icone: "cle", points: [
       { t: "Essai de fermeture et de réarmement de chaque clapet.", s: "verifier" },
       { t: "Étiquette et numéro sur chaque clapet, liste dans le DOE avec les fiches et les PV.", s: "verifier" },
-      { t: "Pour un télécommandé : retour de position vu sur la centrale.", s: "verifier" }
+      { t: "Pour un télécommandé : retour de position vu sur la centrale. Il est obligatoire quand le clapet est commun à plusieurs zones de mise en sécurité.", s: "norme", ref: "NF S 61-932, décembre 2024, § 9.3.2.1" }
     ] }
   ],
 
@@ -209,7 +213,8 @@ window.BIBLE_FICHE = {
     { t: "Un plafond coupe-feu qui protège la charpente est décrit \"sans aucune traversée\", alors que les gaines doivent le traverser : à trancher avant la pose.", s: "cas" },
     { t: "Clapet enfermé dans un faux plafond sans trappe : impossible à réarmer et à vérifier, alors que le mécanisme doit rester accessible.", s: "texte", ref: "arrêté du 25 juin 1980, article CH 32 § 6" },
     { t: "Citer l'ancien CH 32 : l'article a été réécrit par l'arrêté du 29 juillet 2025, en vigueur depuis le 1er août 2025. Prendre la version applicable à la date du dossier.", s: "texte", ref: "arrêté du 29 juillet 2025 modifiant le règlement ERP" },
-    { t: "Un clapet à émission ne se ferme pas si son câble est coupé : sans surveillance de la ligne, la panne passe inaperçue.", s: "verifier" }
+    { t: "Un clapet à émission ne se ferme pas si son câble est coupé : sans la surveillance de ligne, pourtant obligatoire, la panne passerait inaperçue.", s: "norme", ref: "NF S 61-937-1, décembre 2003, § 6.2.3 ; NF S 61-932, décembre 2024, § 7.1" },
+    { t: "Passer le câble de commande du clapet dans la gaine : aucune ligne du système de mise en sécurité ne doit emprunter un conduit aéraulique.", s: "norme", ref: "NF S 61-932, décembre 2024, § 4.5" }
   ],
 
   confondre: [
@@ -224,10 +229,10 @@ window.BIBLE_FICHE = {
 
   references: [
     { s: "texte", t: "Règlement de sécurité contre les risques d'incendie et de panique dans les ERP, arrêté du 25 juin 1980 modifié : dispositions générales (CO, CH, MS) et dispositions propres à chaque type. Article CH 32 en vigueur depuis le 1er août 2025 (arrêté du 29 juillet 2025), article MS 53 pour les catégories de SSI." },
-    { s: "norme", t: "NF EN 15650 : clapets coupe-feu pour réseaux aérauliques (norme produit, marquage CE). Norme payante, non lue." },
+    { s: "norme", t: "NF EN 15650 : clapets coupe-feu pour réseaux aérauliques (norme produit, marquage CE). Non lue : absente de l'abonnement de normes du bureau d'études." },
     { s: "texte", t: "Arrêté du 22 mars 2026 relatif aux performances de résistance au feu, qui remplace celui de 2004 : annexe 2 pour les lettres et le classement des clapets. Il vaut pour les demandes déposées depuis le 1er octobre 2026." },
-    { s: "norme", t: "NF EN 1366-2 : essais de résistance au feu des clapets ; NF EN 13501-3, édition d'août 2025 : leur classement (EI, ve, ho, i↔o, S). Normes payantes, non lues." },
-    { s: "norme", t: "NF S 61-937 : dispositifs actionnés de sécurité (DAS), dont NF S 61-937-5 de mars 2012 pour les clapets, qui vaut présomption de conformité à l'article CH 32 ; NF S 61-932 : règles d'installation du SSI ; NF S 61-934 : CMSI ; NF S 61-940 : alimentations électriques de sécurité. Normes payantes, non lues." },
+    { s: "norme", t: "NF EN 13501-3, août 2025 : classement des clapets (EI, ve, ho, i↔o, S), lue le 6 novembre 2026. NF EN 1366-2 : leurs essais de résistance au feu, non lue." },
+    { s: "norme", t: "NF S 61-937-1, décembre 2003 : règles communes des dispositifs actionnés de sécurité (DAS) ; NF S 61-937-5, mars 2012 : les clapets, qui vaut présomption de conformité à l'article CH 32 ; NF S 61-934, mars 1991 : CMSI ; NF S 61-940, juin 2000 : alimentations électriques de sécurité ; NF S 61-932, décembre 2024, avec son amendement A1 de mai 2026 : règles d'installation du système de mise en sécurité. Lues le 6 novembre 2026." },
     { s: "fabricant", t: "Notice de pose et déclaration des performances du clapet retenu : elles fixent les parois admises, le calfeutrement et les distances." }
   ]
 };

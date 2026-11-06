@@ -3,7 +3,7 @@
    "comme" et "retenir" ne portent pas de badge : "comme" est une image sans chiffre ni règle, "retenir" redit une ligne badgée de l'étape.
    Textes lus le 6 novembre 2026 : NF EN 1825-2 de novembre 2002, NF DTU 60.11 P2, NF DTU 60.1 P1-1-2 et P1-2, NF DTU 60.33 P1-2 et un Avis Technique,
    sous la licence du bureau d'études, reformulés et jamais recopiés ; articles CO 31 et CO 32 du règlement ERP et code de la santé publique sur Légifrance.
-   NF EN 1825-1 n'a pas été lue : la liste des tailles vient d'une note de veille du GRAIE.
+   NF EN 1825-1 de décembre 2004 et son complément national NF P 16-500-1/CN de janvier 2007 lus le 6 novembre 2026, sous la même licence.
    Site public : aucun nom d'affaire, de client, d'entreprise, de fabricant ni de personne. */
 
 window.BIBLE_FICHE = {
@@ -40,14 +40,14 @@ window.BIBLE_FICHE = {
         { id: "pieces", titre: "Ses pièces",
           intro: "Les mots qu'on retrouve dans une fiche technique, un CCTP ou un plan. Le schéma en haut de page les montre en place.",
           tuiles: [
-            { ico: "sgDebourbeur", titre: "Débourbeur", t: "Le premier compartiment, où le lourd se dépose. Au moins 100 litres par unité de taille nominale.", s: "norme", ref: "NF EN 1825-2, novembre 2002, § 6.4" },
-            { ico: "sgSeparateur", titre: "Séparateur", t: "Le compartiment où les graisses montent et s'accumulent. Il en garde environ 40 litres par unité de taille.", s: "norme", ref: "NF EN 1825-2, novembre 2002, § 6.1" },
+            { ico: "sgDebourbeur", titre: "Débourbeur", t: "Le premier compartiment, où le lourd se dépose. Au moins 100 litres par unité de taille nominale.", s: "norme", ref: "NF EN 1825-2, novembre 2002, § 6.4 ; NF EN 1825-1, décembre 2004, § 5.5.4" },
+            { ico: "sgSeparateur", titre: "Séparateur", t: "Le compartiment où les graisses montent et s'accumulent. Il en stocke au moins 40 litres par unité de taille.", s: "norme", ref: "NF EN 1825-1, décembre 2004, § 5.3.8 ; NF EN 1825-2, novembre 2002, § 6.1" },
             { ico: "sgCloison", titre: "Cloison", t: "Elle plonge dans l'eau et retient la couche de graisses. L'eau sort en passant dessous.", s: "fabricant", ref: "documentation d'un fabricant de séparateurs à graisses" },
-            { ico: "sgCouvercle", titre: "Couvercles", t: "Étanches et verrouillés, contre les odeurs. On les ouvre pour vider et entretenir.", s: "fabricant", ref: "fiche d'un séparateur à poser au sol" },
-            { ico: "sgEvent", titre: "Ventilation", t: "La canalisation d'arrivée se prolonge en ventilation, jusqu'à l'air libre.", s: "norme", ref: "NF EN 1825-2, novembre 2002, § 7.4" },
+            { ico: "sgCouvercle", titre: "Couvercles", t: "Dans un bâtiment, ils sont étanches aux odeurs. On les ouvre pour vider et entretenir.", s: "norme", ref: "NF EN 1825-1, décembre 2004, § 5.3.7" },
+            { ico: "sgEvent", titre: "Ventilation", t: "La canalisation d'arrivée se prolonge en ventilation, jusqu'à l'air libre. Dans la cuve, l'air passe de l'entrée à la sortie.", s: "norme", ref: "NF EN 1825-2, novembre 2002, § 7.4 ; NF EN 1825-1, décembre 2004, § 5.3.10" },
             { ico: "sgAspi", titre: "Conduite d'aspiration", t: "Un tuyau fixe, du fond de la cuve jusqu'à un raccord que le camion de vidange peut atteindre.", s: "fabricant", ref: "documentations de fabricants de séparateurs à graisses" },
             { ico: "sgPrelev", titre: "Regard de prélèvement", t: "En sortie, pour prélever l'eau qui part au réseau et contrôler le rejet.", s: "fabricant", ref: "fiche d'un séparateur à poser au sol" },
-            { ico: "sgAlarme", titre: "Alarme de graisses", t: "En option : une sonde prévient quand la couche devient épaisse.", s: "fabricant", ref: "fiche d'un séparateur à poser au sol" },
+            { ico: "sgAlarme", titre: "Alarme de graisses", t: "En option : une sonde prévient quand la couche de graisses devient épaisse, ou que l'eau monte trop.", s: "norme", ref: "NF EN 1825-1, décembre 2004, § 3.12 et § 5.5.2" },
             { ico: "sgRelevage", titre: "Poste de relevage", t: "Si l'eau du séparateur est plus bas que le niveau de refoulement du réseau, une pompe la relève, après le séparateur.", s: "norme", ref: "NF EN 1825-2, novembre 2002, § 7.3" }
           ],
           retenir: "Débourbeur, séparateur et cloison font la cuve. Ventilation, aspiration et prélèvement l'entourent." },
@@ -61,7 +61,7 @@ window.BIBLE_FICHE = {
             { t: "Le règlement de sécurité des ERP ne dit rien du séparateur. Il compte pour les tuyaux qui traversent un plancher : voir l'étape Traverser un plancher.", s: "texte", ref: "arrêté du 25 juin 1980, articles CO 31 et CO 32 ; les articles GC n'en parlent pas" },
             { t: "Les normes sont d'application volontaire, sauf si un arrêté les rend obligatoires. Elles s'imposent quand un règlement ou le marché les cite.", s: "texte", ref: "décret n° 2009-697 du 16 juin 2009, article 17" },
             { t: "Un NF DTU est fait pour être incorporé au marché. S'il n'y est pas cité, la Cour de cassation a jugé qu'il ne permettait pas d'exiger une mise en conformité, en l'absence de désordre.", s: "texte", ref: "Cour de cassation, 3e chambre civile, 10 juin 2021, n° 20-15.277" },
-            { t: "La notice du fabricant fixe le cadre d'emploi de son produit : températures, joints, pose. Hors de ce cadre, il ne le garantit plus.", s: "verifier" }
+            { t: "Le fabricant doit fournir les consignes de manutention, de transport, de pose, de fonctionnement et d'entretien : sa notice fixe le cadre d'emploi du produit.", s: "norme", ref: "NF EN 1825-1, décembre 2004, § 7" }
           ],
           comme: "Le code de la route, le règlement du parking et la notice de la voiture : chacun a son rang, et le plus haut l'emporte.",
           retenir: "La collectivité impose le séparateur ; la norme et le DTU donnent la méthode quand on les cite ; la notice fixe l'emploi du produit." }
@@ -72,11 +72,12 @@ window.BIBLE_FICHE = {
           intro: "Choisir le nombre de repas et les conditions, et regarder la taille changer.",
           lignes: [
             { t: "La taille d'un séparateur s'appelle sa <b>taille nominale</b>, NS. Sauf si l'autorité locale impose sa propre méthode, elle se calcule : NS = Qs × ft × fd × fr.", s: "norme", ref: "NF EN 1825-2, novembre 2002, § 6.1" },
+            { t: "Ce nombre sans unité vaut à peu près le débit maximal que le séparateur traite, en litres par seconde : une NS 4 encaisse de l'ordre de 4 l/s. La NF EN 1825-1 l'écrit TN.", s: "norme", ref: "NF EN 1825-1, décembre 2004, § 3.10" },
             { t: "<b>Qs</b>, le débit de pointe en litres par seconde, se trouve par mesure, par les appareils raccordés, ou par le type d'établissement. Avec deux méthodes, on garde le plus fort.", s: "norme", ref: "NF EN 1825-2, novembre 2002, § 6.2.1" },
             { t: "<b>ft</b>, la température : 1,3 si l'eau dépasse 60 °C, toujours ou de temps en temps ; 1 sinon.", s: "norme", ref: "NF EN 1825-2, novembre 2002, § 6.2.2" },
             { t: "<b>fd</b>, la densité : 1 pour une cuisine ; 1,5 pour des graisses plus denses que 0,94.", s: "norme", ref: "NF EN 1825-2, novembre 2002, § 6.2.3" },
             { t: "<b>fr</b>, les produits de lavage : 1,3 dès qu'on utilise des détergents ou des produits de rinçage, même de temps en temps ; 1 s'il n'y en a jamais.", s: "norme", ref: "NF EN 1825-2, novembre 2002, § 6.2.4" },
-            { t: "On retient ensuite la taille de la liste juste au-dessus : 1, 2, 4, 7, 10, 15, 20 ou 25.", s: "norme", ref: "NF EN 1825-2, novembre 2002, § 6.1 ; liste de la NF EN 1825-1, non lue, d'après une note de veille du GRAIE, 2006" }
+            { t: "On retient ensuite la taille de la liste juste au-dessus : 1, 2, 4, 7, 10, 15, 20 ou 25. Ce sont les tailles recommandées ; d'autres sont admises.", s: "norme", ref: "NF EN 1825-2, novembre 2002, § 6.1 ; NF EN 1825-1, décembre 2004, § 4" }
           ],
           calcul: [
             { q: "Restaurant de 200 repas par jour, ouvert de 11 h à 23 h : quel débit de pointe ?", op: "200 × 50 l × 8,5 ÷ (3 600 × 12) =", res: "1,97 l/s", t: "50 litres d'eau par repas et un coefficient de pointe de 8,5 pour un restaurant.", s: "expert", ref: "note de veille du GRAIE sur le dimensionnement des séparateurs à graisses, 2006, d'après un guide du CNIDEP" },
@@ -91,7 +92,7 @@ window.BIBLE_FICHE = {
           lignes: [
             { t: "D'une taille à l'autre, tout grossit : la cuve, ses volumes et le diamètre de ses raccordements.", s: "fabricant", ref: "fiche d'une gamme de séparateurs à poser au sol" },
             { t: "Dans une gamme posée au sol, la NS 2 et la NS 4 ont des entrées en DN 110, la NS 7 et la NS 10 en DN 160, la NS 15 en DN 200.", s: "fabricant", ref: "fiche d'une gamme de séparateurs à poser au sol" },
-            { t: "Une note de veille donne les diamètres minimaux de la canalisation : 100 mm jusqu'à NS 4, 125 mm jusqu'à NS 7, 150 mm jusqu'à NS 10.", s: "expert", ref: "note de veille du GRAIE sur le dimensionnement des séparateurs à graisses, 2006" },
+            { t: "La norme fixe le diamètre minimal des tuyaux d'entrée et de sortie : DN 100 jusqu'à NS 4, DN 125 jusqu'à NS 7, DN 150 jusqu'à NS 10, DN 200 jusqu'à NS 25.", s: "norme", ref: "NF EN 1825-1, décembre 2004, § 5.3.4, tableau 1" },
             { t: "Dans cette gamme, une NS 4 contient 850 litres en service, une NS 7 en contient 1 660.", s: "fabricant", ref: "fiche d'une gamme de séparateurs à poser au sol" },
             { t: "Passer d'une NS 4 à une NS 7 change donc les raccordements, la place au sol et la charge sur le plancher : on reprend le plan et on fait vérifier la dalle.", s: "verifier" }
           ],
@@ -136,6 +137,7 @@ window.BIBLE_FICHE = {
           lignes: [
             { t: "Sur un collecteur horizontal, un fabricant de tubes conseille de brancher par des culottes à 45°, pas par des tés à 87°30 : moins de remous, moins de bouchons.", s: "fabricant", ref: "guide de pose d'un fabricant de tubes PVC d'évacuation" },
             { t: "Il conseille aussi deux coudes à 45° plutôt qu'un coude à 87°30, et un regard de visite en aval.", s: "fabricant", ref: "guide de pose d'un fabricant de tubes PVC d'évacuation" },
+            { t: "Dans la cuve, le fond du tuyau de sortie est au moins 70 mm plus bas que celui d'entrée : c'est la <b>chute</b>, qui empêche l'eau de refluer vers la cuisine. Le fabricant l'écrit dans sa fiche.", s: "norme", ref: "NF EN 1825-1, décembre 2004, § 5.3.9" },
             { t: "Avant le séparateur, on passe de la verticale à l'horizontale par deux coudes à 45° séparés d'au moins 250 mm. Puis vient une longueur droite d'au moins 10 fois le diamètre, où l'eau se calme avant d'entrer.", s: "norme", ref: "NF EN 1825-2, novembre 2002, § 7.3" },
             { t: "Les siphons de sol de la cuisine ont un siphon, et un panier amovible si besoin. Un débourbeur ne reçoit jamais l'eau par une grille sur le dessus.", s: "norme", ref: "NF EN 1825-2, novembre 2002, § 7.3" },
             { t: "La canalisation d'arrivée se prolonge en ventilation primaire, et toute branche de plus de 5 m a sa ventilation secondaire.", s: "norme", ref: "NF EN 1825-2, novembre 2002, § 7.4" },
@@ -267,6 +269,7 @@ window.BIBLE_FICHE = {
     { titre: "À la réception", icone: "cle", points: [
       { t: "Cuve remplie d'eau claire, couvercles étanches et verrouillés.", s: "norme", ref: "NF EN 1825-2, novembre 2002, § 8 ; fiche d'un séparateur à poser au sol" },
       { t: "Raccordement du camion au raccord d'aspiration essayé.", s: "verifier" },
+      { t: "Plaque d'identification sur la cuve : EN 1825, taille nominale, volumes, année de fabrication. Le tampon porte le mot Séparateur.", s: "norme", ref: "NF EN 1825-1, décembre 2004, § 6" },
       { t: "DOE : plan coté avec fils d'eau et pentes, fiches et PV des produits réellement posés.", s: "cas" },
       { t: "Contrat de vidange et registre des enlèvements remis à l'exploitant.", s: "texte", ref: "code de l'environnement, article R541-43 ; règlements d'assainissement" }
     ] }
@@ -301,7 +304,7 @@ window.BIBLE_FICHE = {
     { s: "texte", t: "Règlements d'assainissement des collectivités : ils imposent le séparateur aux restaurants et fixent la vidange et ses justificatifs. Trois règlements lus, éditions de 2013 à 2025. Règlement sanitaire départemental, article 29." },
     { s: "texte", t: "Règlement de sécurité ERP, arrêté du 25 juin 1980 : article CO 31, version du 8 octobre 2008, et article CO 32, pour les traversées. Les articles GC ne parlent pas des séparateurs." },
     { s: "texte", t: "Code de l'environnement : L541-1-1 (définition du déchet) et R541-43 (registre des déchets). Décret n° 2009-697 du 16 juin 2009, article 17 : les normes sont d'application volontaire. Cour de cassation, 3e chambre civile, 10 juin 2021, n° 20-15.277." },
-    { s: "norme", t: "NF EN 1825-2, novembre 2002 : choix de la taille nominale, installation, service et entretien. Lue le 6 novembre 2026, reformulée ici. NF EN 1825-1, décembre 2004 : conception et tailles nominales, non lue." },
+    { s: "norme", t: "NF EN 1825-2, novembre 2002 : choix de la taille nominale, installation, service et entretien. Lue le 6 novembre 2026, reformulée ici. NF EN 1825-1, décembre 2004 : tailles nominales, conception, marquage ; NF P 16-500-1/CN, janvier 2007 : complément national sur la tenue mécanique des cuves. Lues le 6 novembre 2026." },
     { s: "norme", t: "NF DTU 60.11 P2 (pentes, § 6.1 et § 6.3), NF DTU 60.1 P1-1-2 (§ 5.4) et P1-2 (§ 4.1, matériaux), NF DTU 60.33 P1-2 (§ 3.1, tubes PVC) : lus le 6 novembre 2026." },
     { s: "expert", t: "GRAIE, note de veille normative sur le dimensionnement des séparateurs à graisses, 2006, d'après un guide du CNIDEP : méthode par nombre de repas et exemples chiffrés." },
     { s: "fabricant", t: "Notices et fiches du séparateur, des tubes et des colliers coupe-feu retenus, et Avis Technique des tubes hors DTU : ce sont eux qui fixent l'emploi réel du produit." }

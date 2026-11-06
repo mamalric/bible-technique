@@ -2,7 +2,7 @@
    Chaque affirmation : { t: texte, s: type de source (voir registre.js), ref: référence }.
    "comme" et "retenir" ne portent pas de badge : "comme" est une image sans chiffre ni règle, "retenir" redit une ligne badgée de l'étape.
    Sources principales : guide INRS ED 795 (2009) et note INRS de septembre 2026.
-   NF EN 14175 et NF X 15-206 n'ont pas été lues directement : leurs valeurs viennent de l'INRS.
+   NF EN 14175-2 (2003) et XP CEN/TS 14175-5 (2010) lues le 6 novembre 2026. NF X 15-206 et les autres parties de la NF EN 14175 non lues : leurs valeurs viennent de l'INRS.
    Site public : aucun nom d'affaire, de client, d'entreprise ni de personne. */
 
 window.BIBLE_FICHE = {
@@ -30,7 +30,7 @@ window.BIBLE_FICHE = {
           tuiles: [
             { ico: "enceinte", titre: "Volume de travail", t: "L'intérieur de la boîte, entre les parois fixes et l'écran. On y manipule.", s: "expert", ref: "INRS, guide ED 795, paragraphe 1.1" },
             { ico: "ecran", titre: "Écran, ou guillotine", t: "La paroi mobile et transparente de la face avant. Elle règle la taille de l'ouverture.", s: "expert", ref: "INRS, guide ED 795, paragraphe 1.1" },
-            { ico: "butee", titre: "Butée", t: "Elle arrête la guillotine à la hauteur de travail. Au-delà, on est en position de maintenance.", s: "expert", ref: "INRS, guide ED 795, paragraphe 1.1 et chapitre 3" },
+            { ico: "butee", titre: "Butée", t: "Elle arrête la guillotine à l'ouverture de travail maximale. La dépasser demande un geste voulu ; elle se réarme seule quand on redescend.", s: "norme", ref: "NF EN 14175-2, octobre 2003, § 7.3.2" },
             { ico: "plan", titre: "Plan de travail", t: "Il porte le matériel. Ses rebords retiennent ce qui se renverse.", s: "expert", ref: "INRS, guide ED 795, chapitre 3" },
             { ico: "plenum", titre: "Plenum et fentes", t: "Le double fond, au dos. Il répartit l'aspiration entre les fentes, en haut et en bas.", s: "expert", ref: "INRS, guide ED 795, paragraphe 1.1" },
             { ico: "conduit", titre: "Conduit et ventilateur", t: "Ils emportent l'air dehors. Le ventilateur va hors du bâtiment ou en toiture, pour garder le conduit en dépression.", s: "expert", ref: "INRS, guide ED 795, paragraphe 5.2" },
@@ -57,6 +57,8 @@ window.BIBLE_FICHE = {
         { id: "guillotine", titre: "La guillotine", dessin: "sb_ouverture",
           lignes: [
             { t: "À débit constant, la vitesse est inverse de la surface : ouverture divisée par deux, vitesse multipliée par deux.", s: "expert", ref: "INRS, guide ED 795, paragraphe 1.1" },
+            { t: "Sur une sorbonne de paillasse, l'ouverture de travail est bornée : 500 mm de préférence, jamais plus de 600 mm. Cette hauteur est écrite sur la sorbonne.", s: "norme", ref: "NF EN 14175-2, octobre 2003, § 7.3.1" },
+            { t: "La vitre est en verre feuilleté ou trempé, ou dans un plastique adapté. Elle tient à n'importe quelle hauteur, ne tombe pas si une suspension lâche, et se manœuvre avec 30 N au plus.", s: "norme", ref: "NF EN 14175-2, octobre 2003, § 6.3, § 7.3.3 et § 7.3.4" },
             { t: "On travaille <b>aussi bas que possible</b>, juste de quoi passer les bras. On baisse à la butée quand personne ne manipule.", s: "expert", ref: "INRS, guide ED 795, paragraphes 1.1 et 7.1" },
             { t: "La vitre sert aussi d'écran contre les projections. Jamais la tête dans l'enceinte.", s: "expert", ref: "INRS, guide ED 795, paragraphes 1.1 et 7.1" }
           ],
@@ -121,7 +123,7 @@ window.BIBLE_FICHE = {
 
   chiffres: [
     { valeur: "0,4 m/s", libelle: "Vitesse d'air minimale en chaque point de l'ouverture, guillotine à 500 mm, pour une sorbonne classique.", s: "expert", ref: "INRS, guide ED 795, tableaux 1 et 3" },
-    { valeur: "0,1 ppm", libelle: "Seuil de l'essai de confinement au gaz traceur SF6. Il vient de la norme française, pas de la norme européenne.", s: "expert", ref: "INRS, guide ED 795, encadré 2 (ex-XP X 15-206) ; à relire dans NF X 15-206 d'août 2023, non lue" },
+    { valeur: "0,1 ppm", libelle: "Seuil de l'essai de confinement au gaz traceur SF6. Il vient de la norme française, pas de la norme européenne.", s: "expert", ref: "INRS, guide ED 795, encadré 2 (ex-XP X 15-206) ; NF EN 14175-2, octobre 2003, § 8.1, qui laisse ce seuil aux normes nationales ; NF X 15-206 d'août 2023, non lue" },
     { valeur: "1 m", libelle: "Distance entre l'ouverture et un passage habituel. Passer à 1 m plutôt qu'à 0,4 m divise le risque par plus de 10.", s: "expert", ref: "INRS, guide ED 795, tableau 2 ; Hygiène et sécurité du travail n° 284, septembre 2026" },
     { valeur: "10 à 20 Pa", libelle: "Dépression conseillée du labo par rapport aux locaux voisins sans pollution spécifique.", s: "expert", ref: "INRS, guide ED 795, paragraphe 5.1" }
   ],
@@ -156,21 +158,25 @@ window.BIBLE_FICHE = {
       { t: "Air de compensation étudié en même temps que l'extraction, et dépression du labo contrôlée.", s: "expert", ref: "INRS, guide ED 795, paragraphe 5.1" },
       { t: "Soufflage loin de l'ouverture. Grille murale en face : jet à moins de la moitié de la vitesse frontale. Diffuseur plafonnier : décalé, partie côté sorbonne occultée. Mieux en batterie : conduits textiles, 3 m sous plafond au moins.", s: "expert", ref: "INRS, guide ED 795, paragraphe 5.1" },
       { t: "Implantation : 1 m d'un passage, 1,4 m d'une paillasse d'en face, 2 m d'un mur opposé, 3 m d'une autre sorbonne, 1 m d'une porte dans un mur perpendiculaire. Jamais sur un trajet de sortie d'urgence.", s: "expert", ref: "INRS, guide ED 795, paragraphe 5.3, tableau 2" },
+      { t: "La norme d'installation donne des repères proches : 1 m d'une circulation, 1,4 m d'une paillasse en face, 1,4 m d'un mur en face (près de 2 m pour les gros débits), aucune porte fréquentée à moins de 1 m de la façade ni à moins de 0,3 m d'un côté.", s: "norme", ref: "XP CEN/TS 14175-5, août 2010, § 4.2.2 à § 4.2.4 et § 4.2.8" },
+      { t: "Air du local calme devant la sorbonne : moins de 0,2 m/s à 400 mm de la façade. Hauteur sous plafond : 3 m conseillés, 2,7 m au moins.", s: "norme", ref: "XP CEN/TS 14175-5, août 2010, § 4.2.6" },
       { t: "Ventilateur centrifuge hors du bâtiment ou en toiture, pour garder le conduit en dépression dans le bâtiment. Vitesse dans le conduit : 10 m/s au plus. Réseau capable de 10 % de débit en plus.", s: "expert", ref: "INRS, guide ED 795, paragraphe 5.2" },
       { t: "Rejet vertical, 15 à 20 m/s, à l'écart des prises d'air, pas en façade à ouvrants.", s: "expert", ref: "INRS, guide ED 795, chapitre 2 et paragraphe 5.2" },
-      { t: "Alarme de débit visuelle et sonore, à sécurité positive.", s: "texte", ref: "code du travail, article R4222-13 ; INRS, guide ED 795, chapitre 3" }
+      { t: "Indicateur de débit intégré à la sorbonne, avec alarme visuelle et sonore, à sécurité positive, et un moyen simple de vérifier qu'il marche.", s: "texte", ref: "code du travail, article R4222-13 ; NF EN 14175-2, octobre 2003, § 8.2 ; INRS, guide ED 795, chapitre 3" }
     ] },
     { titre: "Sur le chantier", icone: "casque", points: [
       { t: "Matériaux du conduit résistant aux produits transportés, peu de gaine souple, peu de trajets horizontaux, récupération des condensats.", s: "expert", ref: "INRS, guide ED 795, paragraphe 5.2" },
       { t: "Trappes de visite et points de purge sur le conduit, le ventilateur et la cheminée.", s: "expert", ref: "INRS, guide ED 795, paragraphe 5.2" },
       { t: "Traversée d'une paroi coupe-feu : registre coupe-feu ou collier intumescent (voir la <a href=\"fiche.html?f=clapet-coupe-feu\">fiche clapet coupe-feu</a>).", s: "expert", ref: "INRS, guide ED 795, paragraphe 5.2" },
-      { t: "Butées de guillotine en place, plenum démontable avec des outils seulement, rebords de rétention au plan de travail.", s: "expert", ref: "INRS, guide ED 795, chapitre 3" }
+      { t: "Butées de guillotine en place, plenum démontable avec des outils seulement, rebords de rétention au plan de travail.", s: "expert", ref: "INRS, guide ED 795, chapitre 3 ; NF EN 14175-2, octobre 2003, § 7.2.2 et § 7.3.2" },
+      { t: "Commandes des fluides hors de l'enceinte, celles des gaz combustibles protégées contre une ouverture par mégarde. Prises dehors de préférence ; dedans, IP44 au moins et coupure depuis l'extérieur.", s: "norme", ref: "NF EN 14175-2, octobre 2003, § 9.1 et § 9.3" }
     ] },
     { titre: "À la réception", icone: "cle", points: [
       { t: "Essai sorbonne vide, dans son local : confinement au SF6 sous 0,1 ppm, vitesse d'au moins 0,4 m/s en chaque point, guillotine à 500 mm (15 points pour une largeur de 1,41 à 1,81 m).", s: "expert", ref: "INRS, guide ED 795, chapitre 6 et annexe ; méthodes NF EN 14175-3 et -4" },
       { t: "Vitesses consignées au procès-verbal : ce sont les valeurs de référence pour toute la vie de la sorbonne.", s: "expert", ref: "INRS, guide ED 795, chapitre 6" },
       { t: "Contrôles prévus : débit chaque jour, alarmes chaque semaine, fumigène tous les six mois, vitesses, débit et perte de charge chaque année.", s: "expert", ref: "INRS, guide ED 795, paragraphe 7.2 et annexe ; arrêté du 8 octobre 1987" },
-      { t: "Baisse d'environ 30 % de la vitesse en un point par rapport à la référence : refaire une mesure de confinement.", s: "expert", ref: "INRS, guide ED 795, encadré 7" }
+      { t: "Baisse d'environ 30 % de la vitesse en un point par rapport à la référence : refaire une mesure de confinement.", s: "expert", ref: "INRS, guide ED 795, encadré 7" },
+      { t: "Marquages en place : l'ouverture maximale, la consigne de garder la façade fermée chaque fois que possible, la plaque du type avec son année. Manuel remis, avec le rapport d'essai de type.", s: "norme", ref: "NF EN 14175-2, octobre 2003, § 7.3.1, § 10 et § 11" }
     ] }
   ],
 
@@ -178,7 +184,8 @@ window.BIBLE_FICHE = {
     { t: "Poser une sorbonne sans prévoir l'air de compensation : elle aspire dans un labo qui manque d'air, et ne confine plus.", s: "expert", ref: "INRS, guide ED 795, paragraphe 5.1" },
     { t: "Une sorbonne dans un passage. C'est le passage de personnes, plus que tout autre facteur étudié, qui dégrade le confinement.", s: "expert", ref: "INRS, Hygiène et sécurité du travail n° 284, septembre 2026" },
     { t: "Choisir une sorbonne basse vitesse pour économiser : de 0,4 à 0,2 m/s, le risque est multiplié par environ 20. L'INRS préconise désormais de les proscrire.", s: "expert", ref: "INRS, Hygiène et sécurité du travail n° 284, septembre 2026" },
-    { t: "Croire qu'une sorbonne annoncée conforme à la NF EN 14175 est forcément performante : cette norme donne les méthodes d'essai, sans seuil. Les seuils français sont à part.", s: "expert", ref: "INRS, guide ED 795, encadré 2" },
+    { t: "Croire qu'une sorbonne marquée EN 14175-2 est forcément bonne dans son labo : son essai de type se fait en salle d'essai, et la norme européenne laisse le seuil de confinement aux normes nationales, en France la NF X 15-206. Seul l'essai sur site juge la sorbonne en place.", s: "norme", ref: "NF EN 14175-2, octobre 2003, introduction, § 8.1 et annexe A ; XP CEN/TS 14175-5, août 2010, page de garde" },
+    { t: "Arrêter net une sorbonne qui a servi : son conduit contaminé peut polluer le labo. Garder un petit débit d'extraction, ou la sceller après nettoyage.", s: "norme", ref: "XP CEN/TS 14175-5, août 2010, § 4.5" },
     { t: "Sorbonne à recirculation avec des produits variés ou des CMR : à proscrire.", s: "expert", ref: "INRS, guide ED 795, encadré 1" },
     { t: "Plusieurs sorbonnes sur un collecteur commun, sans étude : refoulement vers celles à l'arrêt si elles n'ont pas de clapet anti-retour, mélanges toxiques ou explosifs.", s: "expert", ref: "INRS, guide ED 795, paragraphe 5.2" },
     { t: "Oublier le risque d'explosion : réduire le débit fait monter la concentration. Une sorbonne en zone ATEX 0 ou 1 est à proscrire ; en zone 2, matériel de catégorie 3.", s: "expert", ref: "INRS, guide ED 795, chapitre 3 et encadré 6" },
@@ -196,8 +203,8 @@ window.BIBLE_FICHE = {
   references: [
     { s: "expert", t: "INRS, guide pratique de ventilation n° 18, ED 795, Sorbonnes de laboratoire, 2e édition, mars 2009 : la référence, encore citée par l'INRS en 2026." },
     { s: "expert", t: "INRS, Hygiène et sécurité du travail n° 284, septembre 2026, Passage de personnes devant une sorbonne de laboratoire : quel impact sur son efficacité ?" },
-    { s: "norme", t: "NF EN 14175 : parties 1 (vocabulaire), 2 (exigences), 3 (essais de type), 4 (essais sur site), 6 (débit variable), et TS 14175-5 (installation). Méthodes d'essai, sans seuil de performance, d'après l'INRS. Norme payante, non lue." },
-    { s: "norme", t: "NF X 15-206, août 2023 : seuils pour les essais de confinement et de vitesse (non lue, valeur de confinement connue par l'INRS). NF X 15-211, mai 2009 : sorbonnes à recirculation." },
+    { s: "norme", t: "NF EN 14175-2, octobre 2003 : exigences de sécurité et de performances (dimensions, guillotine, indicateur de débit, alimentations, marquage). XP CEN/TS 14175-5, août 2010 : recommandations d'installation et de maintenance. Lues le 6 novembre 2026. Parties 1 (vocabulaire), 3 (essais de type), 4 (essais sur site) et 6 (débit variable), non lues." },
+    { s: "norme", t: "NF X 15-206, août 2023 : seuils pour les essais de confinement et de vitesse (non lue, valeur de confinement connue par l'INRS). NF X 15-211, mai 2009 : sorbonnes à recirculation, non lue. La NF EN 14175-2 ne traite pas ces sorbonnes." },
     { s: "texte", t: "Code du travail : R4222-13 (avertissement automatique de défaillance), R4222-20 et R4222-21 (entretien, consigne), R4212-7 (notice du maître d'ouvrage), R4227-42 et suivants (atmosphères explosives). Arrêté du 8 octobre 1987 (contrôles périodiques)." }
   ]
 };

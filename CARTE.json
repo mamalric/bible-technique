@@ -3,7 +3,7 @@
  "titre": "Bible technique : le parcours de l'utilisateur",
  "sous_titre": [
   "Version 2, brouillon du 2026-11-06, en attente",
-  "Version 1 validée le 2026-11-03 ; fiches à venir ajoutées d'après la liste de mots clés du 6 novembre 2026 ; fiche bac à graisses ajoutée le même jour."
+  "Version 1 validée le 2026-11-03 ; le 6 novembre 2026 : fiches à venir d'après la liste de mots clés, fiche bac à graisses, normes lues sous licence."
  ],
  "titre_pos": [
   40,
@@ -369,9 +369,9 @@
    "etat": "en_cours",
    "titre": "Clapet coupe-feu",
    "texte": [
-    "en ligne, cours de 10 étapes, 99 affirmations"
+    "en ligne, cours de 10 étapes, 103 affirmations"
    ],
-   "note": "13 à vérifier"
+   "note": "9 à vérifier"
   },
   {
    "id": "d2",
@@ -395,9 +395,9 @@
    "etat": "en_cours",
    "titre": "Locaux techniques",
    "texte": [
-    "en ligne, cours de 11 étapes, 118 affirmations"
+    "en ligne, cours de 11 étapes, 121 affirmations"
    ],
-   "note": "31 à vérifier"
+   "note": "29 à vérifier"
   },
   {
    "id": "d4",
@@ -421,7 +421,7 @@
    "etat": "en_cours",
    "titre": "Sorbonne",
    "texte": [
-    "en ligne, cours de 8 étapes, 90 affirmations"
+    "en ligne, cours de 8 étapes, 97 affirmations"
    ],
    "note": "1 à vérifier"
   },
@@ -629,9 +629,9 @@
    "etat": "en_cours",
    "titre": "Bac à graisses",
    "texte": [
-    "en ligne, cours de 13 étapes, 149 affirmations"
+    "en ligne, cours de 13 étapes, 152 affirmations"
    ],
-   "note": "6 à vérifier"
+   "note": "5 à vérifier"
   }
  ],
  "textes": [
