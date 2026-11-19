@@ -48,7 +48,9 @@ function controlerTexte(fichier) {
   });
 }
 
-const publies = ["index.html", "fiche.html", "bible.js", "bible.css", "donnees/registre.js"];
+// favicon.svg et les sources des images d'aperçu (apercu.jpg, apple-touch-icon.png) sont publiés aussi.
+const publies = ["index.html", "fiche.html", "bible.js", "bible.css", "donnees/registre.js",
+  "favicon.svg", "src/apercu.html", "src/icone-ios.html"];
 fs.readdirSync(path.join(RACINE, "donnees", "fiches")).forEach(f => publies.push("donnees/fiches/" + f));
 fs.readdirSync(path.join(RACINE, "schemas")).forEach(f => publies.push("schemas/" + f));
 publies.forEach(f => controlerTexte(path.join(RACINE, f)));
