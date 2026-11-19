@@ -30,7 +30,10 @@
     casque: '<path d="M4 16a8 8 0 0 1 16 0"/><path d="M2 16h20v3H2zM12 8V5"/>',
     cle: '<circle cx="8" cy="15" r="4"/><path d="M11 12l9-9M17 6l3 3"/>',
     alerte: '<path d="M12 3l10 18H2z"/><path d="M12 10v5M12 18v.5"/>',
-    retour: '<path d="M15 18l-6-6 6-6"/>'
+    retour: '<path d="M15 18l-6-6 6-6"/>',
+    // L'emblème de la bible : book-open de Lucide (https://lucide.dev/icons/book-open), copié tel quel.
+    // Le même tracé fait l'icône d'onglet (favicon.svg) et l'image d'aperçu des liens (apercu.jpg).
+    embleme: '<path d="M12 5v16"/><path d="M20.001 19A2 2 0 0022 17V5a2 2 0 00-1.999-2L16 3.002A5 5 0 0012 5a5 5 0 00-4-2H4a2 2 0 00-2 2v12a2 2 0 001.999 2H8a5 5 0 014 2 5 5 0 014-2z"/>'
   };
   function icone(nom, taille) {
     var t = taille || 22;
@@ -118,7 +121,7 @@
     var b = document.createElement("header");
     b.className = "barre";
     b.innerHTML = '<div class="dedans">' +
-      '<a class="marque" href="index.html">' + (retour ? icone("retour", 18) : "") + '<span class="pastille">B</span>Bible technique</a>' +
+      '<a class="marque" href="index.html">' + (retour ? icone("retour", 18) : "") + '<span class="pastille">' + icone("embleme", 18) + '</span>Bible technique</a>' +
       '<span class="vide"></span>' +
       '<button class="bouton" id="bascule-theme" type="button" aria-label="Changer de thème"></button></div>';
     document.body.prepend(b);

@@ -2,6 +2,16 @@
 
 <!-- Dernière entrée en haut. Une entrée par session de travail ou par décision. Date au format AAAA-MM-JJ. -->
 
+## 2026-11-19 : icône d'onglet, aperçu des liens et emblème du livre ouvert
+
+- L'utilisateur a relevé que la bible n'avait ni icône d'onglet ni aperçu quand on colle son lien dans une messagerie. Les deux pages n'avaient ni `link rel="icon"` ni balises Open Graph.
+- Emblème : à sa demande, le "B" de la pastille d'en-tête devient le livre ouvert de Lucide (book-open, https://lucide.dev/icons/book-open, tracé fourni par l'utilisateur), clé `embleme` des pictogrammes de `bible.js`. Le même tracé fait l'icône d'onglet et l'image d'aperçu.
+- Icône d'onglet : `favicon.svg`, le livre en encre sombre sur une plaque au vert de l'accent ; `apple-touch-icon.png` (180 x 180) pour l'écran d'accueil d'un téléphone.
+- Aperçu des liens : `apercu.jpg` (1200 x 630), dans la famille de celui du portail b27-hub : fond sombre sur papier millimétré estompé, plaque verte au centre pour survivre au recadrage carré des vignettes, titre, accroche, les six badges de source à leurs couleurs et l'adresse du site. Balises `og:*` et `twitter:card` dans `index.html` (avec `og:url`) et `fiche.html` (sans `og:url`, pour que le lien d'une fiche garde son adresse ; les messageries ne lancent pas le script qui remplit la fiche, elles montrent donc l'aperçu commun).
+- Les images se régénèrent avec `python src/generer_apercu.py`, depuis `src/apercu.html` et `src/icone-ios.html`, par le Chromium de Playwright (Edge sans fenêtre ne rendait aucune capture sur le poste).
+- Contrôlé dans l'aperçu local : les trois fichiers servis, la pastille au livre sur l'accueil et sur une fiche, en thème sombre et clair, console vide. `node tests/verifier_bible.js` : 0 erreur. La carte ne bouge pas : aucune étape n'a changé d'état.
+- Reste à faire : publier sur accord de l'utilisateur, puis vérifier l'aperçu en collant le lien dans Teams ou WhatsApp (Teams garde un aperçu en cache quelque temps).
+
 ## 2026-11-06 : normes CSTB lues pour les autres fiches
 
 - L'utilisateur a accepté que l'accès CSTB du bureau d'études (Batipédia, Reef) serve aux normes restées non lues des autres fiches. Il s'est connecté lui-même. Les PDF et leur texte restent dans `prive/sources`, ignoré par git : rien n'est versé au dépôt, tout est reformulé avec le numéro de paragraphe, jamais recopié.

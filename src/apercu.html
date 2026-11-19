@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Aperçu des liens de la bible</title>
+<!-- Source de apercu.jpg, l'image qu'affichent Teams, Outlook, WhatsApp... quand on colle le lien
+     de la bible. 1200 x 630, l'emblème au centre pour survivre au recadrage carré des vignettes.
+     Se régénère avec : python src/generer_apercu.py -->
+<style>
+  html, body { margin: 0; }
+  body {
+    width: 1200px; height: 630px; overflow: hidden; position: relative;
+    background: #0a0d08; color: #e9ede2;
+    font-family: Inter, "Segoe UI Variable Display", "Segoe UI", Roboto, Arial, sans-serif;
+    display: flex; flex-direction: column; align-items: center;
+  }
+  /* Papier millimétré, la feuille du bureau d'études, estompé vers les bords. */
+  .grille {
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(149,192,61,.10) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(149,192,61,.10) 1px, transparent 1px),
+      linear-gradient(rgba(149,192,61,.045) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(149,192,61,.045) 1px, transparent 1px);
+    background-size: 120px 120px, 120px 120px, 24px 24px, 24px 24px;
+    background-position: 0 15px, 0 0, 0 15px, 0 0;
+    -webkit-mask-image: radial-gradient(ellipse 70% 80% at 50% 40%, #000 30%, transparent 100%);
+            mask-image: radial-gradient(ellipse 70% 80% at 50% 40%, #000 30%, transparent 100%);
+  }
+  .halo {
+    position: absolute; left: 50%; top: 150px; width: 900px; height: 520px; transform: translate(-50%, -50%);
+    background: radial-gradient(closest-side, rgba(149,192,61,.20), rgba(149,192,61,0));
+  }
+  .plaque {
+    position: relative; margin-top: 70px; width: 168px; height: 168px; border-radius: 40px;
+    background: #95c03d; display: grid; place-items: center;
+    box-shadow: 0 18px 50px rgba(0,0,0,.55), 0 0 0 1px rgba(255,255,255,.08) inset;
+  }
+  h1 {
+    position: relative; margin: 34px 0 0; font-size: 80px; line-height: 1; font-weight: 700; letter-spacing: -1.5px;
+  }
+  h1 span { color: #95c03d; }
+  p {
+    position: relative; margin: 22px 0 0; font-size: 29px; color: #c3cbb7;
+  }
+  .badges { position: relative; display: flex; gap: 14px; margin-top: 40px; }
+  .badges b {
+    display: inline-flex; align-items: center; gap: 10px; padding: 10px 18px; border-radius: 99px;
+    font-size: 22px; font-weight: 700; color: #e9ede2;
+    background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.13);
+  }
+  .badges i { width: 12px; height: 12px; border-radius: 50%; background: var(--c); }
+  .adresse { position: absolute; bottom: 36px; font-size: 22px; color: #8d9880; letter-spacing: .3px; }
+</style>
+</head>
+<body>
+  <div class="grille"></div>
+  <div class="halo"></div>
+  <div class="plaque">
+    <!-- book-open de Lucide (https://lucide.dev/icons/book-open), copié tel quel -->
+    <svg width="104" height="104" viewBox="0 0 24 24" fill="none" stroke="#0a0d08" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 5v16"/>
+      <path d="M20.001 19A2 2 0 0022 17V5a2 2 0 00-1.999-2L16 3.002A5 5 0 0012 5a5 5 0 00-4-2H4a2 2 0 00-2 2v12a2 2 0 001.999 2H8a5 5 0 014 2 5 5 0 014-2z"/>
+    </svg>
+  </div>
+  <h1>La <span>bible</span> technique</h1>
+  <p>Une fiche par notion, un schéma pour comprendre, une liste pour vérifier.</p>
+  <!-- Les six badges de source, aux couleurs de bible.css : la signature de la bible. -->
+  <div class="badges">
+    <b style="--c:#4fb36a"><i></i>Texte</b>
+    <b style="--c:#3e8fb8"><i></i>Norme</b>
+    <b style="--c:#7d8fd6"><i></i>Fabricant</b>
+    <b style="--c:#e0a03a"><i></i>Expert</b>
+    <b style="--c:#b07ad0"><i></i>Vu sur affaire</b>
+    <b style="--c:#8d9880"><i></i>À vérifier</b>
+  </div>
+  <div class="adresse">mamalric.github.io/bible-technique</div>
+</body>
+</html>
