@@ -2,6 +2,12 @@
 
 <!-- Dernière entrée en haut. Une entrée par session de travail ou par décision. Date au format AAAA-MM-JJ. -->
 
+## 2026-11-20 : l'icône d'onglet porte aussi une version
+
+- Après la publication du livre blanc, l'utilisateur voyait toujours l'icône d'onglet au livre noir : le fichier en ligne était bien blanc, mais les navigateurs gardent longtemps les icônes d'onglet, et son adresse n'avait pas changé.
+- Les pages appellent désormais aussi `favicon.svg`, `apple-touch-icon.png` et l'image d'aperçu `apercu.jpg` (balise `og:image`) avec `?v=<empreinte>`. L'empreinte de `tests/verifier_bible.js` couvre ces trois fichiers, images comprises : à chaque changement d'icône ou d'image, l'adresse change et navigateurs comme messageries vont chercher la nouvelle. Après `python src/generer_apercu.py`, le vérificateur demande donc `node tests/verifier_bible.js --version`.
+- Contrôlé dans Chromium (Playwright), servi en local : icône d'onglet et icône d'écran d'accueil chargées avec leur version sur l'accueil et une fiche, aucune erreur. `node tests/verifier_bible.js` : 0 erreur.
+
 ## 2026-11-20 : le livre de l'emblème passe en blanc
 
 - À la demande de l'utilisateur, le livre ouvert de l'emblème est blanc au lieu de noir sur la plaque verte, partout où il paraît : pastille de l'en-tête (`bible.css`, dans les deux thèmes), icône d'onglet (`favicon.svg`), icône d'écran d'accueil (`apple-touch-icon.png`) et image d'aperçu des liens (`apercu.jpg`), ces deux dernières régénérées par `python src/generer_apercu.py`.

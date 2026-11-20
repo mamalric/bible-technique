@@ -55,29 +55,33 @@ fs.readdirSync(path.join(RACINE, "donnees", "fiches")).forEach(f => publies.push
 fs.readdirSync(path.join(RACINE, "schemas")).forEach(f => publies.push("schemas/" + f));
 publies.forEach(f => controlerTexte(path.join(RACINE, f)));
 
-/* version des fichiers : les pages appellent bible.css, registre.js et bible.js avec ?v=<empreinte>,
-   et bible.js passe la même aux fiches et aux schémas. L'empreinte suit le contenu : à chaque
-   modification elle change, et un navigateur ne peut plus marier une page neuve avec des fichiers
-   restés en cache (vu le 20 novembre 2026 : nouvelle icône d'onglet, mais l'ancien "B" dans l'en-tête).
+/* version des fichiers : les pages appellent bible.css, registre.js, bible.js, l'icône d'onglet,
+   l'icône d'écran d'accueil et l'image d'aperçu avec ?v=<empreinte>, et bible.js passe la même aux
+   fiches et aux schémas. L'empreinte suit le contenu : à chaque modification elle change, et un
+   navigateur ne peut plus marier une page neuve avec des fichiers restés en cache (vu le 20 novembre
+   2026 : nouvelle icône d'onglet mais ancien "B" dans l'en-tête, puis livre passé en blanc mais icône
+   d'onglet restée noire, les navigateurs gardant longtemps les icônes d'onglet).
    node tests/verifier_bible.js --version l'écrit dans les pages. */
 const crypto = require("crypto");
 const empreinte = crypto.createHash("sha1");
-publies.filter(f => /^(bible\.(js|css)|donnees\/.*\.js|schemas\/.*\.js)$/.test(f)).sort().forEach(f => {
+publies.filter(f => /^(bible\.(js|css)|donnees\/.*\.js|schemas\/.*\.js|favicon\.svg)$/.test(f)).sort().forEach(f => {
   empreinte.update(f + "\n" + fs.readFileSync(path.join(RACINE, f), "utf8").replace(/\r/g, ""));
 });
+["apple-touch-icon.png", "apercu.jpg"].forEach(f => empreinte.update(f + "\n").update(fs.readFileSync(path.join(RACINE, f))));
 const VERSION = empreinte.digest("hex").slice(0, 8);
+const VERSIONNES = ["bible.css", "donnees/registre.js", "bible.js", "favicon.svg", "apple-touch-icon.png", "apercu.jpg"];
 ["index.html", "fiche.html"].forEach(page => {
   const fichier = path.join(RACINE, page);
   let html = fs.readFileSync(fichier, "utf8");
-  const re = /(href|src)="(bible\.css|donnees\/registre\.js|bible\.js)(\?v=[0-9a-f]*)?"/g;
+  const re = /(href|src|content)="((?:https:\/\/mamalric\.github\.io\/bible-technique\/)?)(bible\.css|donnees\/registre\.js|bible\.js|favicon\.svg|apple-touch-icon\.png|apercu\.jpg)(\?v=[0-9a-f]*)?"/g;
   if (process.argv.includes("--version")) {
-    html = html.replace(re, (m, attr, f) => `${attr}="${f}?v=${VERSION}"`);
+    html = html.replace(re, (m, attr, base, f) => `${attr}="${base}${f}?v=${VERSION}"`);
     fs.writeFileSync(fichier, html);
   }
   const appels = [...html.matchAll(re)];
-  if (appels.length !== 3) erreur(`${page} : ${appels.length} appel(s) de bible.css, registre.js et bible.js au lieu de 3`);
+  VERSIONNES.forEach(f => { if (!appels.some(m => m[3] === f)) erreur(`${page} : ${f} n'est pas appelé`); });
   appels.forEach(m => {
-    if (m[3] !== "?v=" + VERSION) erreur(`${page} : ${m[2]} appelé en ${m[3] || "sans version"} au lieu de ?v=${VERSION} ; lancer node tests/verifier_bible.js --version`);
+    if (m[4] !== "?v=" + VERSION) erreur(`${page} : ${m[3]} appelé en ${m[4] || "sans version"} au lieu de ?v=${VERSION} ; lancer node tests/verifier_bible.js --version`);
   });
 });
 
