@@ -10,7 +10,7 @@
 - Aperçu des liens : `apercu.jpg` (1200 x 630), dans la famille de celui du portail b27-hub : fond sombre sur papier millimétré estompé, plaque verte au centre pour survivre au recadrage carré des vignettes, titre, accroche, les six badges de source à leurs couleurs et l'adresse du site. Balises `og:*` et `twitter:card` dans `index.html` (avec `og:url`) et `fiche.html` (sans `og:url`, pour que le lien d'une fiche garde son adresse ; les messageries ne lancent pas le script qui remplit la fiche, elles montrent donc l'aperçu commun).
 - Les images se régénèrent avec `python src/generer_apercu.py`, depuis `src/apercu.html` et `src/icone-ios.html`, par le Chromium de Playwright (Edge sans fenêtre ne rendait aucune capture sur le poste).
 - Contrôlé dans l'aperçu local : les trois fichiers servis, la pastille au livre sur l'accueil et sur une fiche, en thème sombre et clair, console vide. `node tests/verifier_bible.js` : 0 erreur. La carte ne bouge pas : aucune étape n'a changé d'état.
-- Reste à faire : publier sur accord de l'utilisateur, puis vérifier l'aperçu en collant le lien dans Teams ou WhatsApp (Teams garde un aperçu en cache quelque temps).
+- Publié le 20 novembre 2026 sur accord de l'utilisateur (`main` sur c67a0d7), déploiement GitHub Pages réussi du premier coup. Contrôlé en ligne : `favicon.svg`, `apple-touch-icon.png` et `apercu.jpg` servis, balises Open Graph présentes sur les deux pages, pastille au livre dans `bible.js`. Reste à voir l'aperçu en collant le lien dans Teams ou WhatsApp (Teams garde un aperçu en cache quelque temps). Cette note part avec la prochaine publication.
 
 ## 2026-11-06 : normes CSTB lues pour les autres fiches
 
