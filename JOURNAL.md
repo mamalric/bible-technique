@@ -5,7 +5,7 @@
 ## 2026-11-20 : le livre de l'emblème passe en blanc
 
 - À la demande de l'utilisateur, le livre ouvert de l'emblème est blanc au lieu de noir sur la plaque verte, partout où il paraît : pastille de l'en-tête (`bible.css`, dans les deux thèmes), icône d'onglet (`favicon.svg`), icône d'écran d'accueil (`apple-touch-icon.png`) et image d'aperçu des liens (`apercu.jpg`), ces deux dernières régénérées par `python src/generer_apercu.py`.
-- Contrôlé dans Chromium (Playwright) : pastille blanche en clair et en sombre, icône d'onglet et images vérifiées à l'oeil, aucune erreur. `node tests/verifier_bible.js` : 0 erreur, version des fichiers mise à jour. Les messageries gardent un temps l'ancien aperçu d'un lien déjà collé.
+- Contrôlé dans Chromium (Playwright) : pastille blanche en clair et en sombre, icône d'onglet et images vérifiées à l'oeil, aucune erreur. `node tests/verifier_bible.js` : 0 erreur, version des fichiers mise à jour. Les messageries gardent un temps l'ancien aperçu d'un lien déjà collé. Publié le même jour sur accord de l'utilisateur (`main` sur 8a7c47c), déploiement réussi du premier coup ; contrôlé en ligne : icône d'onglet, feuille de style (`?v=92d15a85`) et image d'aperçu au livre blanc. Cette note part avec la prochaine publication.
 
 ## 2026-11-20 : un vrai bouton de thème
 
