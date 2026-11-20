@@ -14,7 +14,7 @@
   --encre-2:#c4cbb8;
   --discret:#8d9880;
   --accent:#95c03d;
-  --accent-encre:#0a0d08;
+  --accent-encre:#ffffff;   /* tout ce qui se pose sur le vert (pastilles, numéros, boutons actifs, coches) : blanc, à la demande de l'utilisateur */
   --lien:#b7dc78;
   --danger:#ef6b5b;
   --danger-fond:rgba(239,107,91,.10);
@@ -50,7 +50,7 @@
   --encre-2:#3a4230;
   --discret:#5f6a52;
   --accent:#95c03d;
-  --accent-encre:#131709;
+  --accent-encre:#ffffff;
   --lien:#4e6b1c;
   --danger:#b3261e;
   --danger-fond:rgba(179,38,30,.07);
@@ -107,6 +107,36 @@ a:hover{text-decoration:underline}
 :root[data-theme="clair"] .bt-lune{opacity:1; transform:none}
 /* le cercle qui ouvre le nouveau thème (bible.js) : sans le fondu par défaut du navigateur */
 ::view-transition-old(root), ::view-transition-new(root){animation:none; mix-blend-mode:normal}
+
+/* Jauges : les curseurs des schémas (public, personnel, température, ouverture...). Une piste arrondie
+   remplie de vert jusqu'au curseur, un curseur rond blanc cerclé de vert. Le navigateur ne sait pas
+   remplir seul la piste partout : bible.js tient --rempli à jour. */
+input[type="range"]{
+  -webkit-appearance:none; appearance:none; width:100%; height:26px; margin:0; padding:0;
+  background:transparent; cursor:pointer; --rempli:50%;
+}
+input[type="range"]::-webkit-slider-runnable-track{
+  height:8px; border-radius:99px;
+  background:linear-gradient(to right, var(--accent) 0 var(--rempli), var(--ligne-forte) var(--rempli) 100%);
+}
+input[type="range"]::-moz-range-track{height:8px; border-radius:99px; background:var(--ligne-forte)}
+input[type="range"]::-moz-range-progress{height:8px; border-radius:99px; background:var(--accent)}
+input[type="range"]::-webkit-slider-thumb{
+  -webkit-appearance:none; appearance:none; width:22px; height:22px; margin-top:-7px; border-radius:50%;
+  background:#fff; border:3px solid var(--accent); box-shadow:0 2px 6px rgba(0,0,0,.25);
+  transition:transform .15s var(--courbe), box-shadow .15s;
+}
+input[type="range"]::-moz-range-thumb{
+  width:16px; height:16px; border-radius:50%; background:#fff; border:3px solid var(--accent);
+  box-shadow:0 2px 6px rgba(0,0,0,.25); transition:transform .15s var(--courbe), box-shadow .15s;
+}
+input[type="range"]:hover::-webkit-slider-thumb{transform:scale(1.1)}
+input[type="range"]:hover::-moz-range-thumb{transform:scale(1.1)}
+input[type="range"]:active::-webkit-slider-thumb{transform:scale(1.2)}
+input[type="range"]:active::-moz-range-thumb{transform:scale(1.2)}
+input[type="range"]:focus-visible{outline:none}
+input[type="range"]:focus-visible::-webkit-slider-thumb{box-shadow:0 0 0 5px rgba(149,192,61,.35)}
+input[type="range"]:focus-visible::-moz-range-thumb{box-shadow:0 0 0 5px rgba(149,192,61,.35)}
 
 /* ---------- accueil ---------- */
 .entree{text-align:center; padding:72px 0 36px}

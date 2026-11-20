@@ -14,6 +14,26 @@
   }
   appliquerTheme(lireTheme() || "clair");
 
+  /* ---------- jauges : la part remplie des curseurs (input range), dessinée par bible.css ----------
+     Tenue à jour quand on fait glisser, et après tout clic ou tout ajout dans la page : les schémas
+     posent parfois une valeur eux-mêmes (bouton de réarmement, débit type) sans prévenir. */
+  function remplir(el) {
+    var min = el.min === "" ? 0 : +el.min, max = el.max === "" ? 100 : +el.max;
+    el.style.setProperty("--rempli", (max > min ? (+el.value - min) / (max - min) * 100 : 0) + "%");
+  }
+  var jaugesPrevues = false;
+  function remplirTout() {
+    if (jaugesPrevues) return;
+    jaugesPrevues = true;
+    (window.requestAnimationFrame || setTimeout)(function () {
+      jaugesPrevues = false;
+      Array.prototype.forEach.call(document.querySelectorAll('input[type="range"]'), remplir);
+    });
+  }
+  document.addEventListener("input", function (e) { if (e.target.type === "range") remplir(e.target); }, true);
+  ["change", "click", "keyup"].forEach(function (t) { document.addEventListener(t, remplirTout, true); });
+  if (window.MutationObserver) new MutationObserver(remplirTout).observe(document.documentElement, { childList: true, subtree: true });
+
   /* ---------- pictogrammes (traits 24 x 24) ----------
      Tous copiés tels quels de Lucide (https://lucide.dev/icons/), jamais dessinés à la main :
      le nom de l'icône Lucide suit chaque tracé. Vérifiés le 20 novembre 2026 sur Lucide 1.68. */

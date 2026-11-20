@@ -2,6 +2,13 @@
 
 <!-- Dernière entrée en haut. Une entrée par session de travail ou par décision. Date au format AAAA-MM-JJ. -->
 
+## 2026-11-20 : du blanc sur le vert, et de vraies jauges
+
+- À la demande de l'utilisateur, tout ce qui se pose sur le vert de l'accent passe du noir au blanc, le vert restant : numéros des rubriques, étape active du cours, boutons actifs des schémas, numéros des calculs, coches des listes, pastilles numérotées des schémas de ventilation et de local technique. Une seule variable porte cette encre, `--accent-encre`, désormais blanche dans les deux thèmes.
+- À sa demande aussi, les curseurs des schémas (public et personnel de l'ERP, température du clapet, ouverture de la sorbonne, débits et pressions de la ventilation) ont un nouveau dessin, commun à toute la bible dans `bible.css` : une piste arrondie remplie de vert jusqu'au curseur, un curseur rond blanc cerclé de vert qui grossit au survol et au glissé, un halo vert au clavier. Ils s'affichaient avant avec le style natif du navigateur, une barre grise et un petit carré noir chez l'utilisateur.
+- La part remplie est tenue par `bible.js` (variable `--rempli`) au glissé, et après tout clic ou ajout dans la page, puisque certains boutons des schémas posent eux-mêmes une valeur (réarmement du clapet, débits types de la ventilation). Firefox la dessine seul.
+- Contrôlé dans Chromium (Playwright), servi en local : jauges de l'ERP au départ, glissées et au clavier, réarmement du clapet et débit type de la ventilation suivis par la part remplie, thèmes clair et sombre, numéros en blanc, aucun débordement en 375 px, aucune erreur. `node tests/verifier_bible.js` : 0 erreur, version des fichiers mise à jour.
+
 ## 2026-11-20 : l'icône d'onglet porte aussi une version
 
 - Après la publication du livre blanc, l'utilisateur voyait toujours l'icône d'onglet au livre noir : le fichier en ligne était bien blanc, mais les navigateurs gardent longtemps les icônes d'onglet, et son adresse n'avait pas changé.
