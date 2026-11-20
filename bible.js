@@ -126,17 +126,31 @@
     b.innerHTML = '<div class="dedans">' +
       '<a class="marque" href="index.html">' + (retour ? icone("retour", 18) : "") + '<span class="pastille">' + icone("embleme", 18) + '</span>Bible technique</a>' +
       '<span class="vide"></span>' +
-      '<button class="bouton" id="bascule-theme" type="button" aria-label="Changer de thème"></button></div>';
+      '<button class="bascule-theme" id="bascule-theme" type="button">' +
+        '<span class="bt-soleil">' + icone("soleil", 18) + '</span><span class="bt-lune">' + icone("lune", 18) + "</span></button></div>";
     document.body.prepend(b);
     var bt = b.querySelector("#bascule-theme");
+    // Le bouton montre le thème où il mène : la lune en clair, le soleil en sombre. Les deux
+    // pictogrammes sont posés l'un sur l'autre, la feuille de style fait tourner l'un dehors, l'autre dedans.
     function maj() {
       var clair = document.documentElement.getAttribute("data-theme") === "clair";
-      bt.innerHTML = icone(clair ? "lune" : "soleil", 16);
-      bt.title = clair ? "Passer en sombre" : "Passer en clair";
+      bt.title = clair ? "Passer en thème sombre" : "Passer en thème clair";
+      bt.setAttribute("aria-label", bt.title);
     }
     bt.addEventListener("click", function () {
-      var clair = document.documentElement.getAttribute("data-theme") === "clair";
-      appliquerTheme(clair ? "sombre" : "clair"); ecrireTheme(clair ? "sombre" : "clair"); maj();
+      var suivant = document.documentElement.getAttribute("data-theme") === "clair" ? "sombre" : "clair";
+      function basculer() { appliquerTheme(suivant); ecrireTheme(suivant); maj(); }
+      // Le nouveau thème s'ouvre en cercle depuis le bouton, là où le navigateur sait le faire
+      // et si le poste ne demande pas moins d'animations ; sinon il se pose d'un coup.
+      var calme = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      if (!document.startViewTransition || calme) { basculer(); return; }
+      var r = bt.getBoundingClientRect(), x = r.left + r.width / 2, y = r.top + r.height / 2;
+      var rayon = Math.hypot(Math.max(x, window.innerWidth - x), Math.max(y, window.innerHeight - y));
+      document.startViewTransition(basculer).ready.then(function () {
+        document.documentElement.animate(
+          { clipPath: ["circle(0px at " + x + "px " + y + "px)", "circle(" + rayon + "px at " + x + "px " + y + "px)"] },
+          { duration: 520, easing: "cubic-bezier(.2,.7,.2,1)", pseudoElement: "::view-transition-new(root)" });
+      }).catch(function () { /* transition refusée : le thème est posé quand même */ });
     });
     maj();
   }

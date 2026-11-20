@@ -90,6 +90,23 @@ a:hover{text-decoration:underline}
 .bouton:hover{border-color:var(--accent)}
 .bouton:active{transform:scale(.97)}
 .bouton.actif{background:var(--accent); color:var(--accent-encre); border-color:var(--accent); font-weight:600}
+/* Bouton de thème : un carré aux coins doux, comme les boutons du portail b27-hub. Il montre le thème
+   où il mène, la lune en clair, le soleil en sombre : les deux pictogrammes sont l'un sur l'autre,
+   l'un sort en tournant pendant que l'autre entre. */
+.bascule-theme{
+  position:relative; width:38px; height:38px; padding:0; display:grid; place-items:center; cursor:pointer;
+  background:var(--carte); border:1px solid var(--ligne); border-radius:var(--rayon-s); color:var(--encre-2);
+  transition:border-color .2s, color .2s, transform .2s var(--courbe);
+}
+.bascule-theme:hover{border-color:var(--ligne-forte); color:var(--encre); transform:translateY(-1px)}
+.bascule-theme:active{transform:scale(.94)}
+.bascule-theme:focus-visible{outline:2px solid var(--accent); outline-offset:2px}
+.bascule-theme > span{grid-area:1/1; display:grid; transition:transform .5s var(--courbe), opacity .3s}
+.bt-lune{opacity:0; transform:rotate(-100deg) scale(.4)}
+:root[data-theme="clair"] .bt-soleil{opacity:0; transform:rotate(100deg) scale(.4)}
+:root[data-theme="clair"] .bt-lune{opacity:1; transform:none}
+/* le cercle qui ouvre le nouveau thème (bible.js) : sans le fondu par défaut du navigateur */
+::view-transition-old(root), ::view-transition-new(root){animation:none; mix-blend-mode:normal}
 
 /* ---------- accueil ---------- */
 .entree{text-align:center; padding:72px 0 36px}

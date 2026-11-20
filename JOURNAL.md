@@ -2,6 +2,13 @@
 
 <!-- Dernière entrée en haut. Une entrée par session de travail ou par décision. Date au format AAAA-MM-JJ. -->
 
+## 2026-11-20 : un vrai bouton de thème
+
+- À la demande de l'utilisateur, le bouton lune et soleil est refait. Il était un ovale de bouton d'onglet avec un pictogramme de 16 px perdu au milieu ; c'est maintenant un carré de 38 px aux coins doux, comme les boutons du portail b27-hub, avec un pictogramme de 18 px.
+- Il montre toujours le thème où il mène (la lune en clair, le soleil en sombre) : les deux pictogrammes Lucide sont posés l'un sur l'autre, l'un sort en tournant pendant que l'autre entre. Son nom dit l'action ("Passer en thème sombre" ou "clair"), lu aussi par les lecteurs d'écran, avec un contour visible au clavier.
+- Au clic, le nouveau thème s'ouvre en cercle depuis le bouton (View Transitions, Chrome et Edge) ; ailleurs, ou si le poste demande moins d'animations, il se pose d'un coup.
+- Contrôlé dans Chromium (Playwright) : les deux états, le cercle à mi-course, la bascule au clavier, la bascule immédiate quand le poste demande moins d'animations, aucun défilement horizontal en 375 px, aucune erreur. `node tests/verifier_bible.js` : 0 erreur, version des fichiers mise à jour.
+
 ## 2026-11-20 : thème clair par défaut
 
 - À la demande de l'utilisateur, la bible s'ouvre désormais en clair, comme les autres outils B27 (le portail b27-hub l'est déjà). Le sombre reste à un clic et le choix est mémorisé par le navigateur (`bible-theme`) : qui l'avait choisi le garde, qui n'avait rien choisi passe au clair.
