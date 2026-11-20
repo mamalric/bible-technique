@@ -20,12 +20,15 @@
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="La bible technique : un livre ouvert sur une plaque verte et les six badges de source">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="stylesheet" href="bible.css?v=92299dcc">
+<!-- Thème posé avant le premier rendu : clair par défaut, comme les autres outils B27 ;
+     le choix du sombre, mémorisé par le navigateur, l'emporte. -->
+<script>try{if(localStorage.getItem("bible-theme")!=="sombre")document.documentElement.setAttribute("data-theme","clair");}catch(e){document.documentElement.setAttribute("data-theme","clair");}</script>
+<link rel="stylesheet" href="bible.css?v=8d99e038">
 </head>
 <body>
 <main class="page"></main>
-<script src="donnees/registre.js?v=92299dcc"></script>
-<script src="bible.js?v=92299dcc"></script>
+<script src="donnees/registre.js?v=8d99e038"></script>
+<script src="bible.js?v=8d99e038"></script>
 <script>Bible.fiche();</script>
 </body>
 </html>

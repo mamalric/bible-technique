@@ -1,5 +1,6 @@
 /* Bible technique : feuille commune à l'accueil et aux fiches.
-   Palette reprise du portail b27-hub : sombre par défaut, vert #95C03D du logo,
+   Palette reprise du portail b27-hub : clair par défaut comme les autres outils B27
+   (data-theme="clair", posé dans l'en-tête des pages), sombre ici en :root, vert #95C03D du logo,
    couleurs de domaine = couleurs de lot B27 du catalogue du hub. */
 
 :root{

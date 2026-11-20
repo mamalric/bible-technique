@@ -4,14 +4,15 @@
 (function () {
   "use strict";
 
-  /* ---------- thème : sombre par défaut, clair mémorisé par navigateur ---------- */
+  /* ---------- thème : clair par défaut, comme les autres outils B27 ; sombre mémorisé par navigateur.
+     Les pages le posent déjà dans leur en-tête, avant le premier rendu, pour éviter un éclair sombre. ---------- */
   function lireTheme() { try { return localStorage.getItem("bible-theme"); } catch (e) { return null; } }
   function ecrireTheme(t) { try { localStorage.setItem("bible-theme", t); } catch (e) { /* navigation privée */ } }
   function appliquerTheme(t) {
     if (t === "clair") document.documentElement.setAttribute("data-theme", "clair");
     else document.documentElement.removeAttribute("data-theme");
   }
-  appliquerTheme(lireTheme());
+  appliquerTheme(lireTheme() || "clair");
 
   /* ---------- pictogrammes (traits 24 x 24) ----------
      Tous copiés tels quels de Lucide (https://lucide.dev/icons/), jamais dessinés à la main :
