@@ -200,9 +200,12 @@
   }
 
   /* ---------- fiche ---------- */
+  // Les fiches et les schémas se chargent avec la version que la page a donnée à bible.js (?v=...),
+  // pour qu'une page neuve ne tourne jamais avec des fichiers restés dans le cache du navigateur.
+  var VERSION = (/[?&]v=([0-9a-f]+)/.exec((document.currentScript || {}).src || "") || [])[1];
   function charger(src) {
     return new Promise(function (ok, ko) {
-      var s = document.createElement("script"); s.src = src; s.onload = ok; s.onerror = ko; document.head.appendChild(s);
+      var s = document.createElement("script"); s.src = src + (VERSION ? "?v=" + VERSION : ""); s.onload = ok; s.onerror = ko; document.head.appendChild(s);
     });
   }
 

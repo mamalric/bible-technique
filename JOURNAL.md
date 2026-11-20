@@ -2,6 +2,12 @@
 
 <!-- Dernière entrée en haut. Une entrée par session de travail ou par décision. Date au format AAAA-MM-JJ. -->
 
+## 2026-11-20 : les fichiers portent une version, plus de mélange avec le cache
+
+- Juste après la publication de l'icône d'onglet, l'utilisateur voyait la nouvelle icône d'onglet mais toujours l'ancien "B" dans l'en-tête : la page était neuve, mais `bible.js` venait encore du cache de son navigateur (GitHub Pages autorise 10 minutes de cache, et il l'avait chargé juste avant la mise en ligne). Un tel mélange peut aussi casser une page, si elle attend un script plus récent que celui du cache.
+- Correction : `index.html` et `fiche.html` appellent `bible.css`, `donnees/registre.js` et `bible.js` avec `?v=<empreinte>`, et `bible.js` passe la même aux fiches et aux schémas qu'il charge. L'empreinte (8 caractères) est tirée du contenu de ces fichiers par `tests/verifier_bible.js` : elle change d'elle-même à chaque modification. Le vérificateur sort en erreur si les pages portent une empreinte périmée, et `node tests/verifier_bible.js --version` l'écrit.
+- Contrôlé dans Chromium (Playwright), servi en local et ouvert en fichier : accueil avec le livre, fiche du clapet et son schéma chargés avec la même version, aucune erreur. `node tests/verifier_bible.js` : 0 erreur.
+
 ## 2026-11-19 : icône d'onglet, aperçu des liens et emblème du livre ouvert
 
 - L'utilisateur a relevé que la bible n'avait ni icône d'onglet ni aperçu quand on colle son lien dans une messagerie. Les deux pages n'avaient ni `link rel="icon"` ni balises Open Graph.

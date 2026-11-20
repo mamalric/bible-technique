@@ -5,7 +5,7 @@ type: application
 statut: actif
 pitch: Aide-mémoire visuel, une fiche par notion, enrichi au fil des affaires.
 cree: 2026-10-27
-maj: 2026-11-19
+maj: 2026-11-20
 tags: [aide-memoire, reglementation, web]
 stack: HTML + CSS + JS vanilla, sans framework ni build, destiné à GitHub Pages (publié depuis main)
 lancer: ouvrir index.html
