@@ -2,6 +2,13 @@
 
 <!-- Dernière entrée en haut. Une entrée par session de travail ou par décision. Date au format AAAA-MM-JJ. -->
 
+## 2026-11-20 : les pictogrammes de la bible viennent de Lucide
+
+- L'utilisateur avait demandé le 19 novembre que les SVG soient repris de Lucide (https://lucide.dev/icons/). La demande visait la bible, la session étant la sienne ; elle avait été appliquée par erreur au portail b27-hub. Rectifié ici.
+- Les 16 pictogrammes de `bible.js` (tuiles des domaines, recherche, thème, colonnes de vérification, pièges, retour), dessinés à la main, sont remplacés par des tracés Lucide 1.68 copiés tels quels depuis le catalogue, le nom de l'icône Lucide en commentaire : vent wind, flamme flame, flocon snowflake, gouttes droplet, bouclier shield-check, thermometre thermometer, eclair zap, livre book-text, loupe search, soleil sun, lune moon, plan file-check (colonne Au VISA), casque hard-hat, cle key (À la réception), alerte triangle-exclamation-point, retour chevron-left. L'emblème book-open l'était déjà.
+- Restent dessinés à la main, faute de décision : les 52 pictogrammes techniques des schémas (`window.BIBLE_ICONES` dans `schemas/clapet.js`, `local-technique.js`, `sorbonne.js`, `ventilation.js` : fusible, lame, joints, piquage, registre, silencieux, CTA...), les vignettes des cartes de fiche et les schémas eux-mêmes, dessins techniques que Lucide ne couvre pas. Question posée à l'utilisateur.
+- Contrôlé dans l'aperçu local : tuiles des domaines, colonnes de vérification et pièges de la fiche bac à graisses, console vide. Les 17 tracés comparés au catalogue Lucide : tous identiques. `node tests/verifier_bible.js` : 0 erreur, version des fichiers mise à jour.
+
 ## 2026-11-20 : les fichiers portent une version, plus de mélange avec le cache
 
 - Juste après la publication de l'icône d'onglet, l'utilisateur voyait la nouvelle icône d'onglet mais toujours l'ancien "B" dans l'en-tête : la page était neuve, mais `bible.js` venait encore du cache de son navigateur (GitHub Pages autorise 10 minutes de cache, et il l'avait chargé juste avant la mise en ligne). Un tel mélange peut aussi casser une page, si elle attend un script plus récent que celui du cache.
