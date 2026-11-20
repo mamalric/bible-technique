@@ -7,7 +7,7 @@
 - À la demande de l'utilisateur, le bouton lune et soleil est refait. Il était un ovale de bouton d'onglet avec un pictogramme de 16 px perdu au milieu ; c'est maintenant un carré de 38 px aux coins doux, comme les boutons du portail b27-hub, avec un pictogramme de 18 px.
 - Il montre toujours le thème où il mène (la lune en clair, le soleil en sombre) : les deux pictogrammes Lucide sont posés l'un sur l'autre, l'un sort en tournant pendant que l'autre entre. Son nom dit l'action ("Passer en thème sombre" ou "clair"), lu aussi par les lecteurs d'écran, avec un contour visible au clavier.
 - Au clic, le nouveau thème s'ouvre en cercle depuis le bouton (View Transitions, Chrome et Edge) ; ailleurs, ou si le poste demande moins d'animations, il se pose d'un coup.
-- Contrôlé dans Chromium (Playwright) : les deux états, le cercle à mi-course, la bascule au clavier, la bascule immédiate quand le poste demande moins d'animations, aucun défilement horizontal en 375 px, aucune erreur. `node tests/verifier_bible.js` : 0 erreur, version des fichiers mise à jour.
+- Contrôlé dans Chromium (Playwright) : les deux états, le cercle à mi-course, la bascule au clavier, la bascule immédiate quand le poste demande moins d'animations, aucun défilement horizontal en 375 px, aucune erreur. `node tests/verifier_bible.js` : 0 erreur, version des fichiers mise à jour. Publié le même jour sur accord de l'utilisateur (`main` sur 7fd2ebc), déploiement réussi du premier coup ; contrôlé en ligne : bouton de 38 px, bascule aller et retour, fichiers en `?v=8f6f59a1`, aucune erreur. Cette note part avec la prochaine publication.
 
 ## 2026-11-20 : thème clair par défaut
 
