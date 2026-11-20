@@ -6,7 +6,7 @@
 
 - À la demande de l'utilisateur, la bible s'ouvre désormais en clair, comme les autres outils B27 (le portail b27-hub l'est déjà). Le sombre reste à un clic et le choix est mémorisé par le navigateur (`bible-theme`) : qui l'avait choisi le garde, qui n'avait rien choisi passe au clair.
 - Le thème est posé par un court script dans l'en-tête de `index.html` et `fiche.html`, avant la feuille de style, pour éviter un éclair sombre au chargement ; `bible.js` applique le même défaut. Les couleurs ne changent pas : celles du clair existaient déjà.
-- Contrôlé dans Chromium (Playwright) sur un navigateur neuf : accueil et fiche du clapet en clair dès le premier rendu, bascule en sombre mémorisée d'une page à l'autre, retour au clair, aucune erreur. `node tests/verifier_bible.js` : 0 erreur, version des fichiers mise à jour.
+- Contrôlé dans Chromium (Playwright) sur un navigateur neuf : accueil et fiche du clapet en clair dès le premier rendu, bascule en sombre mémorisée d'une page à l'autre, retour au clair, aucune erreur. `node tests/verifier_bible.js` : 0 erreur, version des fichiers mise à jour. Publié le même jour sur accord de l'utilisateur (`main` sur 7399078), déploiement réussi du premier coup ; contrôlé en ligne sur un navigateur neuf : accueil et fiche du clapet en clair, fichiers en `?v=8d99e038`, aucune erreur. Cette note part avec la prochaine publication.
 
 - Publication des pictogrammes Lucide (entrée suivante) : faite le 20 novembre sur accord de l'utilisateur (`main` sur 9d9bc0b), déploiement réussi du premier coup, tracés Lucide servis en ligne.
 
