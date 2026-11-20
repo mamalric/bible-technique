@@ -2,6 +2,11 @@
 
 <!-- Dernière entrée en haut. Une entrée par session de travail ou par décision. Date au format AAAA-MM-JJ. -->
 
+## 2026-11-20 : le livre de l'emblème passe en blanc
+
+- À la demande de l'utilisateur, le livre ouvert de l'emblème est blanc au lieu de noir sur la plaque verte, partout où il paraît : pastille de l'en-tête (`bible.css`, dans les deux thèmes), icône d'onglet (`favicon.svg`), icône d'écran d'accueil (`apple-touch-icon.png`) et image d'aperçu des liens (`apercu.jpg`), ces deux dernières régénérées par `python src/generer_apercu.py`.
+- Contrôlé dans Chromium (Playwright) : pastille blanche en clair et en sombre, icône d'onglet et images vérifiées à l'oeil, aucune erreur. `node tests/verifier_bible.js` : 0 erreur, version des fichiers mise à jour. Les messageries gardent un temps l'ancien aperçu d'un lien déjà collé.
+
 ## 2026-11-20 : un vrai bouton de thème
 
 - À la demande de l'utilisateur, le bouton lune et soleil est refait. Il était un ovale de bouton d'onglet avec un pictogramme de 16 px perdu au milieu ; c'est maintenant un carré de 38 px aux coins doux, comme les boutons du portail b27-hub, avec un pictogramme de 18 px.
