@@ -6,7 +6,7 @@
 
 - Juste après la publication de l'icône d'onglet, l'utilisateur voyait la nouvelle icône d'onglet mais toujours l'ancien "B" dans l'en-tête : la page était neuve, mais `bible.js` venait encore du cache de son navigateur (GitHub Pages autorise 10 minutes de cache, et il l'avait chargé juste avant la mise en ligne). Un tel mélange peut aussi casser une page, si elle attend un script plus récent que celui du cache.
 - Correction : `index.html` et `fiche.html` appellent `bible.css`, `donnees/registre.js` et `bible.js` avec `?v=<empreinte>`, et `bible.js` passe la même aux fiches et aux schémas qu'il charge. L'empreinte (8 caractères) est tirée du contenu de ces fichiers par `tests/verifier_bible.js` : elle change d'elle-même à chaque modification. Le vérificateur sort en erreur si les pages portent une empreinte périmée, et `node tests/verifier_bible.js --version` l'écrit.
-- Contrôlé dans Chromium (Playwright), servi en local et ouvert en fichier : accueil avec le livre, fiche du clapet et son schéma chargés avec la même version, aucune erreur. `node tests/verifier_bible.js` : 0 erreur.
+- Contrôlé dans Chromium (Playwright), servi en local et ouvert en fichier : accueil avec le livre, fiche du clapet et son schéma chargés avec la même version, aucune erreur. `node tests/verifier_bible.js` : 0 erreur. Publié le même jour sur accord de l'utilisateur (`main` sur f4bf821), déploiement réussi du premier coup ; contrôlé en ligne : les deux pages appellent leurs fichiers en `?v=211d2ea4`, la fiche du clapet charge sa fiche et son schéma avec la même version, console vide. Cette note part avec la prochaine publication.
 
 ## 2026-11-19 : icône d'onglet, aperçu des liens et emblème du livre ouvert
 
